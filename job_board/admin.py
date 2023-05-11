@@ -7,3 +7,7 @@ from django_summernote.admin import SummernoteModelAdmin
 class JobPostingAdmin(SummernoteModelAdmin):
 
     list_filter = ('approved', 'reported', 'created_on')
+    list_display = ('title', 'created_on', 'approved', 'reported')
+    search_fields = ['title', 'company_overview', 'job_description',
+                    'requirements', 'benefits'
+                    ]
