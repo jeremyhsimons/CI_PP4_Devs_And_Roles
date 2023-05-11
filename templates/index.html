@@ -7,9 +7,11 @@
     <div class="row">
     {% for job in jobposting_list %}
         <div class="jobcard">
-            <p>{{ job.title }}</p>
-            <p>{{ job.salary }}</p>
-            <p>{{ job.location }}</p>
+            <a href="{% url 'job-post-detail' job.pk %}">
+                <p>{{ job.title }}</p>
+                <p>{{ job.salary }}</p>
+                <p>{{ job.location }}</p>
+            </a>
         </div>
     {% if forloop.counter|divisibleby:4 %}
     </div>

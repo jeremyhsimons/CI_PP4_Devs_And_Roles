@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1>{{ jobpost.title }}</h1>
+    {% if "placeholder" in jobpost.featured_image.url %}
+    <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="default picture of a laptop">
+    {% else %}
+    <img src="{{ jobpost.featured_image.url }}" alt="job posting featured image">
+    {% endif %}
+    <ul>
+        <li>{{ jobpost.salary }}</li>
+        <li>{{ jobpost.location }}</li>
+        <li>{{ jobpost.closing_date }}</li>
+    </ul>
+
+    <h3>Company overview:</h3>
+    <p>{{ jobpost.company_overview | safe }}</p>
+    <h3>Job description:</h3>
+    <p>{{ jobpost.job_description | safe }}</p>
+    <h3>Candidate requirements:</h3>
+    <p>{{ jobpost.requirements | safe }}</p>
+    <h3>Benefits:</h3>
+    <p>{{ jobpost.benefits | safe }}</p>
+
+    <hr>
+
+    <p>Applicants: {{ jobpost.applicants }}</p>
+
+{% endblock %}
