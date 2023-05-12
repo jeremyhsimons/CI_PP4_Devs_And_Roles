@@ -11,7 +11,7 @@ class JobPosting(models.Model):
     title = models.CharField(max_length=200, unique=False)
     posted_by = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="job_posting"
-        )
+    )
     salary = models.IntegerField()
     location = models.CharField(max_length=200)
     closing_date = models.DateTimeField()
