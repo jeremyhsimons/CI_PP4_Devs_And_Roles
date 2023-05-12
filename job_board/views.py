@@ -58,7 +58,10 @@ class CreateJobPosting(generic.CreateView):
             print(f'form failed{jobpost_form.errors}')
             jobpost_form = JobPostingForm()
 
-        return render(request, 'create-job-post.html')
+        return render(
+            request,
+            'create-job-post.html'
+        )
 
 
 class UpdateJobPosting(generic.UpdateView):
@@ -72,4 +75,43 @@ class UpdateJobPosting(generic.UpdateView):
     def get(self, request, pk, *args, **kwargs):
         queryset = JobPosting.objects.filter(approved=True)
         jobpost = get_object_or_404(queryset, pk=pk)
-        print(jobpost.title)
+        form = JobPostingForm(
+            initial={
+                'title': jobpost.title,
+                'salary': jobpost.salary,
+                'location': jobpost.location,
+                'closing_date': jobpost.closing_date,
+                'featured_image': jobpost.featured_image,
+                'company_overview': jobpost.company_overview,
+                'job_description': jobpost.job_description,
+                'requirements': jobpost.requirements,
+                'benefits': jobpost.benefits
+            }
+        )
+        return render(
+            request,
+            'update-job-post.html',
+            {'form': form, }
+        )
+
+    def post(self, request, pk, *args, **kwargs):
+        queryset = JobPosting.objects.filter(approved=True)
+        jobpost = get_object_or_404(queryset, pk=pk)
+        updated_form = JobPostingForm(data=request.POST, instance=jobpost)
+
+        if updated_form.is_valid():
+            updated_form.instance.posted_by = request.user
+            print('form saved')
+            updated_form.save()
+            return render(
+                request,
+                'index.html'
+            )
+
+        else:
+            print(f'form failed{updated_form.errors}')
+            updated_form = JobPostingForm()
+            return render(
+                request,
+                'update-job-post.html'
+            )

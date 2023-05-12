@@ -4,7 +4,7 @@
 {% load crispy_forms_tags %}
 
 {% if user.is_authenticated %}
-<h1>Create a job posting</h1>
+<h1>Edit your job posting</h1>
 <p>Posting as: {{ user.username }}</p>
 <form method="POST" height="200px" >
     {{ form.as_p }}
