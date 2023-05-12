@@ -10,6 +10,25 @@
 <body>
     <!--Navigation-->
     <h1>Devs & Roles</h1>
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li>
+                <a href="{% url 'account_logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{% url 'account_signup' %}">Register</a>
+            </li>
+            <li>
+                <a href="{% url 'account_login' %}">Login</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
     <!--Page content-->
     <main>
         {% block content %}
