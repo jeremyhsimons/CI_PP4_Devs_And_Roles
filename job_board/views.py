@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
@@ -115,3 +115,18 @@ class UpdateJobPosting(generic.UpdateView):
                 request,
                 'update-job-post.html'
             )
+
+@login_required
+def delete_job_posting(request, jobpost_id):
+    """
+    View that handles deletion of
+    job postings.
+    """
+    jobpost = get_object_or_404(JobPosting, pk=jobpost_id)
+    if request.user == jobpost.posted_by:
+        jobpost.delete()
+        messages.success(request, 'JOB POSTING SUCCESSFULLY DELETED')
+        return HttpResponseRedirect(reverse('home'))
+    else:
+        messages.error(request, "YOU CANNOT DELETE A POST YOU DIDN'T CREATE")
+        return HttpResponseRedirect(reverse('home'))
