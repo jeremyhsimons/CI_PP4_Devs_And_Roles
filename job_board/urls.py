@@ -6,4 +6,6 @@ urlpatterns = [
     path('', views.JobPostingList.as_view(), name="home"),
     path(
         '<int:pk>/', views.JobPostingDetail.as_view(), name="job-post-detail"),
+    path('create-job-post/', views.CreateJobPosting.as_view(),
+         name="create-job-post"),
 ]
