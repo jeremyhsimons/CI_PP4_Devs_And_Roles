@@ -48,7 +48,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
+    'materialize',
     'crispy_forms',
+    'crispy_forms_materialize',
     'job_board',
 ]
 

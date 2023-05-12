@@ -1,5 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
+from django.http import HttpResponseRedirect
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import JobPosting
 from .forms import JobPostingForm
 
@@ -42,3 +45,31 @@ class CreateJobPosting(generic.CreateView):
     model = JobPosting
     form_class = JobPostingForm
     template_name = 'create-job-post.html'
+
+    def post(self, request, *args, **kwargs):
+        jobpost_form = JobPostingForm(data=request.POST)
+
+        if jobpost_form.is_valid():
+            jobpost_form.instance.posted_by = request.user
+            print('form saved')
+            jobpost_form.save()
+
+        else:
+            print(f'form failed{jobpost_form.errors}')
+            jobpost_form = JobPostingForm()
+
+        return render(request, 'create-job-post.html')
+
+
+class UpdateJobPosting(generic.UpdateView):
+    """
+    A class to handle updates to job postings.
+    """
+    model = JobPosting
+    form_class = JobPostingForm
+    template_name = 'update-job-post.html'
+
+    def get(self, request, pk, *args, **kwargs):
+        queryset = JobPosting.objects.filter(approved=True)
+        jobpost = get_object_or_404(queryset, pk=pk)
+        print(jobpost.title)
