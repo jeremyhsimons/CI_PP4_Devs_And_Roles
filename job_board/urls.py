@@ -10,6 +10,6 @@ urlpatterns = [
          name="create-job-post"),
     path('update-job-post/<int:pk>', views.UpdateJobPosting.as_view(),
          name='update-job-post'),
-    path('delete-job-post/<int:jobpost_id>', views.delete_job_posting, 
+    path('delete-job-post/<int:jobpost_id>', views.delete_job_posting,
          name='delete-job-post'),
 ]

@@ -4,15 +4,19 @@
 {% load crispy_forms_tags %}
 
 {% if user.is_authenticated %}
-<h1>Edit your job posting</h1>
-<p>Posting as: {{ user.username }}</p>
-<form method="POST" height="200px" >
-    {{ form.as_p }}
-    {% csrf_token %}
-    <button type="submit" class="btn">submit</button>
-</form>
+<div class="container">
+    <h1>Edit your job posting</h1>
+    <p>Posting as: {{ user.username }}</p>
+    <form method="POST" height="200px" >
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit" class="btn">submit</button>
+    </form>
+</div>
 {% else %}
-<p>You must be signed in to create a job posting</p>
+<div class="container">
+    <p>You must be signed in to create a job posting</p>
+</div>
 {% endif %}
 
 {% endblock %}
