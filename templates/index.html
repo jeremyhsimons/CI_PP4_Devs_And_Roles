@@ -3,10 +3,10 @@
 {% block content %}
 
 <!--Job posting list-->
-<div class="temp-jobcard-container">
+<div class="container">
     <div class="row">
         {% for job in jobposting_list %}
-        <div class="jobcard">
+        <div class="card-panel col s3">
             <a href="{% url 'job-post-detail' job.pk %}">
                 <p>{{ job.title }}</p>
                 <p>{{ job.salary }}</p>
