@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import JobPosting
+from .models import JobPosting, JobApplication
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -17,3 +17,11 @@ class JobPostingAdmin(SummernoteModelAdmin):
 
     def disapprove_job_posting(self, request, queryset):
         queryset.update(approved=False)
+
+
+@admin.register(JobApplication)
+class JobApplicationAdmin(SummernoteModelAdmin):
+
+    list_filter = ('candidate', 'job_posting',)
+    list_display = ('candidate', 'full_name', 'created_on')
+    search_fields = ['full_name',]

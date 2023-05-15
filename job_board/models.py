@@ -65,4 +65,4 @@ class JobApplication(models.Model):
         ordering = ['-created_on']
 
     def __str__(self):
-        return self.pk
+        return (f'{self.pk}-{self.full_name}')
