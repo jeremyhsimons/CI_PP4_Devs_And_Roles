@@ -25,8 +25,11 @@
 <h3>Candidate supporting documents: CV, Cover Letter, etc.</h3>
 <p>{{ application.supporting_docs }}</p>
 
-<a href="#">Withdraw application</a>
-
-<a href="{% url 'job-post-detail' application.job_posting.pk %}">Back to Job posting</a>
+<p>
+    <a href="{% url 'job-post-detail' application.job_posting.pk %}">Back to Job posting</a>
+</p>
+<p>
+    <a href="{% url 'delete_application' application.pk %}">Withdraw application</a>
+</p>
 
 {% endblock %}

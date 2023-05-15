@@ -54,11 +54,9 @@ class CreateJobPosting(generic.CreateView):
 
         if jobpost_form.is_valid():
             jobpost_form.instance.posted_by = request.user
-            print('form saved')
             jobpost_form.save()
 
         else:
-            print(f'form failed{jobpost_form.errors}')
             jobpost_form = JobPostingForm()
 
         return render(
@@ -104,7 +102,6 @@ class UpdateJobPosting(generic.UpdateView):
 
         if updated_form.is_valid():
             updated_form.instance.posted_by = request.user
-            print('form saved')
             updated_form.save()
             return render(
                 request,
@@ -112,7 +109,6 @@ class UpdateJobPosting(generic.UpdateView):
             )
 
         else:
-            print(f'form failed{updated_form.errors}')
             updated_form = JobPostingForm()
             return render(
                 request,
@@ -175,15 +171,30 @@ class CreateJobApplication(generic.CreateView):
         if application_form.is_valid():
             application_form.instance.job_posting = job_posting
             application_form.instance.candidate = request.user
-            print('form saved')
             application_form.save()
 
         else:
-            print(f'form failed{jobpost_form.errors}')
             application = JobApplicationForm()
 
         return render(
             request,
             'create-job-application.html'
         )
+
+
+@login_required
+def delete_application(request, application_id):
+    """
+    View that handles withdrawal of
+    job applications.
+    """
+    application = get_object_or_404(JobApplication, pk=application_id)
+    if request.user == application.candidate:
+        application.delete()
+        messages.success(request, 'JOB POSTING SUCCESSFULLY DELETED')
+        return HttpResponseRedirect(reverse('home'))
+    else:
+        messages.error(request, "YOU CANNOT DELETE A POST YOU DIDN'T CREATE")
+        print("YOU CANNOT DELETE A POST YOU DIDN'T CREATE")
+        return HttpResponseRedirect(reverse('home'))
 
