@@ -50,9 +50,10 @@ class JobApplication(models.Model):
     job_posting = models.ForeignKey(
         JobPosting, on_delete=models.CASCADE, related_name="job_application"
     )
+    created_on = models.DateTimeField(auto_now_add=True)
     full_name = models.CharField(max_length=200)
     email = models.EmailField(max_length=200)
-    phone = models.IntegerField(max_length=20)
+    phone = models.IntegerField()
     linkedin = models.CharField(max_length=200)
     github_username = models.CharField(max_length=200)
     why_company = models.TextField(max_length=2000)
