@@ -32,4 +32,13 @@
 
 <p>Applicants: {{ jobpost.applicants }}</p>
 
+<h3>SEE ALL APPLICATIONS</h3>
+{% for application in applications %}
+<div class="container card-panel">
+    <p>{{ application.full_name }}</p>
+    <p>{{ application.email }}</p>
+    <p>{{ application.linkedin }}</p>
+</div>
+{% endfor %}
+
 {% endblock %}

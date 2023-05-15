@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import JobPosting
+from .models import JobPosting, JobApplication
 from .forms import JobPostingForm
 
 
@@ -27,12 +27,15 @@ class JobPostingDetail(View):
     def get(self, request, pk, *args, **kwargs):
         queryset = JobPosting.objects.filter(approved=True)
         jobpost = get_object_or_404(queryset, pk=pk)
+        applications = jobpost.job_application.order_by('-created_on')
+        jobpost.applicants = applications.count()
 
         return render(
             request,
             "job-post-detail.html",
             {
-                "jobpost": jobpost,
+                'jobpost': jobpost,
+                'applications': applications,
             },
         )
 
@@ -116,6 +119,7 @@ class UpdateJobPosting(generic.UpdateView):
                 'update-job-post.html'
             )
 
+
 @login_required
 def delete_job_posting(request, jobpost_id):
     """
@@ -130,3 +134,6 @@ def delete_job_posting(request, jobpost_id):
     else:
         messages.error(request, "YOU CANNOT DELETE A POST YOU DIDN'T CREATE")
         return HttpResponseRedirect(reverse('home'))
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Views to handle all job application logic.
+
