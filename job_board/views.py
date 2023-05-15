@@ -137,3 +137,20 @@ def delete_job_posting(request, jobpost_id):
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Views to handle all job application logic.
 
+
+class ViewApplicationDetails(View):
+    """
+    A class to handle viewing the full data
+    contained in each job application.
+    """
+
+    def get(self, request, pk, *args, **kwargs):
+        application = get_object_or_404(JobApplication, pk=pk)
+
+        return render(
+            request,
+            "application-detail.html",
+            {
+                'application': application,
+            },
+        )

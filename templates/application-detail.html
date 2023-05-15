@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Application for {{ jobpost.title }}</h1>
+<ul>
+    <li>{{ application.full_name }}</li>
+    <li>{{ application.email }}</li>
+    <li>{{ application.phone }}</li>
+    <li>{{ application.linkedin }}</li>
+    <li>{{ application.github_username }}</li>
+</ul>
+
+<h3>Why would you like to work for this company?</h3>
+<p>-- max 2000 characters --</p>
+<p>{{ application.why_company | safe }}</p>
+<h3>Why are you a good fit for this role?</h3>
+<p>-- max 2000 characters --</p>
+<p>{{ application.why_role | safe }}</p>
+<h3>Why should this company hire you, specifically?</h3>
+<p>-- max 2000 characters --</p>
+<p>{{ application.why_you | safe }}</p>
+
+<hr>
+
+<h3>Candidate supporting documents: CV, Cover Letter, etc.</h3>
+<p>{{ application.supporting_docs }}</p>
+
+<a href="#">Withdraw application</a>
+
+<a href="{% url 'job-post-detail' application.job_posting.pk %}">Back to Job posting</a>
+
+{% endblock %}

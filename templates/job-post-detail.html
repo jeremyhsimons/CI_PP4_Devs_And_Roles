@@ -38,6 +38,11 @@
     <p>{{ application.full_name }}</p>
     <p>{{ application.email }}</p>
     <p>{{ application.linkedin }}</p>
+    <p>
+        <a href="{% url 'application-detail' application.pk %}">
+            Details
+        </a>
+    </p>
 </div>
 {% endfor %}
 
