@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+{% if user.is_authenticated %}
+<h1>Apply for this job...</h1>
+<div class="container">
+    <p>Posting as: {{ user.username }}</p>
+    <form method="POST" height="200px" >
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit" class="btn">submit</button>
+    </form>
+</div>
+{% else %}
+<div class="container">
+    <p>You must be signed in to apply for a job</p>
+</div>
+{% endif %}
+
+{% endblock %}

@@ -15,4 +15,6 @@ urlpatterns = [
     path('application-detail/<int:pk>',
          views.ViewApplicationDetails.as_view(),
          name='application-detail'),
+    path('apply/<int:job_id>', views.CreateJobApplication.as_view(),
+         name='apply'),
 ]

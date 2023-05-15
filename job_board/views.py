@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import JobPosting, JobApplication
-from .forms import JobPostingForm
+from .forms import JobPostingForm, JobApplicationForm
 
 
 class JobPostingList(generic.ListView):
@@ -154,3 +154,36 @@ class ViewApplicationDetails(View):
                 'application': application,
             },
         )
+
+class CreateJobApplication(generic.CreateView):
+    """
+    A class to handle users writing and submitting
+    job applications.
+    """
+    model = JobApplication
+    form_class = JobApplicationForm
+    template_name = 'create-job-application.html'
+
+    def post(self, request, job_id, *args, **kwargs):
+        """
+        Function to handle POST requests for submitted
+        application forms.
+        """
+        application_form = JobApplicationForm(data=request.POST)
+        job_posting = get_object_or_404(JobPosting, pk=job_id)
+
+        if application_form.is_valid():
+            application_form.instance.job_posting = job_posting
+            application_form.instance.candidate = request.user
+            print('form saved')
+            application_form.save()
+
+        else:
+            print(f'form failed{jobpost_form.errors}')
+            application = JobApplicationForm()
+
+        return render(
+            request,
+            'create-job-application.html'
+        )
+
