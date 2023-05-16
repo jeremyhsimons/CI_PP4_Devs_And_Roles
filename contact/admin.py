@@ -7,7 +7,7 @@ from .models import ContactMessage
 class ContactMessageAdmin(SummernoteModelAdmin):
     list_display = ('full_name', 'date_sent', 'user', 'read')
     list_filter = ('date_sent', 'read')
-    search_fields = ['full_name', 'body',]
+    search_fields = ['full_name', 'message',]
     actions = ['mark_as_read',]
 
     def mark_as_read(self, request, queryset):

@@ -13,7 +13,7 @@ class ContactMessage(models.Model):
         User, on_delete=models.CASCADE, null=True,
         blank=True, related_name='contact_message')
     date_sent = models.DateTimeField(auto_now_add=True)
-    body = models.TextField()
+    message = models.TextField()
     read = models.BooleanField(default=False)
 
     class Meta:
