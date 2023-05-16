@@ -151,6 +151,7 @@ class ViewApplicationDetails(View):
             },
         )
 
+
 class CreateJobApplication(generic.CreateView):
     """
     A class to handle users writing and submitting
@@ -174,7 +175,7 @@ class CreateJobApplication(generic.CreateView):
             application_form.save()
 
         else:
-            application = JobApplicationForm()
+            application_form = JobApplicationForm()
 
         return render(
             request,
@@ -197,4 +198,3 @@ def delete_application(request, application_id):
         messages.error(request, "YOU CANNOT DELETE A POST YOU DIDN'T CREATE")
         print("YOU CANNOT DELETE A POST YOU DIDN'T CREATE")
         return HttpResponseRedirect(reverse('home'))
-

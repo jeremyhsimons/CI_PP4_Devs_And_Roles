@@ -15,7 +15,7 @@ class CreateContactMessage(generic.CreateView):
     def post(self, request, *args, **kwargs):
         """
         Submits completed forms to the database
-        after checking if the user is signed in 
+        after checking if the user is signed in
         and grabbing user details.
         """
         form = ContactForm(data=request.POST)

@@ -31,12 +31,6 @@ class JobPosting(models.Model):
     def __str__(self):
         return self.title
 
-    def number_of_applicants(self):
-        return self.applicants.count()
-
-    def get_deadline(self):
-        return self.closing_date
-
 
 class JobApplication(models.Model):
     """

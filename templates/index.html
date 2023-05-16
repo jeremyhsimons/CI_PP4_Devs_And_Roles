@@ -9,7 +9,7 @@
         <div class="card-panel col s3">
             <a href="{% url 'job-post-detail' job.pk %}">
                 <p>{{ job.title }}</p>
-                <p>{{ job.salary }}</p>
+                <p>£ {{ job.salary }}</p>
                 <p>{{ job.location }}</p>
             </a>
         </div>
