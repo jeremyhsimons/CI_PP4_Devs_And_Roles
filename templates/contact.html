@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<h1>Found a problem with the site?</h1>
+<h2>Send us a message</h2>
+<div class="container card-panel">
+    <p>Posting as: {{ user.username }}</p>
+    <form method="POST" height="200px">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit" class="btn">submit</button>
+    </form>
+</div>
+
+{% endblock %}

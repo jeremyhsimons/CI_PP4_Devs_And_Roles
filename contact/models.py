@@ -10,7 +10,7 @@ class ContactMessage(models.Model):
     full_name = models.CharField(max_length=200)
     email = models.EmailField(max_length=200)
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE,
+        User, on_delete=models.CASCADE, null=True,
         blank=True, related_name='contact_message')
     date_sent = models.DateTimeField(auto_now_add=True)
     body = models.TextField()
