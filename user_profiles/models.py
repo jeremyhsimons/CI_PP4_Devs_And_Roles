@@ -17,7 +17,7 @@ class UserProfile(models.Model):
     job_seeker = models.BooleanField(default=False)
     recruiter = models.BooleanField(default=False)
     location = models.CharField(max_length=200, blank=True)
-    years_experience = models.IntegerField()
+    years_experience = models.IntegerField(null=True)
     education = models.TextField()
     work_experience = models.TextField()
     interests = models.TextField()
