@@ -9,6 +9,7 @@ class JobPostingForm(forms.ModelForm):
                   'featured_image', 'company_overview', 'job_description',
                   'requirements', 'benefits')
 
+
 class JobApplicationForm(forms.ModelForm):
     class Meta:
         model = JobApplication
