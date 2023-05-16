@@ -10,23 +10,23 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,
                                 related_name='profile')
     created_on = models.DateTimeField(auto_now_add=True)
-    first_name = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
+    first_name = models.CharField(max_length=200, blank=True)
+    last_name = models.CharField(max_length=200, blank=True)
     linkedin = models.CharField(max_length=200, blank=True)
     github_username = models.CharField(max_length=200, blank=True)
     job_seeker = models.BooleanField(default=False)
     recruiter = models.BooleanField(default=False)
     location = models.CharField(max_length=200, blank=True)
     years_experience = models.IntegerField(null=True)
-    education = models.TextField()
-    work_experience = models.TextField()
-    interests = models.TextField()
-    roles_open_to = models.CharField(max_length=200)
+    education = models.TextField(blank=True)
+    work_experience = models.TextField(blank=True)
+    interests = models.TextField(blank=True)
+    roles_open_to = models.CharField(max_length=200, blank=True)
     approved = models.BooleanField(default=True)
     reported = models.BooleanField(default=False)
 
-    class Meta:
-        ordering = ['-created_on']
+    def get_absolute_url(self):
+        return reverse('home')
 
     def __str__(self):
-        return (f"{self.first_name} {self.last_name}'s profile")
+        return self.user.username
