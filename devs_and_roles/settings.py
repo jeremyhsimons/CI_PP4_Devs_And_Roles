@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'crispy_forms_materialize',
     'contact',
     'job_board',
+    'user_profiles',
 ]
 
 SITE_ID = 1
