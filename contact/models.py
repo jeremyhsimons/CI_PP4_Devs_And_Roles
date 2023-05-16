@@ -14,6 +14,7 @@ class ContactMessage(models.Model):
         blank=True, related_name='contact_message')
     date_sent = models.DateTimeField(auto_now_add=True)
     body = models.TextField()
+    read = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['-date_sent']
