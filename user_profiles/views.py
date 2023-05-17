@@ -15,7 +15,7 @@ class SeeAllProfiles(generic.ListView):
     template_name = 'display_profiles.html'
 
 
-class AddUserProfileDetails(View):
+class AddUserProfileDetails(generic.UpdateView):
     """
     A class view to handle adding profile information
     once a user has signed up.
