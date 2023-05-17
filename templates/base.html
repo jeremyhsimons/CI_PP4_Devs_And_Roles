@@ -32,7 +32,7 @@
                 <a href="{% url 'create-job-post' %}">Create a Job posting</a>
             </li>
             <li>
-                <a href="{% url 'add_user_profile_details' %}">Edit Profile</a>
+                <a href="{% url 'add_user_profile_details' user.pk %}">Edit Profile</a>
             </li>
             {% else %}
             <li>
