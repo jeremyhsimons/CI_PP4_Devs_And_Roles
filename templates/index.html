@@ -25,9 +25,9 @@
                         </div>
                         <div class="col s6">
                             <div class="container home-job-details">
-                                <p>£ {{ job.salary }}</p>
-                                <p>{{ job.location }}</p>
-                                <p>{{ job.closing_date.date }}</p>
+                                <p><i class="fa-solid fa-money-bill"></i> £{{ job.salary }}</p>
+                                <p><i class="fa-sharp fa-solid fa-location-dot"></i> {{ job.location }}</p>
+                                <p><i class="fa-solid fa-clock"></i> {{ job.closing_date.date }}</p>
                             </div>
                         </div>
                     </div>
@@ -47,13 +47,13 @@
     </div>
 
     {% if is_paginated %}
-    <nav aria-label="Page navigation">
+    <nav aria-label="Page navigation" class="pagination-card">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            <li class="pagination-control"><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
             {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+            <li class="pagination-control"><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
 
             {% endif %}
         </ul>

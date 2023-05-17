@@ -1,45 +1,54 @@
 /*---------------------------------------------------------- General styles */
   
-  body {
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-  }
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
 
-  main {
-      flex: 1 0 auto;
-  }
+main {
+    flex: 1 0 auto;
+}
 
-  .no-padding {
+.no-padding {
     padding: none;
   }
 
 /*---------------------------------------------------------- home page styles */ 
 
-  .home-container {
+.home-container {
     margin: auto;
     width: 90%;
-  }
+}
 
-  .home-card {
+.home-card {
     width: 100%;
-  }
+}
 
-  .home-featured-image {
+.home-featured-image {
     max-width: 100%;
     max-height: 100%;
-  }
+}
 
-  .home-job-link {
+.home-job-link {
     color: black;
-  }
+}
 
-  .home-job-title {
+.home-job-title {
     font-size: 120%;
     font-weight: 500;
-  }
+}
 
-  .home-job-details {
+.home-job-details {
     margin-bottom: 10px;
-  }
+}
 
+.pagination-card {
+    width: 40%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.pagination-control > a {
+    font-weight: 700;
+}
