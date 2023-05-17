@@ -41,8 +41,10 @@ def redirect_view(request):
     view that redirects users to set up
     profile if they have not done so.
     """
+    profiles = UserProfile.objects.all()
+    current_user_profile = get_object_or_404(profiles, user=request.user)
 
-    if request.user.userprofile:
+    if current_user_profile.user == request.user and current_user_profile.first_name:
         print("success")
         return redirect('home')
     else:
