@@ -3,15 +3,17 @@
 {% block content %}
 
 <!--Job posting list-->
-<div class="container">
+<div class="home-container">
     <div class="row">
         {% for job in jobposting_list %}
-        <div class="card-panel col s3">
-            <a href="{% url 'job-post-detail' job.pk %}">
-                <p>{{ job.title }}</p>
-                <p>£ {{ job.salary }}</p>
-                <p>{{ job.location }}</p>
-            </a>
+        <div class="col s3">
+            <div class="card-panel home-card">
+                <a href="{% url 'job-post-detail' job.pk %}">
+                    <p>{{ job.title }}</p>
+                    <p>£ {{ job.salary }}</p>
+                    <p>{{ job.location }}</p>
+                </a>
+            </div>
         </div>
         {% if forloop.counter|divisibleby:4 %}
     </div>

@@ -7,3 +7,14 @@
   main {
       flex: 1 0 auto;
   }
+
+  .home-container {
+    margin: auto;
+    padding: 30px;
+    width: 100%;
+  }
+
+  .home-card {
+    width: 95%;
+  }
+

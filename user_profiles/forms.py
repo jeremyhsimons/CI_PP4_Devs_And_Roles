@@ -22,7 +22,7 @@ class AddUserProfileForm(forms.ModelForm):
             'work_experience',
             'interests',
             'roles_open_to',)
-        
+
     def __init__(self, *args, **kwargs):
         super(AddUserProfileForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()

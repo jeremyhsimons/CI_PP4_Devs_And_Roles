@@ -28,17 +28,6 @@ class AddUserProfileDetails(generic.CreateView):
         return self.request.user.userprofile
 
 
-    # model = UserProfile
-    # form_class = AddUserProfileForm
-    # template_name = "create_profile.html"
-
-    # def get_object(self):
-    #     return self.request.user
-
-    # def form_invalid(self, form):
-    #     return redirect('home')
-
-
 def redirect_view(request):
     """
     view that redirects users to set up
