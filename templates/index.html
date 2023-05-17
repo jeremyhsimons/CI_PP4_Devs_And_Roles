@@ -8,10 +8,34 @@
         {% for job in jobposting_list %}
         <div class="col s3">
             <div class="card-panel home-card">
-                <a href="{% url 'job-post-detail' job.pk %}">
-                    <p>{{ job.title }}</p>
-                    <p>£ {{ job.salary }}</p>
-                    <p>{{ job.location }}</p>
+                <a class="home-job-link" href="{% url 'job-post-detail' job.pk %}">
+                    <div class="row">
+                        <div class="col s12">
+                            <h4 class="home-job-title">{{ job.title }}</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <img class="home-featured-image" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="default picture of a laptop">
+                        </div>
+                        <div class="col s6">
+                            <div class="container home-job-details">
+                                <p>£ {{ job.salary }}</p>
+                                <p>{{ job.location }}</p>
+                                <p>{{ job.closing_date.date }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <hr>
+                        </div>
+                    </div>
                 </a>
             </div>
         </div>
