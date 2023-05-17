@@ -24,6 +24,9 @@ class AddUserProfileDetails(generic.UpdateView):
     form_class = AddUserProfileForm
     template_name = 'create_profile.html'
 
+    def get_object(self, *args, **kwargs):
+        return self.request.user.userprofile
+
 
     # model = UserProfile
     # form_class = AddUserProfileForm
