@@ -20,18 +20,11 @@ class AddUserProfileDetails(View):
     A class view to handle adding profile information
     once a user has signed up.
     """
+    model = UserProfile
+    form_class = AddUserProfileForm
+    template_name = 'create_profile.html'
 
-    def get(self, request, *args, **kwargs):
-        queryset = UserProfile.objects.filter(approved=True)
-        profile = get_object_or_404(queryset, user=request.user)
 
-        return render(
-            request,
-            'create_profile.html',
-            {
-                'profile': profile
-            }
-        )
     # model = UserProfile
     # form_class = AddUserProfileForm
     # template_name = "create_profile.html"
