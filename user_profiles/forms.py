@@ -3,6 +3,10 @@ from .models import UserProfile
 
 
 class AddUserProfileForm(forms.ModelForm):
+
+    job_seeker = forms.BooleanField()
+    recruiter = forms.BooleanField()
+
     class Meta:
         model = UserProfile
         fields = (
@@ -10,8 +14,6 @@ class AddUserProfileForm(forms.ModelForm):
             'last_name',
             'linkedin',
             'github_username',
-            'job_seeker',
-            'recruiter',
             'location',
             'years_experience',
             'education',
@@ -19,3 +21,7 @@ class AddUserProfileForm(forms.ModelForm):
             'interests',
             'roles_open_to',
         )
+
+
+class AlternateProfileForm(forms.Form):
+    

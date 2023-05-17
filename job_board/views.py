@@ -131,6 +131,23 @@ def delete_job_posting(request, jobpost_id):
         messages.error(request, "YOU CANNOT DELETE A POST YOU DIDN'T CREATE")
         return HttpResponseRedirect(reverse('home'))
 
+
+@login_required
+def report_job_posting(request, jobpost_id):
+    """
+    View that handles reporting of
+    job postings.
+    """
+    jobpost = get_object_or_404(JobPosting, pk=jobpost_id)
+    if jobpost.reported is False and request.user != jobpost.posted_by:
+        jobpost.reported = True
+        jobpost.save()
+        return HttpResponseRedirect(reverse('home'))
+    else:
+        messages.error(request, "YOU CANNOT REPORT THIS POST")
+        return HttpResponseRedirect(reverse('home'))
+        
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Views to handle all job application logic.
 
 

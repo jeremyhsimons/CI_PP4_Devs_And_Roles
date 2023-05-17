@@ -3,7 +3,7 @@ from django.views import View, generic
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import UserProfile
-from .forms import AddUserProfileForm
+from .forms import AddUserProfileForm, AlternateProfileForm
 
 
 class SeeAllProfiles(generic.ListView):
@@ -15,17 +15,17 @@ class SeeAllProfiles(generic.ListView):
     template_name = 'display_profiles.html'
 
 
-class AddUserProfileDetails(generic.UpdateView):
+class AddUserProfileDetails(generic.CreateView):
     """
     A class view to handle adding profile information
     once a user has signed up.
     """
     model = UserProfile
-    form_class = AddUserProfileForm
+    form_class = AlternateProfileForm
     template_name = 'create_profile.html'
 
     def get_object(self, *args, **kwargs):
-        return self.request.user.user_profile
+        return self.request.user.userprofile
 
 
     # model = UserProfile

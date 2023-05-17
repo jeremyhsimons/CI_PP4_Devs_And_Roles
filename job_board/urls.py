@@ -12,6 +12,8 @@ urlpatterns = [
          name='update-job-post'),
     path('delete-job-post/<int:jobpost_id>', views.delete_job_posting,
          name='delete-job-post'),
+    path('report-job-post/<int:jobpost_id>', views.report_job_posting,
+         name='report-job-post'),
     path('application-detail/<int:pk>',
          views.ViewApplicationDetails.as_view(),
          name='application-detail'),
