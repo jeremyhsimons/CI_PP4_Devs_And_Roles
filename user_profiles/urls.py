@@ -6,5 +6,7 @@ urlpatterns = [
     path('add_user_profile_details/', views.AddUserProfileDetails.as_view(),
          name='add_user_profile_details'),
     path('redirect/', views.redirect_view, name="redirect"),
-    path('see_all_profiles/', views.SeeAllProfiles.as_view(), name="see_all")
+    path('see_all_profiles/', views.SeeAllProfiles.as_view(), name="see_all"),
+    path('view_profile/', views.ViewProfile.as_view(), name="view_profile"),
+    
 ]
