@@ -1,8 +1,10 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View, generic
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from .models import UserProfile
 from .forms import AddUserProfileForm
@@ -17,7 +19,7 @@ class SeeAllProfiles(generic.ListView):
     template_name = 'display_profiles.html'
 
 
-class AddUserProfileDetails(generic.CreateView):
+class AddUserProfileDetails(generic.CreateView, SuccessMessageMixin):
     """
     A class view to handle adding profile information
     once a user has signed up.
@@ -67,6 +69,29 @@ class ViewProfile(View):
             'view_profile.html',
             {'profile': profile, }
         )
+
+
+class delete_profile(generic.DeleteView):
+    """
+    A view to handle the deletion of users' profiles.
+    """
+    model = User
+    template = 'delete_profile.html'
+
+    def get_object(self, *args, **kwargs):
+        return self.request.user
+    
+    def post(self, request, *args, **kwargs):
+        if UserProfile.objects.filter(user=request.user).exists():
+            profile = UserProfile.objects.filter(user=request.user)
+            profile.delete()
+
+        request.user.is_active = False
+        request.user.save()
+        messages.success(request, 'YOUR ACCOUNT WAS SUCCESSFULLY DELETED')
+
+        return HttpResponseRedirect(reverse_lazy('account_logout'))
+
 
 
 def redirect_view(request):

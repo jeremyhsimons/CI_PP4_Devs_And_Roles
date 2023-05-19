@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+    <h1>Are you sure you want to delete your profie?</h1>
+    <h2>
+        Deleting your profile will also delete your account, 
+        and your username and password will be un-usable for this site in future.
+    </h2>
+    <div class="container">
+        <form method="POST" height="200px">
+            {% csrf_token %}
+            <button type="submit" id="delete" class="btn">Delete</button>
+        </form>
+    </div>
+</section>
+<script>
+    // Alert the user to the permanent deletion of account.
+    let deleteButton = document.getElementById('delete');
+    deleteButton.addEventListener('mouseover', () => {
+        return M.toast({ html: 'This action is not reversible.' })
+    })
+
+    // Dismiss the alert when clicked.
+    let toastElement = document.querySelector('.toast');
+    toastElement.addEventListener('click', () => {
+        let toastInstance = M.Toast.getInstance(toastElement);
+        return toastInstance.dismiss();
+    })
+</script>
+{% endblock %}
