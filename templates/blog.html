@@ -3,9 +3,31 @@
 <h1>View the latest posts from the community:</h1>
 
 <a href="{% url 'create_blog_post' %}" class="btn">Write a blog post...</a>
+<div class="row"></div>
 
 <div class="divider"></div>
-{% for blog in blogpost_list %}
-<h2>{{ blog.title }}</h2>
+<div class="row">
+    {% for blog in blogpost_list %}
+    <div class="col s12 m6 l4">
+        <div class="card">
+            <div class="card-image">
+                {% if "placeholder" in blog.featured_image.url %}
+                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="default picture of a laptop">
+                {% else %}
+                <img src="{{ blog.featured_image.url }}" alt="job posting featured image">
+                {% endif %}
+                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="fa-sharp fa-light fa-eye"></i></a>
+            </div>
+            <div class="card-content">
+                <div class="card-title">{{blog.title}}</div>
+                <p>{{blog.summary}}</p>
+            </div>
+        </div>
+    </div>
+    {% if forloop.counter|divisibleby:3 %}
+</div>
+<div class="row">
+
+{% endif %}
 {% endfor %}
 {% endblock %}
