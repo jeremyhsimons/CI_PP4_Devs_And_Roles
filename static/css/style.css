@@ -14,6 +14,10 @@ main {
     padding: none;
   }
 
+.no-margin-bottom {
+    margin-bottom: 0%;
+}
+
 /*---------------------------------------------------------- home page styles */ 
 
 .home-container {
@@ -51,4 +55,15 @@ main {
 
 .pagination-control > a {
     font-weight: 700;
+}
+
+
+/*-------------------------------------------------- View profile page styles */
+
+.side-nav {
+    height: 100%;
+}
+
+.side-nav > h5{
+    color: antiquewhite;
 }
