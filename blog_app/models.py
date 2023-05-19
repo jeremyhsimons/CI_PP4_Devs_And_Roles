@@ -14,6 +14,7 @@ class BlogPost(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     content = models.TextField()
     summary = models.TextField()
+    featured_image = CloudinaryField('image', default='placeholder')
     created_on = models.DateField(auto_now_add=True)
     approved = models.BooleanField(default=True)
     reported = models.BooleanField(default=False)
