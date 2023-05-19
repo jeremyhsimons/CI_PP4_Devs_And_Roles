@@ -71,12 +71,12 @@ class ViewProfile(View):
         )
 
 
-class delete_profile(generic.DeleteView):
+class DeleteProfile(generic.DeleteView):
     """
     A view to handle the deletion of users' profiles.
     """
     model = User
-    template = 'delete_profile.html'
+    template_name = 'delete_profile.html'
 
     def get_object(self, *args, **kwargs):
         return self.request.user
@@ -91,7 +91,6 @@ class delete_profile(generic.DeleteView):
         messages.success(request, 'YOUR ACCOUNT WAS SUCCESSFULLY DELETED')
 
         return HttpResponseRedirect(reverse_lazy('account_logout'))
-
 
 
 def redirect_view(request):
