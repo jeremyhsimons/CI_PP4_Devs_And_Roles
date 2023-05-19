@@ -9,7 +9,7 @@ class BlogPostAdmin(SummernoteModelAdmin):
     A class to enable admin users to view and edit
     blog entries in the database.
     """
-
+    prepopulated_fields = {'slug': ('title',)}
     list_display = ('title', 'slug', 'created_on', 'approved', 'reported')
     list_filter = ('created_on', 'approved', 'reported')
     search_fields = ['title', 'slug', 'summary', 'content']
@@ -33,7 +33,7 @@ class CommentAdmin(SummernoteModelAdmin):
     list_filter = ('approved', 'reported')
     search_fields = ('name', 'body')
     actions = ['approve_comment', 'disapprove_comment']
-    
+
     def approve_comment(self, request, queryset):
         queryset.update(approved=True)
 
