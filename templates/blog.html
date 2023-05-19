@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>View the latest posts from the community:</h1>
+
+<a href="{% url 'create_blog_post' %}" class="btn">Write a blog post...</a>
+
+<div class="divider"></div>
 {% for blog in blogpost_list %}
 <h2>{{ blog.title }}</h2>
 {% endfor %}

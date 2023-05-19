@@ -7,15 +7,16 @@
 <h1>Create a job posting</h1>
 <div class="container">
     <p>Posting as: {{ user.username }}</p>
-    <form method="POST" height="200px" >
-        {{ form | crispy }}
+    <form method="POST">
+        {{ form | crispy}}
         {% csrf_token %}
         <button type="submit" class="btn">submit</button>
     </form>
+    <a href="{% url 'blog_list' %}" class="btn">Back</a>
 </div>
 {% else %}
 <div class="container">
-    <p>You must be signed in to create a job posting</p>
+    <p>You must be signed in to create a blog post!</p>
 </div>
 {% endif %}
 
