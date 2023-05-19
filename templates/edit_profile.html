@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container">
+    <div class="card-panel">
+        <h1>Edit your profile details:</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col l6">
+                    {{ form.first_name|as_crispy_field }}
+                </div>
+                <div class="col l6">
+                    {{ form.last_name|as_crispy_field }}
+                </div>
+                <div class="col l6">
+                    {{ form.linkedin|as_crispy_field }}
+                </div>
+                <div class="col l6">
+                    {{ form.github_username|as_crispy_field }}
+                </div>
+                <div class="col l12">
+                    <label>
+                        {{ form.job_seeker|as_crispy_field  }}
+                        <span>Are you looking for a new role?</span>
+                    </label>
+                </div>
+                <div class="col l12">
+                    <label>
+                        {{ form.recruiter|as_crispy_field }}
+                        <span>Are you looking for candidates to fill a role?</span>
+                    </label>
+                </div>
+                <div class="col12">
+                    <h3>
+                        Note: if you are a recruiter, you do not need
+                        to fill in the following fields.
+                    </h3>
+                </div>
+                <div class="col l6">
+                    {{ form.location|as_crispy_field }}
+                </div>
+                <div class="col l6">
+                    {{ form.years_experience|as_crispy_field }}
+                </div>
+                <div class="col s12">
+                    {{ form.education|as_crispy_field }}
+                </div>
+                <div class="col s12">
+                    {{ form.work_experience|as_crispy_field }}
+                </div>
+                <div class="col s12">
+                    {{ form.interests|as_crispy_field }}
+                </div>
+                <div class="col s12">
+                    {{ form.roles_open_to|as_crispy_field }}
+                </div>
+            </div>
+            <button type="submit" class="btn">submit</button>
+        </form>
+        <a class="btn" href="{% url 'view_profile' %}">Back</a>
+    </div>
+</div>
+
+<!--Custom script to get Materialize forms to work correctly-->>
+<script>
+    let jobSeekerDiv = document.getElementById('div_id_job_seeker');
+    let jobSeekerInput = document.getElementById('id_job_seeker');
+    jobSeekerDiv.replaceWith(jobSeekerInput);
+
+    let recruiterDiv = document.getElementById('div_id_recruiter');
+    let recruiterInput = document.getElementById('id_recruiter');
+    recruiterDiv.replaceWith(recruiterInput);
+</script>
+
+{% endblock %}

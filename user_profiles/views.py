@@ -61,6 +61,7 @@ class ViewProfile(View):
     """
     A class to handle users viewing their profile page. 
     """
+
     def get(self, request, *args, **kwargs):
         profles = UserProfile.objects.all()
         profile = get_object_or_404(profles, user=request.user)
@@ -69,6 +70,60 @@ class ViewProfile(View):
             'view_profile.html',
             {'profile': profile, }
         )
+
+
+class EditUserProfileDetails(generic.CreateView, SuccessMessageMixin):
+    """
+    A class view to handle adding profile information
+    once a user has signed up.
+    """
+    model = UserProfile
+    form_class = AddUserProfileForm
+    template_name = 'edit_profile.html'
+
+    def get_object(self, *args, **kwargs):
+        profile = self.request.user.userprofile
+        profile_form = AddUserProfileForm(
+            initial={
+                'first_name': profile.first_name,
+                'last_name': profile.last_name,
+                'linkedin': profile.linkedin,
+                'github_username': profile.github_username,
+                'job_seeker': profile.job_seeker,
+                'recruiter': profile.recruiter,
+                'location': profile.location,
+                'years_experience': profile.years_experience,
+                'education': profile.education,
+                'work_experience': profile.work_experience,
+                'interests': profile.interests,
+                'roles_open_to': profile.roles_open_to,
+            }
+        )
+
+    def post(self, request, *args, **kwargs):
+        """
+        A function to handle submitting user profile information
+        to the database.
+        """
+        profile = AddUserProfileForm(data=request.POST)
+        all_profiles = UserProfile.objects.all()
+
+        if profile.is_valid():
+            try:
+                current_profile = get_object_or_404(
+                    all_profiles, user=request.user)
+                current_profile.delete()
+            except UserProfile.DoesNotExist:
+                pass
+            profile.instance.user = request.user
+            messages.success(request, 'PROFILE CREATED SUCCESSFULLY')
+            profile.save()
+            return redirect('home')
+        else:
+            messages.error(request,
+                           'INVALID PROFILE DETAILS. PLEASE TRY AGAIN.')
+            profile = AddUserProfileForm()
+            return HttpResponseRedirect('add_user_profile_details')
 
 
 class DeleteProfile(generic.DeleteView):
@@ -80,7 +135,7 @@ class DeleteProfile(generic.DeleteView):
 
     def get_object(self, *args, **kwargs):
         return self.request.user
-    
+
     def post(self, request, *args, **kwargs):
         if UserProfile.objects.filter(user=request.user).exists():
             profile = UserProfile.objects.filter(user=request.user)
