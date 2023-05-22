@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+    <div class="container">
+        <h1>Are you sure you want to delete This blog post?</h1>
+    </div>
+    <div class="container">
+        <div class="card-panel">
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" id="delete" class="btn">Delete</button>
+            </form>
+            <a href="{% url 'blog_list' %}" class="btn">Back</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

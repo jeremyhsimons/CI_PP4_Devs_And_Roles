@@ -1,4 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, reverse, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 from django.views import generic, View
 from django.contrib import messages
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal
@@ -109,3 +111,17 @@ class UpdateBlog(generic.UpdateView):
             request,
             'edit_blog.html'
         )
+
+
+@login_required
+def delete_blog(request, slug):
+    blog = get_object_or_404(request, slug=slug)
+    if request.user == blog.posted_by:
+        messages.success(request, 'BLOG POST DELETED SUCCESSFULLY')
+        blog.delete()
+        HttpResponseRedirect(reverse('blog_list'))
+    else:
+        messages.error(
+            request, 'YOU DO NOT HAVE PERMISSION TO DELETE THIS POST'
+        )
+        HttpResponseRedirect(reverse('blog_list'))
