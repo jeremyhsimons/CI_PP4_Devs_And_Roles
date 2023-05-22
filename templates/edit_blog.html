@@ -4,19 +4,21 @@
 {% load crispy_forms_tags %}
 
 {% if user.is_authenticated %}
-<h1>Create a blog post</h1>
+{% if user == blog.posted_by %}
+<h1>Edit blog post:</h1>
 <div class="container">
     <p>Posting as: {{ user.username }}</p>
-    <form method="POST" height="200px" >
+    <form method="POST">
         {{ form | crispy }}
         {% csrf_token %}
         <button type="submit" class="btn">Submit</button>
     </form>
     <a href="{% url 'blog_list' %}" class="btn">Back</a>
 </div>
+{% endif %}
 {% else %}
 <div class="container">
-    <p>You must be signed in to create a blog post</p>
+    <p>You must be signed AND have the correct permissions to edit this blog post</p>
 </div>
 {% endif %}
 

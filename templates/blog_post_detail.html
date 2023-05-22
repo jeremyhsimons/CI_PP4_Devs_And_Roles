@@ -7,7 +7,7 @@
             <ul>
                 {% if user == blog.posted_by %}
                 <li>
-                    <a href="#">Edit</a>
+                    <a href="{% url 'edit_blog' blog.slug %}">Edit</a>
                 </li>
                 <li>
                     <a href="#">Delete</a>
