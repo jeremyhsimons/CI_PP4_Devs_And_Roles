@@ -56,6 +56,35 @@ class BlogView(View):
         blog = get_object_or_404(blogs, slug=slug)
         comments = Comment.objects.filter(blog_post=blog).order_by(
             "created_on")
+
+        return render(
+            request,
+            'blog_post_detail.html',
+            {
+                'blog': blog,
+                'comments': comments,
+                'form': CommentForm(),
+            }
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+        """
+        A method to handle comment submission
+        """
+        blog = get_object_or_404(BlogPost, slug=slug)
+        comments = Comment.objects.filter(blog_post=blog).order_by(
+            "created_on")
+        comment_form = CommentForm(data=request.POST)
+
+        if comment_form.is_valid() and comment_form.instance.body != "":
+            comment_form.instance.name = request.user.username
+            comment_form.instance.blog_post = blog
+            messages.success(request, 'YOUR COMMENT HAS BEEN POSTED.')
+            comment_form.save()
+        else:
+            comment_form = CommentForm()
+            messages.error(request, 'PLEASE SUBMIT A VALID COMMENT.')
+
         return render(
             request,
             'blog_post_detail.html',
