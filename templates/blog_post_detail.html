@@ -51,6 +51,9 @@
                     <div class="card-panel">
                         <span>{{ comment.name }} | {{ comment.created_on }}</span>
                         <p>{{ comment.body }}</p>
+                        {% if user.username == comment.name %}
+                        <a href="#" class="btn">Delete</a>
+                        {% endif %}
                     </div>
                     {% endfor %}
                 </div>
