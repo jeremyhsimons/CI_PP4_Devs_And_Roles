@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal
-from .models import BlogPost
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal
+from .models import BlogPost, Comment
 from .forms import BlogPostForm
 
 
@@ -37,4 +37,27 @@ class WriteBlog(generic.CreateView):
         return render(
             request,
             'create_blog_post.html'
+        )
+
+
+class BlogView(View):
+    """
+    A class based view to handle viewing blog posts.
+    """
+    def get(self, request, slug, *args, **kwargs):
+        """
+        Method to get the blog post content and comments for
+        display in the detail page.
+        """
+        blogs = BlogPost.objects.filter(approved=True)
+        blog = get_object_or_404(blogs, slug=slug)
+        comments = Comment.objects.filter(blog_post=blog).order_by(
+            "created_on")
+        return render(
+            request,
+            'blog_post_detail.html',
+            {
+                'blog': blog,
+                'comments': comments
+            }
         )

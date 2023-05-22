@@ -18,9 +18,9 @@
                     <div class="row">
                         <div class="col s6">
                             {% if "placeholder" in job.featured_image.url %}
-                            <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="default picture of a laptop">
+                            <img class="home-featured-image" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="default picture of a laptop">
                             {% else %}
-                            <img src="{{ job.featured_image.url }}" alt="job posting featured image">
+                            <img class="home-featured-image" src="{{ job.featured_image.url }}" alt="job posting featured image">
                             {% endif %}
                         </div>
                         <div class="col s6">
@@ -41,7 +41,6 @@
         {% endif %}
         {% endfor %}
     </div>
-
     {% if is_paginated %}
     <nav aria-label="Page navigation" class="pagination-card">
         <ul class="pagination justify-content-center">
