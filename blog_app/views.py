@@ -155,3 +155,16 @@ def delete_blog(request, slug):
             request, 'YOU DO NOT HAVE PERMISSION TO DELETE THIS POST'
         )
         HttpResponseRedirect(reverse('blog_list'))
+
+
+@login_required
+def delete_comment(request, comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+    if request.user.username == comment.name:
+        messages.success(request, 'COMMENT DELETED SUCCESSFULLY.')
+        comment.delete()
+        HttpResponseRedirect(reverse('blog_list'))
+    else:
+        messages.error(
+            request, 'YOU DO NOT HAVE PERMISSION TO DELETE THIS COMMENT')
+        HttpResponseRedirect(reverse('blog_list'))
