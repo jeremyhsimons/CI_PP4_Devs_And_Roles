@@ -52,7 +52,8 @@
                         <span>{{ comment.name }} | {{ comment.created_on }}</span>
                         <p>{{ comment.body }}</p>
                         {% if user.username == comment.name %}
-                        <a href="#" class="btn">Delete</a>
+                        <a class="waves-effect waves-light btn modal-trigger" href="#commentmodal">Delete</a>
+                        {% block delete_comment_modal %}{% include 'delete_comment_modal.html' %}{% endblock delete_comment_modal %}
                         {% endif %}
                     </div>
                     {% endfor %}

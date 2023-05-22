@@ -1,6 +1,7 @@
 from django.shortcuts import render, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
 from django.views import generic, View
 from django.contrib import messages
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal
@@ -163,8 +164,8 @@ def delete_comment(request, comment_id):
     if request.user.username == comment.name:
         messages.success(request, 'COMMENT DELETED SUCCESSFULLY.')
         comment.delete()
-        HttpResponseRedirect(reverse('blog_list'))
+        return HttpResponseRedirect(reverse_lazy('blog_list'))
     else:
         messages.error(
             request, 'YOU DO NOT HAVE PERMISSION TO DELETE THIS COMMENT')
-        HttpResponseRedirect(reverse('blog_list'))
+        return HttpResponseRedirect(reverse_lazy('blog_list'))
