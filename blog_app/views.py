@@ -5,7 +5,7 @@ from django.views import generic, View
 from django.contrib import messages
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal
 from .models import BlogPost, Comment
-from .forms import BlogPostForm, UpdateBlogForm
+from .forms import BlogPostForm, UpdateBlogForm, CommentForm
 
 
 class BlogsList(generic.ListView):
@@ -61,7 +61,8 @@ class BlogView(View):
             'blog_post_detail.html',
             {
                 'blog': blog,
-                'comments': comments
+                'comments': comments,
+                'form': CommentForm(),
             }
         )
 
