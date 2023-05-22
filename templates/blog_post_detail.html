@@ -10,14 +10,15 @@
             <ul>
                 {% if user == blog.posted_by %}
                 <li>
-                    <a href="{% url 'edit_blog' blog.slug %}">Edit</a>
+                    <a class="btn" href="{% url 'edit_blog' blog.slug %}">Edit</a>
                 </li>
                 <li>
-                    <a href="#">Delete</a>
+                    <a class="waves-effect waves-light btn modal-trigger" href="#blogmodal">Delete</a>
+                    {% block delete_blog_modal %}{% include 'delete_blog_modal.html' %}{% endblock delete_blog_modal %}
                 </li>
                 {% endif %}
                 <li>
-                    <a href="{% url 'blog_list' %}">Back</a>
+                    <a class="btn" href="{% url 'blog_list' %}">Back</a>
                 </li>
             </ul>
         </div>

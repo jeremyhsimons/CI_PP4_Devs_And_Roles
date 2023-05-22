@@ -1,0 +1,12 @@
+{% block delete_blog_modal %}
+<!---Modal-->
+<div id="blogmodal" class="modal">
+    <div class="modal-content">
+        <h4>Are you sure you want to delete this blog post?</h4>
+        <p>This action cannot be undone.</p>
+    </div>
+    <div class="modal-footer">
+        <a href="{% url 'delete_blog' blog.slug %}" class="modal-close waves-effect waves-green btn-flat">Delete</a>
+    </div>
+</div>
+{% endblock %}

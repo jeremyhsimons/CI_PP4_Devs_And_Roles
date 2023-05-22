@@ -10,6 +10,7 @@ urlpatterns = [
          name='blog_detail'),
     path('edit_blog/<slug:slug>', views.UpdateBlog.as_view(),
          name='edit_blog'),
+    path('delete_blog/<slug:slug>', views.delete_blog, name="delete_blog"),
     path('delete_comment/<int:comment_id>', views.delete_comment,
          name='delete_comment'),
 ]
