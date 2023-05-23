@@ -4,8 +4,8 @@
 {% load crispy_forms_tags %}
 
 <section>
-    <div class="row grey no-margin-bottom">
-        <div class="col s12 l2 grey darken-2 side-nav">
+    <div class="row no-margin-bottom">
+        <div class="col s12 l2 side-nav">
             <h5>Options:</h5>
             <ul>
                 {% if user == blog.posted_by %}
@@ -22,20 +22,22 @@
                 </li>
             </ul>
         </div>
-        <div class="col s12 l10">
-            <div class="card-panel">
-                <h1>{{ blog.title }}</h1>
-                <h3>By: {{ blog.posted_by }}</h3>
+        <div class="col s12 l10 container">
+            <div class="card-panel profile">
+                <div class="container center-align">
+                    <h1 class="bold">{{ blog.title }}</h1>
+                    <h3>By: {{ blog.posted_by }}</h3>
+                </div>
                 <p>{{ blog.summary }}</p>
                 <div class="divider"></div>
-                <div class="section">
+                <div class="section container">
                     {% if "placeholder" in blog.featured_image.url %}
-                    <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="default picture of a laptop">
+                    <img class="hero circle responsive-img" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="default picture of a laptop">
                     {% else %}
-                    <img src="{{ blog.featured_image.url }}" alt="job posting featured image">
+                    <img class="hero responsive-img" src="{{ blog.featured_image.url }}" alt="job posting featured image">
                     {% endif %}
                     <p>{{ blog.content }}</p>
-                    <p>Posted on: {{ blog.created_on }}</p>
+                    <h5 class="bold">Posted on: {{ blog.created_on }}</h5>
                 </div>
                 <div class="divider"></div>
                 <div class="section">
@@ -49,8 +51,8 @@
                 <div class="section">
                     <h4>Comments:</h4>
                     {% for comment in comments %} 
-                    <div class="card-panel">
-                        <span>{{ comment.name }} | {{ comment.created_on }}</span>
+                    <div class="card-panel comment">
+                        <span class="bold">{{ comment.name }} | {{ comment.created_on }}</span>
                         <p>{{ comment.body }}</p>
                         {% if user.username == comment.name %}
                         <a class="waves-effect waves-light btn modal-trigger" href="#commentmodal">Delete</a>
