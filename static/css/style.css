@@ -10,12 +10,24 @@ main {
     flex: 1 0 auto;
 }
 
+textarea {
+    border-width: 0;
+}
+
+:focus-visible {
+    outline: 0;
+}
+
 .no-padding {
     padding: none;
   }
 
 .no-margin-bottom {
     margin-bottom: 0%;
+}
+
+.clearablefileinput {
+    margin-left: 60px;
 }
 
 /*---------------------------------------------------------- home page styles */ 
