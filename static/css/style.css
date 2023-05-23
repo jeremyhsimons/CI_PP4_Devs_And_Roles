@@ -111,8 +111,19 @@ nav {
 
 .side-nav {
     height: 100%;
+    overflow: auto;
+    background-color: #CDF4DC;
 }
 
 .side-nav > h5{
-    color: antiquewhite;
+    color: #011502;
+}
+
+.profile {
+    background-color: #011502;
+    color: #CDF4DC;
+}
+
+.profile > .divider {
+    background-color: #CDF4DC;
 }

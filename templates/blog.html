@@ -16,7 +16,7 @@
                 {% else %}
                 <img src="{{ blog.featured_image.url }}" alt="job posting featured image">
                 {% endif %}
-                <a class="btn-floating halfway-fab waves-effect waves-light red" href="{% url 'blog_detail' blog.slug %}"><i class="fa-sharp fa-light fa-eye"></i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light green" href="{% url 'blog_detail' blog.slug %}"><i class="fa-brands fa-readme"></i></a>
             </div>
             <div class="card-content">
                 <div class="card-title">{{blog.title}}</div>
