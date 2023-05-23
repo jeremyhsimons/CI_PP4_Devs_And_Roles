@@ -12,7 +12,7 @@ header {
 }
 
 header > h1 {
-    color: #f4d8cd;
+    color: #fff;
     font-weight: 700;
     text-align: center;
 }
@@ -50,6 +50,14 @@ textarea {
 
 nav {
     background-color: #32746D;
+}
+
+.page-footer {
+    background-color: #32746D;
+}
+
+#bottom-footer {
+    background-color: #104F55;
 }
 
 /*---------------------------------------------------------- home page styles */ 

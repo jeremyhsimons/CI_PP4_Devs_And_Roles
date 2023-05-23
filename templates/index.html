@@ -23,8 +23,8 @@
                             <img class="home-featured-image" src="{{ job.featured_image.url }}" alt="job posting featured image">
                             {% endif %}
                         </div>
-                        <div class="col s6">
-                            <div class="container home-job-details">
+                        <div class="col s6 no-padding">
+                            <div class="home-job-details">
                                 <p><i class="fa-solid fa-money-bill"></i> £{{ job.salary }}</p>
                                 <p><i class="fa-sharp fa-solid fa-location-dot"></i> {{ job.location }}</p>
                                 <p><i class="fa-solid fa-clock"></i> {{ job.closing_date.date }}</p>
