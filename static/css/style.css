@@ -6,8 +6,18 @@ body {
     flex-direction: column;
 }
 
+header {
+    background-color: #104F55;
+}
+
+header > h1 {
+    color: #f4d8cd;
+    font-weight: 700;
+}
+
 main {
     flex: 1 0 auto;
+    background-color: #f4d8cd;
 }
 
 textarea {
@@ -16,6 +26,10 @@ textarea {
 
 :focus-visible {
     outline: 0;
+}
+
+#div_id_featured_image > label {
+    padding-bottom: 40px;
 }
 
 .no-padding {
@@ -28,6 +42,12 @@ textarea {
 
 .clearablefileinput {
     margin-left: 60px;
+}
+
+/*--------------------------------------------- Overriding materialize styles */
+
+nav {
+    background-color: #32746D;
 }
 
 /*---------------------------------------------------------- home page styles */ 
