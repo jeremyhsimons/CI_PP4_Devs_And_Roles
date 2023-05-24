@@ -2,21 +2,25 @@
 {% block content %}
 <section>
     <div class="row no-margin-bottom c">
-        <div class="col s12 l2 side-nav">
-            <h5>Options:</h5>
+        <div class="col s12 l2 side-nav pinned offset-l1">
+            <h5 class="bold center-align">Options:</h5>
+            <div class="divider"></div>
+            <div class="row"></div>
             <ul>
-                <li>
+                <li class="container center-align">
                     <a class="btn" href="{% url 'edit_profile' %}">Edit</a>
                 </li>
-                <li>
+                <div class="row"></div>
+                <li class="container center-align">
                     <a class="btn" href="{% url 'delete_profile' %}">Delete</a>
                 </li>
-                <li>
+                <div class="row"></div>
+                <li class="container center-align">
                     <a class="btn" href="{% url 'home' %}">Back</a>
                 </li>
             </ul>
         </div>
-        <div class="col s12 l10">
+        <div class="col s12 l10 offset-l2">
             <div class="container">
                 <div class="card-panel profile">
                     <h3 class="profile-name">{{ profile.first_name }} {{ profile.last_name }}</h3>
