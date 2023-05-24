@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>View the latest posts from the community:</h1>
-
-<a href="{% url 'create_blog_post' %}" class="btn">Write a blog post...</a>
+<div class="container"></div>
+    <h1 class="white-text center-align">View the latest posts from the community:</h1>
+    <p class="center-align"><a href="{% url 'create_blog_post' %}" class="btn">Write a blog post...</a></p>
+</div>
 <div class="row"></div>
 
 <div class="divider"></div>
@@ -20,7 +21,7 @@
             </div>
             <div class="card-content">
                 <div class="card-title">{{blog.title}}</div>
-                <p>{{blog.summary}}</p>
+                <p class="truncate">{{blog.summary}}</p>
             </div>
         </div>
     </div>

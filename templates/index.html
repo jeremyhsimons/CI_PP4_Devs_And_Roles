@@ -11,7 +11,7 @@
                 <a class="home-job-link" href="{% url 'job-post-detail' job.pk %}">
                     <div class="row">
                         <div class="col s12">
-                            <h4 class="home-job-title">{{ job.title }}</h4>
+                            <h4 class="home-job-title truncate">{{ job.title }}</h4>
                             <div class="divider"></div>
                         </div>
                     </div>
@@ -25,9 +25,9 @@
                         </div>
                         <div class="col s6 no-padding">
                             <div class="home-job-details">
-                                <p><i class="fa-solid fa-money-bill"></i> £{{ job.salary }}</p>
-                                <p><i class="fa-sharp fa-solid fa-location-dot"></i> {{ job.location }}</p>
-                                <p><i class="fa-solid fa-clock"></i> {{ job.closing_date.date }}</p>
+                                <p class="truncate"><i class="fa-solid fa-money-bill"></i> £{{ job.salary }}</p>
+                                <p class="truncate"><i class="fa-sharp fa-solid fa-location-dot"></i> {{ job.location }}</p>
+                                <p class="truncate"><i class="fa-solid fa-clock"></i> {{ job.closing_date.date }}</p>
                             </div>
                         </div>
                     </div>
