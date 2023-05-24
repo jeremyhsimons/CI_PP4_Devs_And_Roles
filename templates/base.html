@@ -29,10 +29,9 @@
                 <a href="{% url 'contact' %}">Contact</a>
             </li>
             {% if user.is_authenticated %}
-            <li>
-                <a href="{% url 'account_logout' %}">Logout</a>
-            </li>
-            {% if user.userprofile is None %}
+            {% for profile in userprofiles %}
+            {% if profile.user == user %}
+            {% if profile.recruiter %}
             <li>
                 <a class='dropdown-trigger' href='#' data-target='dropdown1'>RECRUITERS</a>
             </li>
@@ -45,17 +44,40 @@
                     <a href="{% url 'see_all' %}">Candidates</a>
                 </li>
             </ul>
+            
             {% endif %}
+            {% if profile.job_seeker %}
+            <li>
+                <a href="{% url 'view_profile' %}">View Profile</a>
+            </li>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
             <li>
                 <a href="{% url 'blog_list' %}">Blog</a>
             </li>
             <li>
                 <a href="{% url 'view_profile' %}">View Profile</a>
             </li>
+            {% endif %}
+        </ul>
+        <ul class="right">
+            <li>
+                <a class='dropdown-trigger' href='#' data-target='dropdown2'><i class="fa-solid fa-user"></i> Account</a>
+            </li>
+        </ul>
+
+        <ul id='dropdown2' class='dropdown-content'>
+            {% if user.is_authenticated %}
+            <li>
+                <a href="{% url 'account_logout' %}">Logout</a>
+            </li>
+            <li class="divider" tabindex="-1"></li>
             {% else %}
             <li>
                 <a href="{% url 'account_signup' %}">Register</a>
             </li>
+            <li class="divider" tabindex="-1"></li>
             <li>
                 <a href="{% url 'account_login' %}">Login</a>
             </li>
