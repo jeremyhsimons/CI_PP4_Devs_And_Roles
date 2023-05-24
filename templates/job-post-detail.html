@@ -2,12 +2,14 @@
 {% block content %}
 
 <h1>{{ jobpost.title }}</h1>
+{% if user == jobpost.posted_by %}
 <p></p>
     <a class="btn"  href="{% url 'update-job-post' jobpost.pk %}">Edit</a>
 </p>
 <p>
     <a class="btn"  href="{% url 'delete-job-post' jobpost.pk %}">Delete</a>
 </p>
+{% endif %}
 <p>
     <a class="btn" href="{% url 'report-job-post' jobpost.pk %}">Report</a>
 </p>
@@ -33,14 +35,27 @@
 
 <hr>
 
+{% for profile in userprofiles %}
+{% if profile.user == user %}
+{% if profile.job_seeker %}
 <div class="container card-panel">
     <a class="btn" href="{% url 'apply' jobpost.pk %}">Apply</a>
 </div>
+{% else %}
+<p>You need to update your profile to job seeker if you wish to apply.</p>
+{% endif %}
+{% endif %}
+{% endfor %}
+
+<hr>
+
+<p>posted_by: {{ jobpost.posted_by }}</p>
 
 <hr>
 
 <p>Applicants: {{ jobpost.applicants }}</p>
 
+{% if user == jobpost.posted_by %}
 <h3>SEE ALL APPLICATIONS</h3>
 {% for application in applications %}
 <div class="container card-panel">
@@ -54,5 +69,6 @@
     </p>
 </div>
 {% endfor %}
+{% endif %}
 
 {% endblock %}
