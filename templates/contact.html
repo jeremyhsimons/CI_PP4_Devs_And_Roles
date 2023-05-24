@@ -8,13 +8,11 @@
 </div>
 <div class="container">
     <div class="card-panel">
-        <p>Posting as: {{ user.username }}</p>
         <form method="POST" height="200px">
-            {{ form.as_p }}
+            {{ form | crispy }}
             {% csrf_token %}
-            <button type="submit" class="btn">submit</button>
+            <button type="submit" class="btn">Send message</button>
         </form>
     </div>
 </div>
-
 {% endblock %}
