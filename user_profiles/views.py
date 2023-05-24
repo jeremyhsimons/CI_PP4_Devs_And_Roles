@@ -118,6 +118,11 @@ class EditUserProfileDetails(generic.CreateView, SuccessMessageMixin):
                 'roles_open_to': profile.roles_open_to,
             }
         )
+        return render(
+            request,
+            'edit_profile.html',
+            {'form': profile_form, }
+        )
 
     def post(self, request, *args, **kwargs):
         """
