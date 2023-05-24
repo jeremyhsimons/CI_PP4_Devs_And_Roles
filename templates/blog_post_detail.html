@@ -5,27 +5,40 @@
 
 <section>
     <div class="row no-margin-bottom">
-        <div class="col s12 l2 side-nav">
-            <h5>Options:</h5>
+        <div class="col s12 l2 side-nav pinned">
+            <h5 class="center-align bold">Options:</h5>
+            <div class="divider"></div>
+            <div class="row"></div>
             <ul>
                 {% if user == blog.posted_by %}
-                <li>
+                <li class="container center-align">
                     <a class="btn" href="{% url 'edit_blog' blog.slug %}">Edit</a>
                 </li>
-                <li>
+                <div class="row"></div>
+                <li class="container center-align">
                     <a class="waves-effect waves-light btn modal-trigger" href="#blogmodal">Delete</a>
                     {% block delete_blog_modal %}{% include 'delete_blog_modal.html' %}{% endblock delete_blog_modal %}
                 </li>
+                <div class="row"></div>
+
                 {% endif %}
-                <li>
+                <li class="container center-align">
+                    <a class="btn" href="#title">Back to top</a>
+                </li>
+                <div class="row"></div>
+                <li class="container center-align">
+                    <a class="btn" href="#comment-section">Comments</a>
+                </li>
+                <div class="row"></div>
+                <li class="container center-align">
                     <a class="btn" href="{% url 'blog_list' %}">Back</a>
                 </li>
             </ul>
         </div>
-        <div class="col s12 l10 container">
+        <div class="col s12 l10 containe offset-l2">
             <div class="card-panel profile">
                 <div class="container center-align">
-                    <h1 class="bold">{{ blog.title }}</h1>
+                    <h1 id="title" class="bold">{{ blog.title }}</h1>
                     <h3>By: {{ blog.posted_by }}</h3>
                 </div>
                 <p>{{ blog.summary }}</p>
@@ -40,7 +53,7 @@
                     <h5 class="bold">Posted on: {{ blog.created_on }}</h5>
                 </div>
                 <div class="divider"></div>
-                <div class="section">
+                <div id="comment-section" class="section">
                     <form method="POST" height="200px">
                         {{ form | crispy }}
                         {% csrf_token %}

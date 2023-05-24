@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container"></div>
-    <h1 class="white-text center-align">View the latest posts from the community:</h1>
+    <h2 class="white-text center-align">View the latest posts from the community:</h2>
     <p class="center-align"><a href="{% url 'create_blog_post' %}" class="btn">Write a blog post...</a></p>
 </div>
 <div class="row"></div>
@@ -20,7 +20,7 @@
                 <a class="btn-floating halfway-fab waves-effect waves-light green" href="{% url 'blog_detail' blog.slug %}"><i class="fa-brands fa-readme"></i></a>
             </div>
             <div class="card-content">
-                <div class="card-title">{{blog.title}}</div>
+                <div class="card-title bold">{{blog.title}}</div>
                 <p class="truncate">{{blog.summary}}</p>
             </div>
         </div>

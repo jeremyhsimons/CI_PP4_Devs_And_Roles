@@ -1,5 +1,9 @@
 /*---------------------------------------------------------- General styles */
-  
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     display: flex;
     min-height: 100vh;
@@ -63,6 +67,10 @@ nav {
 
 .page-footer {
     background-color: #32746D;
+}
+
+.card-content {
+    background-color: #CDF4DC;
 }
 
 #bottom-footer {
