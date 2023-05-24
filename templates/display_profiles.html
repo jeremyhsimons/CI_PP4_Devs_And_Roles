@@ -1,10 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
-
+<div class="home-container">
+    <div class="row">
 {% for profile in userprofile_list %}
+        <div class="col s12 m6 l3 profile-card">
+            <div class="card-panel profile-card-details">
+                <a class="home-job-link" href="#"> 
+                    <div class="row">
+                        <div class="col s12">
+                            <h4 class="home-job-title">{{ profile.first_name }} {{ profile.last_name }}</h4>
+                            <div class="divider"></div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="home-job-details">
+                            <p><i class="fa-solid fa-money-bill"></i> {{ profile.location }}</p>
+                            <p><i class="fa-sharp fa-solid fa-location-dot"></i> Years experience: {{ profile.years_experience }}</p>
+                            {% if profile.linkedin != None %}
+                            <p><i class="fa-brands fa-linkedin"></i> Available on LinkedIn <i class="fa-solid fa-check"></i></p>
+                            {% else %}
+                            <p><i class="fa-brands fa-linkedin"></i> Not vailable on LinkedIn <i class="fa-regular fa-circle-xmark"></i></p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+{% if forloop.counter|divisibleby:4 %}
+    </div>
+<div class="row">
+    {% endif %}
+    {% endfor %}
+</div>
+{% if is_paginated %}
+<nav aria-label="Page navigation" class="pagination-card">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li class="pagination-control"><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo;
+                PREV </a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li class="pagination-control"><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT
+                &raquo;</a></li>
 
-<p>{{ profile.user.username }}</p>
-
-{% endfor %}
+        {% endif %}
+        {% endif %}
+    </ul>
+</nav>
 
 {% endblock %}

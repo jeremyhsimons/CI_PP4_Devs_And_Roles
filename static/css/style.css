@@ -19,7 +19,7 @@ header > h1 {
 
 main {
     flex: 1 0 auto;
-    background-color: #f4d8cd;
+    background-color: #011502;
 }
 
 textarea {
@@ -147,3 +147,15 @@ nav {
     color: #011502;
 }
 
+
+/*-------------------------------------------------- profile list page styles */
+
+.profile-card {
+    height: 100%;
+}
+
+.profile-card-details {
+    height: 100%;
+    background-color: #CDF4DC;
+    overflow: auto;
+}
