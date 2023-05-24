@@ -5,7 +5,7 @@
 {% for profile in userprofile_list %}
         <div class="col s12 m6 l3 profile-card">
             <div class="card-panel profile-card-details">
-                <a class="home-job-link" href="#"> 
+                <a class="home-job-link" href="{% url 'profile_detail' profile.pk %}">
                     <div class="row">
                         <div class="col s12">
                             <h4 class="home-job-title">{{ profile.first_name }} {{ profile.last_name }}</h4>

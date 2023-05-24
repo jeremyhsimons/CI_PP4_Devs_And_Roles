@@ -12,11 +12,30 @@ from .forms import AddUserProfileForm
 
 class SeeAllProfiles(generic.ListView):
     """
-    testclass
+    A class based view to get all job seeker profiles
+    and display them to a recruiter user.
     """
     model = UserProfile
-    queryset = UserProfile.objects.all()
+    queryset = UserProfile.objects.filter(job_seeker=True)
     template_name = 'display_profiles.html'
+
+
+class ProfileDetail(View):
+    """
+    A class to view the details of a job seeker's profile
+    """
+
+    def get(self, request, pk, *args, **kwargs):
+        queryset = UserProfile.objects.filter(approved=True)
+        profile = get_object_or_404(queryset, pk=pk)
+
+        return render(
+            request,
+            "profile_detail.html",
+            {
+                'profile': profile,
+            },
+        )
 
 
 class AddUserProfileDetails(generic.CreateView, SuccessMessageMixin):
