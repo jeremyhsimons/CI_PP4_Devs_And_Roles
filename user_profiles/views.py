@@ -100,7 +100,7 @@ class EditUserProfileDetails(generic.CreateView, SuccessMessageMixin):
     form_class = AddUserProfileForm
     template_name = 'edit_profile.html'
 
-    def get_object(self, *args, **kwargs):
+    def get_object(self, request, *args, **kwargs):
         profile = self.request.user.userprofile
         profile_form = AddUserProfileForm(
             initial={

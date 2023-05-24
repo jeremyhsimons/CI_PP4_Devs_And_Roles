@@ -32,13 +32,19 @@
             <li>
                 <a href="{% url 'account_logout' %}">Logout</a>
             </li>
-            {% if user.userprofile.recruiter == True %}
+            {% if user.userprofile is None %}
             <li>
-                <a href="{% url 'create-job-post' %}">Create a Job posting</a>
+                <a class='dropdown-trigger' href='#' data-target='dropdown1'>RECRUITERS</a>
             </li>
-            <li>
-                <a href="{% url 'see_all' %}">Candidates</a>
-            </li>
+            <ul id='dropdown1' class='dropdown-content'>
+                <li>
+                    <a href="{% url 'create-job-post' %}">Create a Job posting</a>
+                </li>
+                <li class="divider" tabindex="-1"></li>
+                <li>
+                    <a href="{% url 'see_all' %}">Candidates</a>
+                </li>
+            </ul>
             {% endif %}
             <li>
                 <a href="{% url 'blog_list' %}">Blog</a>
@@ -95,10 +101,16 @@
     <script>
         //Initialise modals
         document.addEventListener('DOMContentLoaded', function () {
-            let elems = document.querySelectorAll('.modal');
-            let instances = M.Modal.init(elems);
-            console.log('Modal initialised.')
+            let modals = document.querySelectorAll('.modal');
+            let modalsInstances = M.Modal.init(modals);
         });
+
+        //Initialise dropdown
+        document.addEventListener('DOMContentLoaded', function () {
+            let dropdowns = document.querySelectorAll('.dropdown-trigger');
+            let dropdownsInstances = M.Dropdown.init(dropdowns);
+        });
+
 
         //Fix bug that doesn't auto-apply materialize styles to textareas
         let textareas = document.querySelectorAll('.textarea');
