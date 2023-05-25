@@ -127,6 +127,7 @@ nav {
     overflow: auto;
     background-color: #CDF4DC;
     border: solid 6px #104F55;
+    position: fixed;
 }
 
 .side-nav > h5{
@@ -168,4 +169,12 @@ nav {
     height: 100%;
     background-color: #CDF4DC;
     overflow: auto;
+}
+
+/*------------------------------------------------------------- Media Queries */
+
+@media screen and (max-width: 992px) {
+    .side-nav {
+        position: relative;
+    }
 }
