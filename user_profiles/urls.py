@@ -14,4 +14,6 @@ urlpatterns = [
          name='edit_profile'),
     path('delete_profile/', views.DeleteProfile.as_view(),
          name='delete_profile'),
+    path('report_profile/<int:pk>', views.report_profile,
+         name='report_profile'),
 ]

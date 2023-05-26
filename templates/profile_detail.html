@@ -8,7 +8,10 @@
             <h5>Options:</h5>
             <ul>
                 <li>
-                    <a class="btn" href="{% url 'home' %}">Send Message</a>
+                    <a class="btn" href="{% url 'report_profile' profile.pk %}">Report</a>
+                </li>
+                <li>
+                    <a class="btn" href="#messaging">Send Message</a>
                 </li>
                 <li>
                     <a class="btn" href="{% url 'home' %}">Back</a>
@@ -76,7 +79,7 @@
                         </ul>
                     </div>
                     <div class="divi"></div>
-                    <div class="section">
+                    <div id="messaging" class="section">
                         <h4>Message {{ profile.first_name }}</h4>
                         <div class="card-panel">
                             <form method="POST">

@@ -142,6 +142,7 @@ def report_job_posting(request, jobpost_id):
     if jobpost.reported is False and request.user != jobpost.posted_by:
         jobpost.reported = True
         jobpost.save()
+        messages.success(request, "POSTING REPORTED. AN ADMIN WILL REVIEW IT")
         return HttpResponseRedirect(reverse('home'))
     else:
         messages.error(request, "YOU CANNOT REPORT THIS POST")

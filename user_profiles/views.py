@@ -1,14 +1,15 @@
 # ~~~ IMPORTS
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 3rd party
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 3rd party
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views import View, generic
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal
 from .models import UserProfile, Message
 from .forms import AddUserProfileForm, MessageUser
 
@@ -217,3 +218,20 @@ def redirect_view(request):
     else:
         print('fail')
         return redirect('add_user_profile_details')
+
+
+@login_required
+def report_profile(request, pk):
+    """
+    View that handles reporting of
+    user profiles.
+    """
+    profile = get_object_or_404(UserProfile, pk=pk)
+    if profile.reported is False and request.user != profile.user:
+        profile.reported = True
+        profile.save()
+        messages.success(request, "PROFILE REPORTED. AN ADMIN WILL REVIEW IT")
+        return HttpResponseRedirect(reverse('home'))
+    else:
+        messages.error(request, "YOU CANNOT REPORT THIS PROFILE")
+        return HttpResponseRedirect(reverse('home'))
