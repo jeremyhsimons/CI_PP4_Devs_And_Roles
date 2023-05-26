@@ -84,7 +84,7 @@ class ViewProfile(View):
     def get(self, request, *args, **kwargs):
         profiles = UserProfile.objects.all()
         profile = get_object_or_404(profiles, user=request.user)
-        messages = profile.message.order_by('-sent_on')
+        messages = profile.message_set.all().order_by('-sent_on')
         return render(
             request,
             'view_profile.html',
