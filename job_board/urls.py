@@ -19,6 +19,8 @@ urlpatterns = [
          name='application-detail'),
     path('apply/<int:job_id>', views.CreateJobApplication.as_view(),
          name='apply'),
+    path('my_applications/', views.TrackMyApplications.as_view(),
+         name='my_applications'),
     path('delete_application/<int:application_id>', views.delete_application,
          name='delete_application'),
 ]

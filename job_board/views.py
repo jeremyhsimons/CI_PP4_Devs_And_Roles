@@ -146,9 +146,9 @@ def report_job_posting(request, jobpost_id):
     else:
         messages.error(request, "YOU CANNOT REPORT THIS POST")
         return HttpResponseRedirect(reverse('home'))
-        
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Views to handle all job application logic.
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Views to handle all job application logic.
 
 
 class ViewApplicationDetails(View):
@@ -197,6 +197,24 @@ class CreateJobApplication(generic.CreateView):
         return render(
             request,
             'create-job-application.html'
+        )
+
+
+class TrackMyApplications(generic.ListView):
+    """
+    A class-based view to display all the user's
+    job applications.
+    """
+    model = JobApplication
+    template_name = 'my_applications.html'
+
+    def get(self, request, *args, **kwargs):
+        my_applications = JobApplication.objects.filter(
+            candidate=request.user).order_by('created_on')
+        return render(
+            request,
+            'my_applications.html',
+            {'applications': my_applications}
         )
 
 
