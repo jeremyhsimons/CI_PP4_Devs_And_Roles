@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
-from .models import UserProfile
+from .models import UserProfile, Message
 from .forms import AddUserProfileForm
 
 
@@ -82,12 +82,16 @@ class ViewProfile(View):
     """
 
     def get(self, request, *args, **kwargs):
-        profles = UserProfile.objects.all()
-        profile = get_object_or_404(profles, user=request.user)
+        profiles = UserProfile.objects.all()
+        profile = get_object_or_404(profiles, user=request.user)
+        messages = profile.message.order_by('-sent_on')
         return render(
             request,
             'view_profile.html',
-            {'profile': profile, }
+            {
+                'profile': profile,
+                'messages': messages,
+            }
         )
 
 

@@ -80,6 +80,24 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="divider"></div>
+                    <div class="section">
+                        <h4>View your messages:</h4>
+                        {% if messages%}
+                        {% for message in messages%}
+                        <div class="container card-panel">
+                            <p class="bold">From: {{ message.first_name }} {{ message.last_name }}</p>
+                            <p>Recieved on: {{ message.sent_on }}</p>
+                            <p>{{ message.message }}</p>
+                            <p>Contact {{ message.first_name }}: {{ message.email }}</p>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <div class="card-panel">
+                            <p>You do not have any messages.</p>
+                        </div>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
