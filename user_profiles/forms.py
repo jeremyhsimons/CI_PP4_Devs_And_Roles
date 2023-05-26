@@ -1,7 +1,7 @@
 from django import forms
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Div
-from .models import UserProfile
+from .models import UserProfile, Message
 
 
 class AddUserProfileForm(forms.ModelForm):
@@ -27,3 +27,9 @@ class AddUserProfileForm(forms.ModelForm):
         super(AddUserProfileForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.layout = Layout()
+
+
+class MessageUser(forms.ModelForm):
+    class Meta:
+        model = Message
+        fields = ('first_name', 'last_name', 'email', 'message')

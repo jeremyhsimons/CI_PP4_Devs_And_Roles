@@ -1,3 +1,5 @@
+# ~~~ IMPORTS
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 3rd party
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View, generic
@@ -6,8 +8,9 @@ from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal
 from .models import UserProfile, Message
-from .forms import AddUserProfileForm
+from .forms import AddUserProfileForm, MessageUser
 
 
 class SeeAllProfiles(generic.ListView):
@@ -34,6 +37,7 @@ class ProfileDetail(View):
             "profile_detail.html",
             {
                 'profile': profile,
+                'message_form': MessageUser(),
             },
         )
 
