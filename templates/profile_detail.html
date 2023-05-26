@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+
+{% load crispy_forms_tags %}
 <section>
     <div class="row no-margin-bottom c">
         <div class="col s12 l2 side-nav">
@@ -13,7 +15,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col s12 l10">
+        <div class="col s12 l10 offset-l1">
             <div class="container">
                 <div class="card-panel profile">
                     <h3 class="profile-name">{{ profile.first_name }} {{ profile.last_name }}</h3>
@@ -72,6 +74,17 @@
                                 {{ profile.github_username }}
                             </li>
                         </ul>
+                    </div>
+                    <div class="divi"></div>
+                    <div class="section">
+                        <h4>Message {{ profile.first_name }}</h4>
+                        <div class="card-panel">
+                            <form action="POST">
+                                {{ message_form | crispy }}
+                                {% csrf_token %}
+                                <button type="submit" class="btn">Submit</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
