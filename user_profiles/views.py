@@ -41,6 +41,25 @@ class ProfileDetail(View):
             },
         )
 
+    def post(self, request, pk, *args, **kwargs):
+        queryset = UserProfile.objects.filter(approved=True)
+        profile = get_object_or_404(queryset, pk=pk)
+        message_form = MessageUser(data=request.POST)
+
+        if message_form.is_valid():
+            message_form.instance.recipient = profile
+            message_form.save()
+        else:
+            message_form = MessageUser()
+        return render(
+            request,
+            "profile_detail.html",
+            {
+                'profile': profile,
+                'message_form': MessageUser(),
+            },
+        )
+
 
 class AddUserProfileDetails(generic.CreateView, SuccessMessageMixin):
     """

@@ -79,7 +79,7 @@
                     <div class="section">
                         <h4>Message {{ profile.first_name }}</h4>
                         <div class="card-panel">
-                            <form action="POST">
+                            <form method="POST">
                                 {{ message_form | crispy }}
                                 {% csrf_token %}
                                 <button type="submit" class="btn">Submit</button>

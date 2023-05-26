@@ -7,7 +7,7 @@
 <div class="container">
     <h1>Edit your job posting</h1>
     <p>Posting as: {{ user.username }}</p>
-    <form method="POST" height="200px" >
+    <form method="POST">
         {{ form.as_p }}
         {% csrf_token %}
         <button type="submit" class="btn">submit</button>
