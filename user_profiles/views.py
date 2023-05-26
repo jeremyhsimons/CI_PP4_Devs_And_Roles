@@ -41,7 +41,7 @@ class ProfileDetail(View):
             },
         )
 
-    def post(self, request, pk, *args, **kwargs):
+    def post(self, request, pk, messages, *args, **kwargs):
         queryset = UserProfile.objects.filter(approved=True)
         profile = get_object_or_404(queryset, pk=pk)
         message_form = MessageUser(data=request.POST)
@@ -49,8 +49,12 @@ class ProfileDetail(View):
         if message_form.is_valid():
             message_form.instance.recipient = profile
             message_form.save()
+            messages.success(request, 'MESSAGE SENT')
         else:
             message_form = MessageUser()
+            messages.error(
+                request, 'MESSAGE NOT SENT: PLEASE COMPLETE ALL FIELDS.'
+                )
         return render(
             request,
             "profile_detail.html",
