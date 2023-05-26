@@ -7,11 +7,11 @@
     <a class="btn"  href="{% url 'update-job-post' jobpost.pk %}">Edit</a>
 </p>
 <p>
-    <a class="btn"  href="{% url 'delete-job-post' jobpost.pk %}">Delete</a>
+    <a class="btn red lighten-1"  href="{% url 'delete-job-post' jobpost.pk %}">Delete</a>
 </p>
 {% endif %}
 <p>
-    <a class="btn" href="{% url 'report-job-post' jobpost.pk %}">Report</a>
+    <a class="btn amber" href="{% url 'report-job-post' jobpost.pk %}">Report</a>
 </p>
 {% if "placeholder" in jobpost.featured_image.url %}
 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="default picture of a laptop">

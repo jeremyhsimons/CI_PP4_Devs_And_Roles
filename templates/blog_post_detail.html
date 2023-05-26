@@ -12,30 +12,30 @@
             <ul>
                 {% if user == blog.posted_by %}
                 <li class="container center-align">
-                    <a class="btn" href="{% url 'edit_blog' blog.slug %}">Edit</a>
+                    <a class="btn left" href="{% url 'edit_blog' blog.slug %}">Edit</a>
                 </li>
                 <div class="row"></div>
                 <li class="container center-align">
-                    <a class="waves-effect waves-light btn modal-trigger" href="#blogmodal">Delete</a>
+                    <a class="waves-effect waves-light btn left red lighten-1 modal-trigger" href="#blogmodal">Delete</a>
                     {% block delete_blog_modal %}{% include 'delete_blog_modal.html' %}{% endblock delete_blog_modal %}
                 </li>
                 <div class="row"></div>
 
                 {% endif %}
                 <li class="container center-align">
-                    <a class="btn" href="#title">Title</a>
+                    <a class="btn left" href="#title">Title</a>
                 </li>
                 <div class="row"></div>
                 <li class="container center-align">
-                    <a class="btn" href="#comment-section">Comments</a>
+                    <a class="btn left" href="#comment-section">Comments</a>
                 </li>
                 <div class="row"></div>
                 <li class="container center-align">
-                    <a class="btn" href="{% url 'report_blog' blog.slug %}">Report</a>
+                    <a class="btn left amber" href="{% url 'report_blog' blog.slug %}">Report</a>
                 </li>
                 <div class="row"></div>
                 <li class="container center-align">
-                    <a class="btn" href="{% url 'blog_list' %}">Back</a>
+                    <a class="btn left" href="{% url 'blog_list' %}">Back</a>
                 </li>
             </ul>
         </div>
@@ -58,6 +58,7 @@
                 </div>
                 <div class="divider"></div>
                 <div id="comment-section" class="section">
+                    <h4>Write a comment:</h4>
                     <form method="POST" height="200px">
                         {{ form | crispy }}
                         {% csrf_token %}
@@ -67,17 +68,23 @@
                 <div class="divider"></div>
                 <div class="section">
                     <h4>Comments:</h4>
+                    {% if comments %}
                     {% for comment in comments %} 
                     <div class="card-panel comment">
                         <span class="bold">{{ comment.name }} | {{ comment.created_on }}</span>
                         <p>{{ comment.body }}</p>
-                        <a class="waves-effect waves-light btn modal-trigger" href="{% url 'report_comment' comment.pk %}">REPORT</a>
+                        <a class="waves-effect btn modal-trigger amber" href="{% url 'report_comment' comment.pk %}">REPORT</a>
                         {% if user.username == comment.name %}
-                        <a class="waves-effect waves-light btn modal-trigger" href="#commentmodal">Delete</a>
+                        <a class="waves-effect btn red lighten-1 modal-trigger" href="#commentmodal">Delete</a>
                         {% block delete_comment_modal %}{% include 'delete_comment_modal.html' %}{% endblock delete_comment_modal %}
                         {% endif %}
                     </div>
                     {% endfor %}
+                    {% else %}
+                    <div class="card-panel">
+                        <p>It's pretty quiet here... Be the first to post a comment!</p>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
