@@ -31,3 +31,20 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class Message(models.Model):
+    """
+    A model representing the message that a recruiter can send
+    to a job seeker through the site.
+    """
+    recipient = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    sent_on = models.DateField(auto_now_add=True)
+    first_name = models.CharField(max_length=80, blank=False)
+    last_name = models.CharField(max_length=80, blank=False)
+    message = models.TextField(blank=False)
+    email = models.EmailField(blank=False)
+
+    def __str__(self):
+        return (
+            f'{self.first_name} message to {self.recipient.first_name}')
