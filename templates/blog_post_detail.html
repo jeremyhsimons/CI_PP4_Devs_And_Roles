@@ -31,6 +31,10 @@
                 </li>
                 <div class="row"></div>
                 <li class="container center-align">
+                    <a class="btn" href="{% url 'report_blog' blog.slug %}">Report</a>
+                </li>
+                <div class="row"></div>
+                <li class="container center-align">
                     <a class="btn" href="{% url 'blog_list' %}">Back</a>
                 </li>
             </ul>
@@ -67,6 +71,7 @@
                     <div class="card-panel comment">
                         <span class="bold">{{ comment.name }} | {{ comment.created_on }}</span>
                         <p>{{ comment.body }}</p>
+                        <a class="waves-effect waves-light btn modal-trigger" href="{% url 'report_comment' comment.pk %}">REPORT</a>
                         {% if user.username == comment.name %}
                         <a class="waves-effect waves-light btn modal-trigger" href="#commentmodal">Delete</a>
                         {% block delete_comment_modal %}{% include 'delete_comment_modal.html' %}{% endblock delete_comment_modal %}

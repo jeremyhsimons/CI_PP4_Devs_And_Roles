@@ -48,6 +48,7 @@ class BlogView(View):
     """
     A class based view to handle viewing blog posts.
     """
+
     def get(self, request, slug, *args, **kwargs):
         """
         Method to get the blog post content and comments for
@@ -169,3 +170,41 @@ def delete_comment(request, comment_id):
         messages.error(
             request, 'YOU DO NOT HAVE PERMISSION TO DELETE THIS COMMENT')
         return HttpResponseRedirect(reverse_lazy('blog_list'))
+
+
+@login_required
+def report_blog(request, slug):
+    """
+    View that handles reporting of
+    user profiles.
+    """
+    blog = get_object_or_404(BlogPost, slug=slug)
+    if blog.reported is False and request.user != blog.posted_by:
+        blog.reported = True
+        blog.save()
+        messages.success(
+            request, "BLOG POST REPORTED. AN ADMIN WILL REVIEW IT"
+            )
+        return HttpResponseRedirect(reverse('home'))
+    else:
+        messages.error(request, "YOU CANNOT REPORT THIS BLOG POST")
+        return HttpResponseRedirect(reverse('home'))
+
+
+@login_required
+def report_comment(request, pk):
+    """
+    View that handles reporting of
+    user profiles.
+    """
+    comment = get_object_or_404(Comment, pk=pk)
+    if comment.reported is False:
+        comment.reported = True
+        comment.save()
+        messages.success(
+            request, "COMMENT REPORTED. AN ADMIN WILL REVIEW IT"
+        )
+        return HttpResponseRedirect(reverse('home'))
+    else:
+        messages.error(request, "YOU CANNOT REPORT THIS COMMENT")
+        return HttpResponseRedirect(reverse('home'))
