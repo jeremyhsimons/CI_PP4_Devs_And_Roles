@@ -24,7 +24,9 @@ header > h1 {
 
 main {
     flex: 1 0 auto;
-    background-color: #011502;
+    background: url(../images/dandrbg.webp) no-repeat top center #fff;
+    background-size: 100%;
+    background-attachment: fixed;
 }
 
 textarea {
