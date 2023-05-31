@@ -24,7 +24,7 @@ class SeeAllProfiles(generic.ListView):
     template_name = 'display_profiles.html'
 
 
-class ProfileDetail(View):
+class ProfileDetail(View, SuccessMessageMixin):
     """
     A class to view the details of a job seeker's profile
     """
@@ -42,7 +42,7 @@ class ProfileDetail(View):
             },
         )
 
-    def post(self, request, pk, messages, *args, **kwargs):
+    def post(self, request, pk, *args, **kwargs):
         queryset = UserProfile.objects.filter(approved=True)
         profile = get_object_or_404(queryset, pk=pk)
         message_form = MessageUser(data=request.POST)

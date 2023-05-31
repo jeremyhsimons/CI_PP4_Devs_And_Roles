@@ -57,6 +57,24 @@ textarea {
     margin-left: 60px;
 }
 
+/*----------------------------------------------------------- messages styles */
+
+.message-bar{
+    background-color: #011502;
+}
+
+.alert-success {
+    border: solid 2px green;
+    background-color: lightgreen;
+    color: #011502;
+}
+
+.alert-danger {
+    border: solid 2px red;
+    background-color: lightcoral;
+    color: #011502;
+}
+
 /*--------------------------------------------- Overriding materialize styles */
 
 nav {
