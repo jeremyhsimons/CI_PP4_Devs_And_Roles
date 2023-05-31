@@ -4,7 +4,7 @@ from .forms import ContactForm
 
 class TestContactForm(TestCase):
     """
-    A test suite to check the contact form 
+    A test suite to check the contact form
     functions correctly.
     """
     def test_name_is_required(self):
