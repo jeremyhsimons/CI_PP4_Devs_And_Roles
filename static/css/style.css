@@ -52,6 +52,10 @@ textarea {
 .bold{
     font-weight: 700;
 }
+.dark-bg{
+    background-color: #011502;
+    border: solid 2px #CDF4DC;
+}
 
 .clearablefileinput {
     margin-left: 60px;
@@ -107,6 +111,7 @@ nav {
 .home-card {
     width: 100%;
     background-color: #CDF4DC;
+    border: solid 1px #32746D;
 }
 
 .home-featured-image {

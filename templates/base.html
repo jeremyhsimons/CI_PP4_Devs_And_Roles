@@ -128,9 +128,10 @@
         {% endif %}
     </ul>
 
-    <div class="message-bar">
+    <!--Page content-->
+    <main>
         <div class="row">
-            <div class="vertical-align center col s8 offset-s2">
+            <div class="center col s8 offset-s2">
                 {% for message in messages %}
                 <div class="chip {{ message.tags }}">
                     {{ message | safe }}
@@ -139,11 +140,6 @@
                 {% endfor %}
             </div>
         </div>
-    </div>
-
-    <!--Page content-->
-    <main>
-        <div class="row"></div>
         {% block content %}
         {% endblock content %}
     </main>
