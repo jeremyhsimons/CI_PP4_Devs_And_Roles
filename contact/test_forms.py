@@ -10,11 +10,11 @@ class TestContactForm(TestCase):
     def test_name_is_required(self):
         form = ContactForm({'name': ''})
         self.assertFalse(form.is_valid())
-    
+
     def test_email_is_required(self):
         form = ContactForm({'email': ''})
         self.assertFalse(form.is_valid())
-    
+
     def test_message_is_required(self):
         form = ContactForm({'message': ''})
         self.assertFalse(form.is_valid())
