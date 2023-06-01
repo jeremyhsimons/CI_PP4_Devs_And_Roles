@@ -106,7 +106,7 @@ class AddUserProfileDetails(generic.CreateView, SuccessMessageMixin):
 
 class ViewProfile(View):
     """
-    A class to handle users viewing their profile page. 
+    A class to handle users viewing their profile page.
     """
 
     def get(self, request, *args, **kwargs):

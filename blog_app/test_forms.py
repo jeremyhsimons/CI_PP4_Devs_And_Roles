@@ -14,7 +14,7 @@ class TestBlogPostForm(TestCase):
         for field in required_fields:
             form = BlogPostForm({field: ''})
             self.assertFalse(form.is_valid())
-    
+
     def setUp(self):
         """
         Save a new blog to the db
