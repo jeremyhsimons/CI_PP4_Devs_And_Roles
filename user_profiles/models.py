@@ -47,4 +47,4 @@ class Message(models.Model):
 
     def __str__(self):
         return (
-            f'{self.first_name} message to {self.recipient.first_name}')
+            f"{self.first_name}'s message to {self.recipient.first_name}")
