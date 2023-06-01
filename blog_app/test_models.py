@@ -17,7 +17,6 @@ class TestBlogPost(TestCase):
         self.assertEqual(str(blog), 'This is yet another test blog')
 
 
-
 class TestComment(TestCase):
     """
     Checks str method works correctly
@@ -28,7 +27,7 @@ class TestComment(TestCase):
         blog = BlogPost.objects.create(
             title='How to avoid burnout',
             slug='avoid-burnout-123',
-            posted_by=user1 
+            posted_by=user1
         )
         comment = Comment.objects.create(
             name=user2.username,

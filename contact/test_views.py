@@ -22,6 +22,6 @@ class TestCreateContactMessage(TestCase):
         self.user.save()
         self.user.set_password('hellotestuser101')
         self.user.save()
-    
+
     def tearDown(self):
         self.user.delete()
