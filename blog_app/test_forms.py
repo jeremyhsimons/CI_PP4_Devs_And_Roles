@@ -10,9 +10,7 @@ class TestBlogPostForm(TestCase):
     functions as expected.
     """
     def test_required_fields(self):
-        required_fields = [
-            'title', 'slug', 'summary', 'content',
-            ]
+        required_fields = ['title', 'slug', 'summary', 'content',]
         for field in required_fields:
             form = BlogPostForm({field: ''})
             self.assertFalse(form.is_valid())
@@ -44,3 +42,27 @@ class TestBlogPostForm(TestCase):
         Destroy the blog after test runs
         """
         self.blog.delete()
+
+
+class TestUpdateBlogForm(TestCase):
+    """
+    A class to check users can't submit empty
+    required fields to update blog form.
+    """
+    def test_required_fields(self):
+        """
+        Loop through fields and test them as empty.
+        """
+        required_fields = ['title', 'summary', 'content',]
+        for field in required_fields:
+            form = UpdateBlogForm({field: ''})
+            self.assertFalse(form.is_valid())
+
+
+class TestCommentForm(TestCase):
+    """
+    A class to check users can't submit empty comment.
+    """
+    def test_empty_comment(self):
+        form = CommentForm({'body':''})
+        self.assertFalse(form.is_valid())
