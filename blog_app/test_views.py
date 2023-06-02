@@ -1,8 +1,9 @@
 from django.test import TestCase, RequestFactory
+from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
 from django.urls import reverse
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal imports
-from .views import BlogsList, BlogView
+from .views import BlogsList, BlogView, WriteBlog, UpdateBlog
 from .models import BlogPost, Comment
 
 
@@ -17,10 +18,135 @@ class TestBlogsList(TestCase):
         self.assertTemplateUsed(response, 'blog.html')
 
 
+class TestWriteBlog(TestCase):
+    """
+    Checks that submitting a blog form
+    returns the correct response.
+    """
+    def setUp(self):
+        self.user = User.objects.create(
+            username='testuser101',
+            password='hellotestuser101',
+            email='tester@email.com',
+            id='101'
+        )
+        self.user.save()
+
+    def test_get_blog_form(self):
+        response = self.client.get('/blog/create_blog_post/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response, 'create_blog_post.html'
+            )
+
+    def test_submit_blog_form(self):
+        # User authentication required
+        self.client.force_login(self.user)
+        # submitting a new blog
+        response = self.client.post(
+            '/blog/create_blog_post/',
+            {
+                'title': 'test blog',
+                'slug': 'test-blog-1',
+                'content': 'This is a test submission',
+                'summary': 'This is a test submission',
+            }
+        )
+        self.assertEqual(response.status_code, 200)
+        # blog exists in the db.
+        self.assertTrue(
+            BlogPost.objects.filter(slug='test-blog-1').exists()
+            )
+
+    def test_submit_invalid_blog_form(self):
+        # User authentication required
+        self.client.force_login(self.user)
+        # submitting a new blog
+        self.client.post(
+            '/blog/create_blog_post/',
+            {
+                'title': '',
+                'slug': 'faulty-submission-test',
+                'content': '',
+                'summary': '',
+            }
+        )
+        # blog doesn't exist in the db.
+        self.assertFalse(
+            BlogPost.objects.filter(slug='faulty-submission-test').exists()
+        )
+
+
+class TestUpdateBlog(TestCase):
+    """
+    A class to check that the updateblog view:
+    1. gets the correct blog content from the db.
+    2. saves valid updated form data to db.
+    3. does not save invalid form data to the db.
+    """
+    def setUp(self):
+        self.user1 = User.objects.create(
+            username='testuser101',
+            password='hellotestuser101',
+            email='tester@email.com',
+            id='101'
+        )
+        self.user1.save()
+
+        self.blog1 = BlogPost.objects.create(
+            title='test-blog-one-o-one',
+            slug='test-blog-101',
+            posted_by=self.user1,
+            summary='a test blog',
+            content='a test blog',
+        )
+        self.blog1.save()
+
+    def test_get_blog_data(self):
+        response = self.client.get('/blog/edit_blog/test-blog-101')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'edit_blog.html')
+
+    def test_submit_edited_blog(self):
+        self.client.force_login(self.user1)
+        response = self.client.post(
+            '/blog/edit_blog/test-blog-101',
+            {
+                'title': ' updated',
+                'content': 'updated',
+                'summary': 'updated',
+            },
+            follow=True
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(BlogPost.objects.filter(title='updated').exists())
+
+    def test_invalid_submission_blog_edits(self):
+        self.client.force_login(self.user1)
+        response = self.client.post(
+            '/blog/edit_blog/test-blog-101',
+            {
+                'title': '',
+                'content': '',
+                'summary': '',
+            },
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse(BlogPost.objects.filter(title='').exists())
+
+    def tearDown(self):
+        self.user1.delete()
+        self.blog1.delete()
+
+
+
+
 class TestBlogView(TestCase):
     """
-    Checks that a get request returns
-    the correct blog page.
+    Checks that the testblog view:
+    1. returns the correct data when getting the blog.
+    2. returns a 200 status code when valid comment is submitted.
+    3. returns a 302 status code when invalid comment is submitted.
     """
     def setUp(self):
         self.factory = RequestFactory()
