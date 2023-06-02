@@ -22,9 +22,7 @@ class CreateContactMessage(generic.CreateView, SuccessMessageMixin):
         """
         form = ContactForm(data=request.POST)
         if form.is_valid():
-            form.save(commit=False)
-            if request.user:
-                form.instance.user = request.user
+            form.instance.user = request.user
             form.save()
             messages.success(
                 request, 'Your message has been sent to the site admin')
@@ -32,5 +30,7 @@ class CreateContactMessage(generic.CreateView, SuccessMessageMixin):
         else:
             form = ContactForm()
             messages.error(
-                request, 'We could not process your message. Please try again.')
+                request,
+                'We could not process your message. Please try again.'
+                )
             return redirect('contact')

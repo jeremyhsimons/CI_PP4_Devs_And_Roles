@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <!--Navigation-->
+    <!--Navigation for desktop-->
     <header>
         <h1>Devs&Roles</h1>
     </header>
@@ -26,10 +26,10 @@
             <li>
                 <a href="{% url 'home' %}">Home</a>
             </li>
+            {% if user.is_authenticated %}
             <li>
                 <a href="{% url 'contact' %}">Contact</a>
             </li>
-            {% if user.is_authenticated %}
             {% for profile in userprofiles %}
             {% if profile.user == user %}
             {% if profile.recruiter %}
@@ -91,10 +91,10 @@
         <li>
             <a href="{% url 'home' %}">Home</a>
         </li>
+        {% if user.is_authenticated %}
         <li>
             <a href="{% url 'contact' %}">Contact</a>
         </li>
-        {% if user.is_authenticated %}
         {% for profile in userprofiles %}
         {% if profile.user == user %}
         {% if profile.recruiter %}
