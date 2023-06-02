@@ -1,4 +1,4 @@
-from django.shortcuts import render, reverse, get_object_or_404
+from django.shortcuts import render, reverse, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
@@ -86,6 +86,7 @@ class BlogView(View):
         else:
             comment_form = CommentForm()
             messages.error(request, 'PLEASE SUBMIT A VALID COMMENT.')
+            return redirect('blog_list')
 
         return render(
             request,

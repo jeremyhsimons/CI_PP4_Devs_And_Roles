@@ -26,7 +26,6 @@ class TestCreateContactMessage(TestCase):
     def test_get_contact_page(self):
         # checks that the correct page and template is retrieved from db.
         response = self.client.get('/contact/contact/')
-        print(self.user.username)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'contact.html')
 
