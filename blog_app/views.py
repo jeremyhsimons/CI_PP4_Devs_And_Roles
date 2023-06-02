@@ -148,16 +148,16 @@ class UpdateBlog(generic.UpdateView):
 
 @login_required
 def delete_blog(request, slug):
-    blog = get_object_or_404(request, slug=slug)
+    blog = get_object_or_404(BlogPost, slug=slug)
     if request.user == blog.posted_by:
         messages.success(request, 'BLOG POST DELETED SUCCESSFULLY')
         blog.delete()
-        HttpResponseRedirect(reverse('blog_list'))
+        return HttpResponseRedirect(reverse('blog_list'))
     else:
         messages.error(
             request, 'YOU DO NOT HAVE PERMISSION TO DELETE THIS POST'
         )
-        HttpResponseRedirect(reverse('blog_list'))
+        return HttpResponseRedirect(reverse('blog_list'))
 
 
 @login_required
