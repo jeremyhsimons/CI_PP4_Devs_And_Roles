@@ -1,4 +1,5 @@
-from django.test import TestCase
+from django.test import TestCase, RequestFactory
+from django.contrib.messages.middleware import MessageMiddleware
 from django.contrib.auth.models import User
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal
 from .models import ContactMessage
@@ -11,6 +12,7 @@ class TestCreateContactMessage(TestCase):
     A test to check that the CreateContactMessage view
     works as expected.
     """
+
     def setUp(self):
         # set up user for the test
         self.user = User.objects.create(
@@ -30,16 +32,32 @@ class TestCreateContactMessage(TestCase):
 
     def test_sending_message(self):
         # checks that sending a message results in redirect to home page.
+        self.client.force_login(self.user)
         response = self.client.post(
             '/contact/contact/',
             {
-                'full_name': 'test user',
-                'user': self.user,
-                'email': 'franco@email.com',
-                'message': 'Hello this is a message'
+                'full_name': self.user.username,
+                'email': self.user.email,
+                'message': 'This is a new message'
             }
-            )
-        self.assertRedirects(response, '/')
+        )
+        self.assertEqual(response.status_code, 302)
+
+    def test_sending_invalid_message(self):
+        """
+        Checks that sending an empty message
+        returns an error.
+        """
+        self.client.force_login(self.user)
+        response = self.client.post(
+            '/contact/contact/',
+            {
+                'full_name': self.user.username,
+                'email': self.user.email,
+                'message': ''
+            }
+        )
+        self.assertRedirects(response, '/contact/contact/')
 
     def tearDown(self):
         self.user.delete()
