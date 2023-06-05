@@ -230,5 +230,4 @@ def delete_application(request, application_id):
         return HttpResponseRedirect(reverse('home'))
     else:
         messages.error(request, "YOU CANNOT DELETE A POST YOU DIDN'T CREATE")
-        print("YOU CANNOT DELETE A POST YOU DIDN'T CREATE")
         return HttpResponseRedirect(reverse('home'))

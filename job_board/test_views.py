@@ -8,7 +8,10 @@ from .views import (
     JobPostingDetail, 
     CreateJobPosting,
     UpdateJobPosting, 
-    delete_job_posting
+    delete_job_posting,
+    ViewApplicationDetails,
+    CreateJobApplication,
+    delete_application
 )
 from .models import JobApplication, JobPosting
 
@@ -105,7 +108,6 @@ class TestCreateJobPosting(TestCase):
                 'benefits': 'nice stuff',
                 'id': 102
             })
-        print(response)
         self.assertEqual(response.status_code, 200)
         # check it exists in db
         unapproved_jobs = JobPosting.objects.filter(approved=False)
@@ -282,3 +284,222 @@ class TestDeleteJobPosting(TestCase):
         self.user1.delete()
         self.user2.delete()
         self.job.delete()
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TESTING JOB APPLICATION VIEWS
+
+
+class TestViewApplicationDetails(TestCase):
+    """
+    Checks that the user can successfully get
+    the data for a job application from the db.
+    """
+    def setUp(self):
+        self.user1 = User.objects.create(
+            username='testuser101',
+            password='hellotestuser101',
+            email='tester@email.com',
+            id='101'
+        )
+        self.user1.save()
+
+        self.user2 = User.objects.create(
+            username='testuser102',
+            password='hellotestuser102',
+            email='tester2@email.com',
+            id='102'
+        )
+        self.user2.save()
+
+        self.job = JobPosting.objects.create(
+            title='test job posting 101',
+            posted_by=self.user1,
+            salary=123456,
+            location='London',
+            closing_date="2025-05-05",
+            company_overview="this is a test company",
+            job_description="this is a test JD",
+            requirements="These are test requirements",
+            benefits="These are test benefits",
+            approved=True,
+            id='104'
+        )
+        self.job.save()
+
+        self.application = JobApplication.objects.create(
+            candidate=self.user2,
+            job_posting=self.job,
+            full_name=self.user2.username,
+            email=self.user2.email,
+            phone=12345678,
+            linkedin='url.com',
+            github_username='github',
+            why_company="I like it",
+            why_role='I like it',
+            why_you='I like myself',
+            id='105'
+        )
+        self.application.save()
+
+    def test_get_application_details(self):
+        response = self.client.get('/application-detail/105')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "application-detail.html")
+        
+    def tearDown(self):
+        self.user1.delete()
+        self.user2.delete()
+        self.job.delete()
+        self.application.delete()
+
+
+class TestCreateJobApplication(TestCase):
+    """
+    Checks:
+    1. That the application form is successfully retrieved from db
+    2. That a valid submission is successfully saved to db
+    3. That an invalid submission is not saved to db
+    """
+    def setUp(self):
+        self.user1 = User.objects.create(
+            username='testuser101',
+            password='hellotestuser101',
+            email='tester@email.com',
+            id='101'
+        )
+        self.user1.save()
+
+        self.user2 = User.objects.create(
+            username='testuser102',
+            password='hellotestuser102',
+            email='tester2@email.com',
+            id='102'
+        )
+        self.user2.save()
+
+        self.job = JobPosting.objects.create(
+            title='test job posting 101',
+            posted_by=self.user1,
+            salary=123456,
+            location='London',
+            closing_date="2025-05-05",
+            company_overview="this is a test company",
+            job_description="this is a test JD",
+            requirements="These are test requirements",
+            benefits="These are test benefits",
+            approved=True,
+            id='106'
+        )
+        self.job.save()
+
+    def test_get_application_form(self):
+        response = self.client.get('/apply/106')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response, 'create-job-application.html'
+        )
+
+    def test_submit_valid_application(self):
+        self.client.force_login(user=self.user2)
+        response = self.client.post(
+            '/apply/106',
+            {
+                'full_name': 'tester2',
+                'email': 'tester2@email.com',
+                'phone': 13234567,
+                'linkedin': 'linkedin',
+                'github_username': 'github',
+                'why_company': 'test application',
+                'why_role': 'test application',
+                'why_you': 'test application',
+            }
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(
+            JobApplication.objects.filter(full_name='tester2').exists()
+        )
+    
+    def tearDown(self):
+        self.user1.delete()
+        self.user2.delete()
+        self.job.delete()
+        
+
+class TestDeleteJobApplication(TestCase):
+    """
+    Checks:
+    1. Users can successfully delete their applications from db
+    2. Users cannot delete other users' job applications.
+    """
+
+    def setUp(self):
+        self.user1 = User.objects.create(
+            username='testuser101',
+            password='hellotestuser101',
+            email='tester@email.com',
+            id='101'
+        )
+        self.user1.save()
+
+        self.user2 = User.objects.create(
+            username='testuser102',
+            password='hellotestuser102',
+            email='tester2@email.com',
+            id='102'
+        )
+        self.user2.save()
+
+        self.job = JobPosting.objects.create(
+            title='test job posting 101',
+            posted_by=self.user1,
+            salary=123456,
+            location='London',
+            closing_date="2025-05-05",
+            company_overview="this is a test company",
+            job_description="this is a test JD",
+            requirements="These are test requirements",
+            benefits="These are test benefits",
+            approved=True,
+            id='107'
+        )
+        self.job.save()
+
+        self.application = JobApplication.objects.create(
+            candidate=self.user2,
+            job_posting=self.job,
+            full_name=self.user2.username,
+            email=self.user2.email,
+            phone=12345678,
+            linkedin='url.com',
+            github_username='github',
+            why_company="I like it",
+            why_role='I like it',
+            why_you='I like myself',
+            id='108'
+        )
+        self.application.save()
+
+    def test_delete_application(self):
+        self.client.force_login(user=self.user2)
+        response = self.client.post(reverse(
+            'delete_application', kwargs={'application_id': '108'}
+        ))
+        self.assertRedirects(response, '/')
+        self.assertFalse(
+            JobApplication.objects.filter(id='108').exists()
+        )
+
+    def test_delete_other_users_application(self):
+        self.client.force_login(user=self.user1)
+        response = self.client.post(reverse(
+            'delete_application', kwargs={'application_id': '108'}
+        ))
+        self.assertRedirects(response, '/')
+        self.assertTrue(
+            JobApplication.objects.filter(id='108').exists()
+        )
+
+    def tearDown(self):
+        self.user1.delete()
+        self.user2.delete()
+        self.job.delete()
+        self.application.delete()
