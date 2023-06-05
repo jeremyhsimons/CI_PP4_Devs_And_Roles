@@ -1,6 +1,7 @@
 from django.test import TestCase, RequestFactory
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
+from django.urls import reverse
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal imports
 from .views import (
     JobPostingList, 
@@ -213,4 +214,71 @@ class TestUpdateJobPosting(TestCase):
 
     def tearDown(self):
         self.user.delete()
+        self.job.delete()
+
+class TestDeleteJobPosting(TestCase):
+    """
+    Checks whether:
+    1. the delete view/url removes
+    job posting from the db
+    2. the posting cannot be deleted
+    by another user
+    """
+    def setUp(self):
+        self.user1 = User.objects.create(
+            username='testuser101',
+            password='hellotestuser101',
+            email='tester@email.com',
+            id='101'
+        )
+        self.user1.save()
+
+        self.user2 = User.objects.create(
+            username='testuser102',
+            password='hellotestuser102',
+            email='tester2@email.com',
+            id='102'
+        )
+        self.user2.save()
+
+        self.job = JobPosting.objects.create(
+            title='test job posting 101',
+            posted_by=self.user1,
+            salary=123456,
+            location='London',
+            closing_date="2025-05-05",
+            company_overview="this is a test company",
+            job_description="this is a test JD",
+            requirements="These are test requirements",
+            benefits="These are test benefits",
+            approved=True,
+            id='104'
+        )
+        self.job.save()
+
+    def test_delete_job_post(self):
+        # checks that the user can remove the job post from the db
+        self.client.force_login(user=self.user1)
+        response = self.client.post(reverse(
+            'delete-job-post', kwargs={'jobpost_id': '104'}
+            ))
+        self.assertRedirects(response, '/')
+        self.assertFalse(
+            JobPosting.objects.filter(id='104').exists()
+            )
+
+    def test_delete_other_users_job_post(self):
+        # checks that the user can remove the job post from the db
+        self.client.force_login(user=self.user2)
+        response = self.client.post(reverse(
+            'delete-job-post', kwargs={'jobpost_id': '104'}
+            ))
+        self.assertRedirects(response, '/')
+        self.assertTrue(
+            JobPosting.objects.filter(id='104').exists()
+            )
+
+    def tearDown(self):
+        self.user1.delete()
+        self.user2.delete()
         self.job.delete()
