@@ -139,8 +139,6 @@ class TestUpdateBlog(TestCase):
         self.blog1.delete()
 
 
-
-
 class TestBlogView(TestCase):
     """
     Checks that the testblog view:
@@ -170,6 +168,8 @@ class TestBlogView(TestCase):
 
     def test_get_blog(self):
         # Checks that the url path for test blog works.
+        print(self.user)
+        print(self.blog)
         self.client.force_login(self.user)
         request = self.factory.get('/blog/blog_detail/test-blog-101/')
         response = self.view(request, 'test-blog-101')
