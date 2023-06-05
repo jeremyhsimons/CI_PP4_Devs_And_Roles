@@ -103,18 +103,17 @@ class UpdateJobPosting(generic.UpdateView):
         if updated_form.is_valid():
             updated_form.instance.posted_by = request.user
             updated_form.save()
-            return render(
-                request,
-                'index.html'
-            )
+            messages.success(request, 'JOB SUCCESSFULLY UPDATED.')
+            return redirect('home')
 
         else:
             updated_form = JobPostingForm()
+            messages.error(request, 'PLEASE SUBMIT A VALID, UPDATED FORM.')
             return render(
                 request,
-                'update-job-post.html'
+                'update-job-post.html',
+                {'form': updated_form, }
             )
-
 
 @login_required
 def delete_job_posting(request, jobpost_id):
@@ -130,7 +129,6 @@ def delete_job_posting(request, jobpost_id):
     else:
         messages.error(request, "YOU CANNOT DELETE A POST YOU DIDN'T CREATE")
         return HttpResponseRedirect(reverse('home'))
-
 
 @login_required
 def report_job_posting(request, jobpost_id):

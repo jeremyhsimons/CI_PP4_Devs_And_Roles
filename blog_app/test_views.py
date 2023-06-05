@@ -112,7 +112,7 @@ class TestUpdateBlog(TestCase):
         response = self.client.post(
             '/blog/edit_blog/test-blog-101',
             {
-                'title': ' updated',
+                'title': 'updated',
                 'content': 'updated',
                 'summary': 'updated',
             },
@@ -168,8 +168,6 @@ class TestBlogView(TestCase):
 
     def test_get_blog(self):
         # Checks that the url path for test blog works.
-        print(self.user)
-        print(self.blog)
         self.client.force_login(self.user)
         request = self.factory.get('/blog/blog_detail/test-blog-101/')
         response = self.view(request, 'test-blog-101')
@@ -272,8 +270,6 @@ class TestDeleteBlog(TestCase):
         self.user2.delete()
         self.blog1.delete()
         self.blog2.delete()
-
-
 
 
 class TestDeleteComment(TestCase):
