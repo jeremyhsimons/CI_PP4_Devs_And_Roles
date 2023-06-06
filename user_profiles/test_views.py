@@ -103,7 +103,7 @@ class TestProfileDetail(TestCase):
 
     def test_invalid_message(self):
         self.client.force_login(user=self.user1)
-        response = self.client.post(
+        self.client.post(
             '/profile/profile_details/2',
             {
                 'first_name': '',
