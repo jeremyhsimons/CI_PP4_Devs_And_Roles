@@ -59,10 +59,16 @@
                 <div class="divider"></div>
                 <div id="comment-section" class="section">
                     <h4>Write a comment:</h4>
-                    <form method="POST" height="200px">
-                        {{ form | crispy }}
-                        {% csrf_token %}
-                        <button type="submit" class="btn">Submit</button>
+                    <form method="POST" class="comment">
+                        <div class="row add-padding">
+                            <div class="col s12 add-padding">
+                                {{ form | crispy }}
+                                {% csrf_token %}
+                            </div>
+                            <div class="col s12 add-padding">
+                                <button type="submit" class="btn">Submit</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <div class="divider"></div>

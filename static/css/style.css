@@ -41,9 +41,13 @@ textarea {
     padding-bottom: 40px;
 }
 
+#message-row{
+    height: 0px;
+}
+
 .no-padding {
     padding: none;
-  }
+}
 
 .no-margin-bottom {
     margin-bottom: 0%;
@@ -52,9 +56,14 @@ textarea {
 .bold{
     font-weight: 700;
 }
+
 .dark-bg{
     background-color: #011502;
     border: solid 2px #CDF4DC;
+}
+
+.add-padding{
+    padding: 20px;
 }
 
 .clearablefileinput {
@@ -62,10 +71,6 @@ textarea {
 }
 
 /*----------------------------------------------------------- messages styles */
-
-.message-bar{
-    background-color: #011502;
-}
 
 .alert-success {
     border: solid 2px green;
@@ -83,6 +88,7 @@ textarea {
 
 nav {
     background-color: #32746D;
+    color:#fff;
 }
 
 .divider {
@@ -95,6 +101,9 @@ nav {
 
 .card-content {
     background-color: #CDF4DC;
+}
+.chip{
+    z-index: 2;
 }
 
 #bottom-footer {
