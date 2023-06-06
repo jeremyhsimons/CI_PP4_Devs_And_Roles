@@ -54,15 +54,28 @@ class CreateJobPosting(generic.CreateView):
 
         if jobpost_form.is_valid():
             jobpost_form.instance.posted_by = request.user
+            messages.success(request,
+                             """
+                             JOB POSTING SUBMITTED SUCCESSFULLY.
+                             IT WILL GO LIVE ON THE SITE FOLLOWING APPROVAL BY
+                             ADMINS.
+                             """)
+
             jobpost_form.save()
+            return redirect('home')
 
         else:
+            messages.error(request,
+                           """
+                           YOUR REQUEST COULD NOT BE PROCESSED.
+                           PLEASE ENSURE YOU COMPLETE
+                           ALL FORM FIELDS CORRECTLY.
+                           """)
             jobpost_form = JobPostingForm()
-
-        return render(
-            request,
-            'create-job-post.html'
-        )
+            return render(
+                request,
+                'create-job-post.html'
+            )
 
 
 class UpdateJobPosting(generic.UpdateView):
@@ -189,14 +202,16 @@ class CreateJobApplication(generic.CreateView):
             application_form.instance.job_posting = job_posting
             application_form.instance.candidate = request.user
             application_form.save()
+            messages.success(request, 'APPLICATION SENT SUCCESSFULLY')
+            return redirect('home')
 
         else:
+            messages.error(request, 'PLEASE SUBMIT A VALID APPLICATION FORM')
             application_form = JobApplicationForm()
-
-        return render(
-            request,
-            'create-job-application.html'
-        )
+            return render(
+                request,
+                'create-job-application.html'
+            )
 
 
 class TrackMyApplications(generic.ListView):

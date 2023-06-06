@@ -14,4 +14,4 @@ class JobApplicationForm(forms.ModelForm):
     class Meta:
         model = JobApplication
         fields = ('full_name', 'email', 'phone', 'linkedin', 'github_username',
-                  'why_company', 'why_role', 'why_you', 'supporting_docs',)
+                  'why_company', 'why_role', 'why_you')

@@ -53,7 +53,6 @@ class JobApplication(models.Model):
     why_company = models.TextField(max_length=2000)
     why_role = models.TextField(max_length=2000)
     why_you = models.TextField(max_length=2000)
-    supporting_docs = models.FileField(blank=True)
 
     class Meta:
         ordering = ['-created_on']
