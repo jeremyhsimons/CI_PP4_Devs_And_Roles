@@ -156,7 +156,7 @@ def report_job_posting(request, jobpost_id):
         messages.success(request, "POSTING REPORTED. AN ADMIN WILL REVIEW IT")
         return HttpResponseRedirect(reverse('home'))
     else:
-        messages.error(request, "YOU CANNOT REPORT THIS POST")
+        messages.error(request, "YOU CANNOT REPORT THIS JOB POSTING")
         return HttpResponseRedirect(reverse('home'))
 
 

@@ -172,7 +172,7 @@ class EditUserProfileDetails(generic.CreateView, SuccessMessageMixin):
             except UserProfile.DoesNotExist:
                 pass
             profile.instance.user = request.user
-            messages.success(request, 'PROFILE CREATED SUCCESSFULLY')
+            messages.success(request, 'PROFILE UPDATED SUCCESSFULLY')
             profile.save()
             return redirect('home')
         else:
@@ -210,9 +210,9 @@ def redirect_view(request):
     profile if they have not done so.
     """
     profiles = UserProfile.objects.all()
-    current_user_profile = get_object_or_404(profiles, user=request.user)
+    profile = get_object_or_404(profiles, user=request.user)
 
-    if current_user_profile.user == request.user and current_user_profile.first_name:
+    if profile.user == request.user and profile.first_name:
         print("success")
         return redirect('home')
     else:

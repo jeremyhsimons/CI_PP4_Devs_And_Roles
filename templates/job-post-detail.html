@@ -1,39 +1,84 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h1>{{ jobpost.title }}</h1>
+<div class="row container">
+    <div class="col s12 dark-bg white-text">
+        <h2 class="add-padding bold center">{{ jobpost.title }}</h2>
+    </div>
+</div>
+<div class="row container light-green-bg">
 {% if user == jobpost.posted_by %}
-<p></p>
-    <a class="btn"  href="{% url 'update-job-post' jobpost.pk %}">Edit</a>
-</p>
-<p>
-    <a class="btn red lighten-1"  href="{% url 'delete-job-post' jobpost.pk %}">Delete</a>
-</p>
-{% endif %}
-<p>
-    <a class="btn amber" href="{% url 'report-job-post' jobpost.pk %}">Report</a>
-</p>
-{% if "placeholder" in jobpost.featured_image.url %}
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="default picture of a laptop">
-{% else %}
-<img src="{{ jobpost.featured_image.url }}" alt="job posting featured image">
-{% endif %}
-<ul>
-    <li>{{ jobpost.salary }}</li>
-    <li>{{ jobpost.location }}</li>
-    <li>{{ jobpost.closing_date }}</li>
-</ul>
-
-<h3>Company overview:</h3>
-<p>{{ jobpost.company_overview | safe }}</p>
-<h3>Job description:</h3>
-<p>{{ jobpost.job_description | safe }}</p>
-<h3>Candidate requirements:</h3>
-<p>{{ jobpost.requirements | safe }}</p>
-<h3>Benefits:</h3>
-<p>{{ jobpost.benefits | safe }}</p>
-
-<hr>
+    <div class="col s12 l4">
+        <p class="center">
+            <a class="btn" href="{% url 'update-job-post' jobpost.pk %}">Edit</a>
+        </p>
+    </div>
+    <div class="col s12 l4">
+        <p class="center">
+            <a class="btn red lighten-1" href="{% url 'delete-job-post' jobpost.pk %}">Delete</a>
+        </p>
+    </div>
+    {% endif %}
+    <div class="col s12 l4">
+        <p class="center">
+            <a class="btn amber" href="{% url 'report-job-post' jobpost.pk %}">Report</a>
+        </p>
+    </div>
+</div>
+<div class="row container">
+    <div class="col s12">
+        <div class="card dark-bg">
+            <div class="card-image waves-effect waves-block waves-light container">
+                {% if "placeholder" in jobpost.featured_image.url %}
+                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="default picture of a laptop">
+                {% else %}
+                <img src="{{ jobpost.featured_image.url }}" alt="job posting featured image">
+                {% endif %}
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Click Here for More Details About This Opportunity<i
+                        class="fa-solid fa-ellipsis-vertical right"></i></span>
+            </div>
+            <div class="card-reveal light-green-bg">
+                <span class="card-title grey-text text-darken-4"><i class="close fa-regular fa-circle-xmark right"></i></span>
+                <ul class="job-detail-list">
+                    <li class="job-detail-list-item">
+                        <h3>SALARY: £{{ jobpost.salary }}</h3>
+                    </li>
+                    <li class="job-detail-list-item">
+                        <h3>LOCATION: {{ jobpost.location }}</h3>
+                    </li>
+                    <li class="job-detail-list-item">
+                        <h3>CLOSING DATE: {{ jobpost.closing_date }}</h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="card-panel">
+        <h3>Company overview:</h3>
+        <p>{{ jobpost.company_overview | safe }}</p>
+    </div>
+</div>
+<div class="container">
+    <div class="card-panel">
+        <h3>Job description:</h3>
+        <p>{{ jobpost.job_description | safe }}</p>
+    </div>
+</div>
+<div class="container">
+    <div class="card-panel">
+        <h3>Candidate requirements:</h3>
+        <p>{{ jobpost.requirements | safe }}</p>
+    </div>
+</div>
+<div class="container">
+    <div class="card-panel">
+        <h3>Benefits:</h3>
+        <p>{{ jobpost.benefits | safe }}</p>
+    </div>
+</div>
 
 {% for profile in userprofiles %}
 {% if profile.user == user %}
@@ -42,33 +87,38 @@
     <a class="btn" href="{% url 'apply' jobpost.pk %}">Apply</a>
 </div>
 {% else %}
-<p>You need to update your profile to job seeker if you wish to apply.</p>
+<p>You need to update your profile to 'job seeker' if you wish to apply.</p>
 {% endif %}
 {% endif %}
 {% endfor %}
 
-<hr>
-
-<p>posted_by: {{ jobpost.posted_by }}</p>
-
-<hr>
-
-<p>Applicants: {{ jobpost.applicants }}</p>
-
-{% if user == jobpost.posted_by %}
-<h3>SEE ALL APPLICATIONS</h3>
-{% for application in applications %}
-<div class="container card-panel">
-    <p>{{ application.full_name }}</p>
-    <p>{{ application.email }}</p>
-    <p>{{ application.linkedin }}</p>
-    <p>
-        <a class="btn" href="{% url 'application-detail' application.pk %}">
-            Details
-        </a>
-    </p>
+<div class="container">
+    <p class="center bold">Posted By: {{ jobpost.posted_by }}  | Applicants: {{ jobpost.applicants }}</p>
 </div>
-{% endfor %}
-{% endif %}
+
+<div class="container">
+    <div class="card-panel dark-bg">
+        {% if user == jobpost.posted_by %}
+        <h3 class="white-text center">SEE ALL APPLICATIONS</h3>
+        {% if applications %}
+        {% for application in applications %}
+        <div class="container card-panel dark-bg">
+            <p class="white-text">{{ application.full_name }}</p>
+            <p class="white-text">{{ application.email }}</p>
+            <p class="white-text">{{ application.linkedin }}</p>
+            <p>
+                <a class="btn add-padding" href="{% url 'application-detail' application.pk %}">
+                    Details
+                </a>
+            </p>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p class="white-text center">There are currently no applicants for this role.</p>
+        {% endif %}
+        {% endif %}
+    </div>
+</div>
+
 
 {% endblock %}

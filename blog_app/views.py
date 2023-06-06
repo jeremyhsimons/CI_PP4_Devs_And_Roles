@@ -34,8 +34,16 @@ class WriteBlog(generic.CreateView):
 
         if blogpost_form.is_valid():
             blogpost_form.instance.posted_by = request.user
+            messages.success(
+                request,
+                'BLOG POST SUBMITTED SUCCESSFULLY.'
+            )
             blogpost_form.save()
         else:
+            messages.error(
+                request,
+                'BLOG POST NOT SUBMITTED. PLEASE COMPLETE ALL FIELDS.'
+            )
             blogpost_form = BlogPostForm()
 
         return render(
