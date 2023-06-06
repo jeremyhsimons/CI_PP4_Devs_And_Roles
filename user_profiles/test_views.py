@@ -266,3 +266,37 @@ class TestEditUserProfileDetails(TestCase):
 
     def tearDown(self):
         self.user1.delete()
+
+
+class TestDeleteProfile(TestCase):
+    """
+    Checks:
+    1. Delete page is successfully retrieved for user
+    2. Profile can be successfully deleted on form submit.
+    """
+
+    def setUp(self):
+        self.user1 = User.objects.create(
+            username='testuser101',
+            password='hellotestuser101',
+            email='tester@email.com',
+            pk='101'
+        )
+        self.user1.save()
+
+    def test_get_delete_page(self):
+        self.client.force_login(user=self.user1)
+        response = self.client.get('/profile/delete_profile/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed('delete_profile.html')
+
+    def test_delete_profile(self):
+        self.client.force_login(user=self.user1)
+        response = self.client.post('/profile/delete_profile/')
+        self.assertEqual(response.status_code, 302)
+        self.assertFalse(
+            UserProfile.objects.filter(user=self.user1).exists()
+        )
+
+    def tearDown(self):
+        self.user1.delete()
