@@ -107,8 +107,11 @@ nav {
 .card-content {
     background-color: #CDF4DC;
 }
-.chip{
-    z-index: 2;
+
+.chip {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 110%;
 }
 
 #bottom-footer {

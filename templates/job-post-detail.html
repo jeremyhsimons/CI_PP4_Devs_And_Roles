@@ -100,8 +100,10 @@
 {% for profile in userprofiles %}
 {% if profile.user == user %}
 {% if profile.job_seeker %}
-<div class="container card-panel">
-    <a class="btn" href="{% url 'apply' jobpost.pk %}">Apply</a>
+<div class="container">
+    <div class="card-panel">
+        <a class="btn center-align" href="{% url 'apply' jobpost.pk %}">Apply</a>
+    </div>
 </div>
 {% else %}
 <div class="container">
