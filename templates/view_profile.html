@@ -16,6 +16,10 @@
                 </li>
                 <div class="row"></div>
                 <li class="container center-align">
+                    <a class="btn" href="#messages">Messages</a>
+                </li>
+                <div class="row"></div>
+                <li class="container center-align">
                     <a class="btn" href="{% url 'home' %}">Back</a>
                 </li>
             </ul>
@@ -81,15 +85,15 @@
                         </ul>
                     </div>
                     <div class="divider"></div>
-                    <div class="section">
+                    <div id="messages" class="section">
                         <h4>View your messages:</h4>
-                        {% if messages%}
-                        {% for message in messages%}
+                        {% if user_messages %}
+                        {% for user_message in user_messages %}
                         <div class="container card-panel">
-                            <p class="bold">From: {{ message.first_name }} {{ message.last_name }}</p>
-                            <p>Recieved on: {{ message.sent_on }}</p>
-                            <p>{{ message.message }}</p>
-                            <p>Contact {{ message.first_name }}: {{ message.email }}</p>
+                            <p class="bold black-text">From: {{ user_message.first_name }} {{ user_message.last_name }}</p>
+                            <p class="black-text">Recieved on: {{ user_message.sent_on }}</p>
+                            <p class="black-text">{{ user_message.message }}</p>
+                            <p class="black-text">Contact {{ user_message.first_name }}: {{ user_message.email }}</p>
                         </div>
                         {% endfor %}
                         {% else %}

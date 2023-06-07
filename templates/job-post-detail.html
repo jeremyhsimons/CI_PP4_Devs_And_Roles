@@ -6,27 +6,34 @@
     </div>
 </div>
 
-{% if user.is_authenticated %}
+
 <div class="row container light-green-bg">
+{% if user.is_authenticated %}
 {% if user == jobpost.posted_by %}
-    <div class="col s12 l4">
+    <div class="col s12 l3">
         <p class="center">
             <a class="btn" href="{% url 'update-job-post' jobpost.pk %}">Edit</a>
         </p>
     </div>
-    <div class="col s12 l4">
+    <div class="col s12 l3">
         <p class="center">
             <a class="btn red lighten-1" href="{% url 'delete-job-post' jobpost.pk %}">Delete</a>
         </p>
     </div>
     {% endif %}
-    <div class="col s12 l4">
+    <div class="col s12 l3">
         <p class="center">
             <a class="btn amber" href="{% url 'report-job-post' jobpost.pk %}">Report</a>
         </p>
     </div>
+    {% endif %}
+    <div class="col s12 l3">
+        <p class="center">
+            <a class="btn" href="{% url 'home' %}">Back</a>
+        </p>
+    </div>
 </div>
-{% endif %}
+
 
 <div class="row container">
     <div class="col s12">
@@ -123,29 +130,39 @@
     <p class="center bold">Posted By: {{ jobpost.posted_by }}  | Applicants: {{ jobpost.applicants }}</p>
 </div>
 
+{% if user == jobpost.posted_by %}
 <div class="container">
     <div class="card-panel dark-bg">
-        {% if user == jobpost.posted_by %}
-        <h3 class="white-text center">SEE ALL APPLICATIONS</h3>
+        <h3 class="white-text center">SEE ALL APPLICATIONS:</h3>
         {% if applications %}
         {% for application in applications %}
-        <div class="container card-panel dark-bg">
-            <p class="white-text">{{ application.full_name }}</p>
-            <p class="white-text">{{ application.email }}</p>
-            <p class="white-text">{{ application.linkedin }}</p>
-            <p>
-                <a class="btn add-padding" href="{% url 'application-detail' application.pk %}">
-                    Details
-                </a>
-            </p>
+        <div class="container">
+            <div class="card-panel light-green-bg">
+                <div class="row">
+                    <div class="col s6">
+                        <p>APPLICANT: {{ application.full_name }}</p>
+                    </div>                
+                    <div class="col s6">
+                        <p>EMAIL ADDRESS: {{ application.email }}</p>                
+                    </div>
+                    <div class="col s6">
+                        <p>LINKEDIN: {{ application.linkedin }}</p>
+                    </div>
+                    <div class="col s6">
+                        <a class="btn" href="{% url 'application-detail' application.pk %}">
+                            View Application Details
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
         {% endfor %}
         {% else %}
         <p class="white-text center">There are currently no applicants for this role.</p>
         {% endif %}
-        {% endif %}
     </div>
 </div>
+{% endif %}
 
 
 {% endblock %}

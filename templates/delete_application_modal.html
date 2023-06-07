@@ -1,0 +1,12 @@
+{% block delete_application_modal %}
+<!---Modal-->
+<div id="applicationmodal" class="modal">
+    <div class="modal-content">
+        <h4>Are you sure you want to withdraw this Job Application?</h4>
+        <p>This action cannot be undone.</p>
+    </div>
+    <div class="modal-footer">
+        <a href="{% url 'delete_application' application.pk %}" class="modal-close waves-effect waves-green btn-flat">Delete</a>
+    </div>
+</div>
+{% endblock %}

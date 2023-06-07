@@ -1,32 +1,62 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Application for {{ jobpost.title }}</h1>
-<ul>
-    <li>{{ application.full_name }}</li>
-    <li>{{ application.email }}</li>
-    <li>{{ application.phone }}</li>
-    <li>{{ application.linkedin }}</li>
-    <li>{{ application.github_username }}</li>
-</ul>
+<div class="row container">
+    <div class="col s12 l6">
+        <div class="">
+            <div class="card-panel dark-bg">
+                <h3 class="white-text">Application for:</h3>
+                <h2 class="white-text center">{{ jobpost.title }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 l6">
+        <div class="">
+            <div class="card-panel light-green-bg">
+                <ul class="center">
+                    <li class="personal-details-item"><i class="fa-solid fa-hand-point-right"></i> Full Name: {{ application.full_name }}</li>
+                    <li class="personal-details-item"><i class="fa-solid fa-hand-point-right"></i> Email Address: {{ application.email }}</li>
+                    <li class="personal-details-item"><i class="fa-solid fa-hand-point-right"></i> Phone Number: {{ application.phone }}</li>
+                    <li class="personal-details-item"><i class="fa-solid fa-hand-point-right"></i> LinkedIn Profile: {{ application.linkedin }}</li>
+                    <li class="personal-details-item"><i class="fa-solid fa-hand-point-right"></i> GitHub Username: {{ application.github_username }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h3>Why would you like to work for this company?</h3>
-<p>-- max 2000 characters --</p>
-<p>{{ application.why_company | safe }}</p>
-<h3>Why are you a good fit for this role?</h3>
-<p>-- max 2000 characters --</p>
-<p>{{ application.why_role | safe }}</p>
-<h3>Why should this company hire you, specifically?</h3>
-<p>-- max 2000 characters --</p>
-<p>{{ application.why_you | safe }}</p>
+<div class="row container">
+    <div class="col s12 card-panel">
+        <h4>Why would you like to work for this company?</h4>
+        <div class="divider"></div>
+        <p>{{ application.why_company | safe }}</p>
+    </div>
+    <div class="col s12 card-panel">
+        <h4>Why are you a good fit for this role?</h4>
+        <div class="divider"></div>
+        <p>{{ application.why_role | safe }}</p>
+    </div>
+    <div class="col s12 card-panel">
+        <h4>Why should this company hire you, specifically?</h4>
+        <div class="divider"></div>
+        <p>{{ application.why_you | safe }}</p>
+    </div>
+</div>
 
-<hr>
 
-<p>
-    <a href="{% url 'job-post-detail' application.job_posting.pk %}">Back to Job posting</a>
-</p>
-<p>
-    <a href="{% url 'delete_application' application.pk %}">Withdraw application</a>
-</p>
+<div class="row container">
+    <div class="col s12 m6">
+        <p class="center">
+            <a class="btn" href="{% url 'job-post-detail' application.job_posting.pk %}">Back to Job posting</a>
+        </p>
+    </div>
+    {% if user == application.candidate %}
+    <div class="col s12 m6">
+        <p>
+            <a class="btn red" href="#application.modal">Withdraw application</a>
+        </p>
+    </div>
+    {% endif %}
+</div>
 
 {% endblock %}

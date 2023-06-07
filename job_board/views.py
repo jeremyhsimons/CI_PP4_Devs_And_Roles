@@ -128,6 +128,7 @@ class UpdateJobPosting(generic.UpdateView):
                 {'form': updated_form, }
             )
 
+
 @login_required
 def delete_job_posting(request, jobpost_id):
     """
@@ -142,6 +143,7 @@ def delete_job_posting(request, jobpost_id):
     else:
         messages.error(request, "YOU CANNOT DELETE A POST YOU DIDN'T CREATE")
         return HttpResponseRedirect(reverse('home'))
+
 
 @login_required
 def report_job_posting(request, jobpost_id):
@@ -171,12 +173,14 @@ class ViewApplicationDetails(View):
 
     def get(self, request, pk, *args, **kwargs):
         application = get_object_or_404(JobApplication, pk=pk)
+        jobpost = application.job_posting
 
         return render(
             request,
             "application-detail.html",
             {
                 'application': application,
+                'jobpost': jobpost,
             },
         )
 

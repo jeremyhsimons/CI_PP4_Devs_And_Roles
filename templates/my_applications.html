@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container"></div>
+<div class="container dark-bg add-padding">
     <h2 class="white-text center-align">View the applications you have made.</h2>
 </div>
 {% for application in applications %}
-<div class="row">
+<div class="row container">
     <div class="col s12">
-        <div class="card-panel">
+        <div class="card-panel light-green-bg">
             <h3>{{ application.job_posting.title }}</h3>
+            <a class="btn" href="{% url 'application-detail' application.pk %}">View Details</a>
+            <a  class="btn red modal-trigger" href="#applicationmodal">Withdraw application </a>
+            {% block delete_application_modal %}{% include 'delete_application_modal.html' %}{% endblock delete_application_modal %}
         </div>
     </div>
 </div>
