@@ -5,6 +5,8 @@
         <h2 class="add-padding bold center">{{ jobpost.title }}</h2>
     </div>
 </div>
+
+{% if user.is_authenticated %}
 <div class="row container light-green-bg">
 {% if user == jobpost.posted_by %}
     <div class="col s12 l4">
@@ -24,6 +26,8 @@
         </p>
     </div>
 </div>
+{% endif %}
+
 <div class="row container">
     <div class="col s12">
         <div class="card dark-bg">
@@ -42,13 +46,25 @@
                 <span class="card-title grey-text text-darken-4"><i class="close fa-regular fa-circle-xmark right"></i></span>
                 <ul class="job-detail-list">
                     <li class="job-detail-list-item">
-                        <h3>SALARY: £{{ jobpost.salary }}</h3>
+                        <h4>{</h4>
                     </li>
                     <li class="job-detail-list-item">
-                        <h3>LOCATION: {{ jobpost.location }}</h3>
+                        <h4>  SALARY: '£{{ jobpost.salary }}',</h4>
                     </li>
                     <li class="job-detail-list-item">
-                        <h3>CLOSING DATE: {{ jobpost.closing_date }}</h3>
+                        <h4>  LOCATION: '{{ jobpost.location }}',</h4>
+                    </li>
+                    <li class="job-detail-list-item">
+                        <h4>  CLOSING DATE: '{{ jobpost.closing_date }}',</h4>
+                    </li>
+                    <li class="job-detail-list-item">
+                        <h4>  JOB POSTED ON: '{{ jobpost.created_on }}',</h4>
+                    </li>
+                    <li class="job-detail-list-item">
+                        <h4>  CURRENT APPLICANTS: '{{ jobpost.applicants }}',</h4>
+                    </li>
+                    <li class="job-detail-list-item">
+                        <h4>}</h4>
                     </li>
                 </ul>
             </div>
@@ -80,6 +96,7 @@
     </div>
 </div>
 
+{% if user.is_authenticated %}
 {% for profile in userprofiles %}
 {% if profile.user == user %}
 {% if profile.job_seeker %}
@@ -87,10 +104,18 @@
     <a class="btn" href="{% url 'apply' jobpost.pk %}">Apply</a>
 </div>
 {% else %}
-<p>You need to update your profile to 'job seeker' if you wish to apply.</p>
+<div class="container">
+    <p class="center bold">You need to update your profile to 'job seeker' if you wish to apply.</p>
+</div>
 {% endif %}
 {% endif %}
 {% endfor %}
+
+{% else %}
+<div class="container">
+    <p class="center bold">Log in to apply.</p>
+</div>
+{% endif %}
 
 <div class="container">
     <p class="center bold">Posted By: {{ jobpost.posted_by }}  | Applicants: {{ jobpost.applicants }}</p>

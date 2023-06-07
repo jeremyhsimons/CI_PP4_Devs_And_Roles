@@ -161,13 +161,16 @@ nav {
 /*-------------------------------------------------- Job Detail page styles */
 
 .job-detail-list {
-    padding-top: 50px;
+    padding-top: 20px;
 }
 
 .job-detail-list-item {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
+.job-detail-list-item > h4 {
+    font-size: 150%;
+}
 /*-------------------------------------------------- View profile page styles */
 
 .side-nav {
