@@ -4,15 +4,45 @@
 {% load crispy_forms_tags %}
 
 {% if user.is_authenticated %}
-<h1>Create a blog post</h1>
 <div class="container">
-    <p>Posting as: {{ user.username }}</p>
-    <form method="POST" height="200px" >
-        {{ form | crispy }}
-        {% csrf_token %}
-        <button type="submit" class="btn">Submit</button>
-    </form>
-    <a href="{% url 'blog_list' %}" class="btn">Back</a>
+    <div class="card-panel light-green-bg">
+        <h2>Create a blog post:</h2>
+    </div>
+</div>
+
+<div class="container">
+    <h4 class="center">Posting as: {{ user.username }}</h4>
+    <div class="card-panel add-padding">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col s12">
+                    {{ form.title | as_crispy_field }}
+                </div>
+                <div class="col s12">
+                    {{ form.slug | as_crispy_field }}
+                </div>
+                <div class="col s12">
+                    {{ form.summary| as_crispy_field }}
+                </div>
+                <div class="col s12">
+                    {{ form.content | as_crispy_field }}
+                </div>
+                <div class="col s12">
+                    <p>Upload a featured image for your blog:</p>
+                    {{ form.featured_image }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn">Submit Blog Post</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <p class="center"><a href="{% url 'blog_list' %}" class="btn">Back</a></p>
+    </div>
 </div>
 {% else %}
 <div class="container">
