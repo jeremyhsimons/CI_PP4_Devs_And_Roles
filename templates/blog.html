@@ -5,10 +5,10 @@
     <p class="center-align"><a href="{% url 'create_blog_post' %}" class="btn">Write a blog post...</a></p>
 </div>
 <div class="row"></div>
-<div class="row">
+<div class="row container">
     {% for blog in blogpost_list %}
     <div class="col s12 m6 l4">
-        <div class="card">
+        <div class="card light-green-bg">
             <div class="card-image">
                 {% if "placeholder" in blog.featured_image.url %}
                 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="default picture of a laptop">
