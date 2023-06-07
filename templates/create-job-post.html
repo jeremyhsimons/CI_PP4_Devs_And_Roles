@@ -4,18 +4,58 @@
 {% load crispy_forms_tags %}
 
 {% if user.is_authenticated %}
-<h1>Create a job posting</h1>
+<div class="container dark-bg">
+    <h2 class="center white-text">Create a job posting:</h2>
+</div>
 <div class="container">
-    <p>Posting as: {{ user.username }}</p>
-    <form method="POST" height="200px" >
-        {{ form | crispy }}
-        {% csrf_token %}
-        <button type="submit" class="btn">submit</button>
-    </form>
+    <div class="card-panel light-green-bg">
+        <h3 class="center">Posting as: {{ user.username }}</h3>
+        <form method="POST" height="200px">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col s12 l6">
+                    {{ form.title | as_crispy_field }}
+                </div>
+                <div class="col s12 l6">
+                    {{ form.salary | as_crispy_field }}
+                </div>
+                <div class="col s12 l6">
+                    {{ form.location | as_crispy_field }}
+                </div>
+                <div class="col s12 l6">
+                    {{ form.closing_date | as_crispy_field }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <p>
+                        {{ form.featured_image | as_crispy_field }}
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    {{ form.company_overview | as_crispy_field }}
+                </div>
+                <div class="col s12">
+                    {{ form.job_description | as_crispy_field }}
+                </div>
+                <div class="col s12">
+                    {{ form.requirements | as_crispy_field }}
+                </div>
+                <div class="col s12">
+                    {{ form.benefits | as_crispy_field }}
+                </div>
+            </div>
+            <button type="submit" class="btn">submit</button>
+        </form>
+    </div>
 </div>
 {% else %}
 <div class="container">
-    <p>You must be signed in to create a job posting</p>
+    <div class="card-panel">
+        <p class="center">You must be signed in to create a job posting</p>
+    </div>
 </div>
 {% endif %}
 
