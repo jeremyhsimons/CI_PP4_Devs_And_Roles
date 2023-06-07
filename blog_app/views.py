@@ -30,26 +30,24 @@ class WriteBlog(generic.CreateView):
     template_name = 'create_blog_post.html'
 
     def post(self, request, *args, **kwargs):
-        blogpost_form = BlogPostForm(data=request.POST)
+        blogpost_form = BlogPostForm(request.POST, request.FILES)
 
         if blogpost_form.is_valid():
+            print(blogpost_form.instance.featured_image)
             blogpost_form.instance.posted_by = request.user
             messages.success(
                 request,
                 'BLOG POST SUBMITTED SUCCESSFULLY.'
             )
             blogpost_form.save()
+            return redirect('blog_list')
         else:
             messages.error(
                 request,
                 'BLOG POST NOT SUBMITTED. PLEASE COMPLETE ALL FIELDS.'
             )
             blogpost_form = BlogPostForm()
-
-        return render(
-            request,
-            'create_blog_post.html'
-        )
+            return redirect('create_blog_post')
 
 
 class BlogView(View):
@@ -137,13 +135,17 @@ class UpdateBlog(generic.UpdateView):
         )
 
     def post(self, request, slug, *args, **kwargs):
-        updateblog_form = UpdateBlogForm(data=request.POST)
+        updateblog_form = UpdateBlogForm(request.POST, request.FILES)
 
         if updateblog_form.is_valid():
             messages.success(request, 'BLOG POST UPDATED SUCCESSFULLY')
             updateblog_form.instance.posted_by = request.user
             updateblog_form.save()
         else:
+            print(updateblog_form.instance.title)
+            print(updateblog_form.instance.summary)
+            print(updateblog_form.instance.content)
+            print(updateblog_form.instance.featured_image)
             messages.error(
                 request, 'PLEASE COMPLETE ALL FIELDS BEFORE SUBMITTING')
             updateblog_form = BlogPostForm()

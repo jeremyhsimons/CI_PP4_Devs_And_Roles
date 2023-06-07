@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% load cloudinary %}
 
 {% load crispy_forms_tags %}
 
@@ -13,20 +14,20 @@
 <div class="container">
     <h4 class="center">Posting as: {{ user.username }}</h4>
     <div class="card-panel add-padding">
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="row">
                 <div class="col s12">
-                    {{ form.title | as_crispy_field }}
+                    {{ form.title }}
                 </div>
                 <div class="col s12">
-                    {{ form.slug | as_crispy_field }}
+                    {{ form.slug }}
                 </div>
                 <div class="col s12">
-                    {{ form.summary| as_crispy_field }}
+                    {{ form.summary }}
                 </div>
                 <div class="col s12">
-                    {{ form.content | as_crispy_field }}
+                    {{ form.content }}
                 </div>
                 <div class="col s12">
                     <p>Upload a featured image for your blog:</p>
@@ -34,7 +35,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col s12">
                     <button type="submit" class="btn">Submit Blog Post</button>
                 </div>
             </div>

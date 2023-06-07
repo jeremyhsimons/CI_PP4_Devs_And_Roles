@@ -5,20 +5,46 @@
 
 {% if user.is_authenticated %}
 {% if user == blog.posted_by %}
-<h1>Edit blog post:</h1>
+<div class="container light-green-bg add-padding">
+    <h2>Edit blog post:</h2>
+</div>
 <div class="container">
-    <p>Posting as: {{ user.username }}</p>
-    <form method="POST">
-        {{ form | crispy }}
-        {% csrf_token %}
-        <button type="submit" class="btn">Submit</button>
-    </form>
-    <a href="{% url 'blog_list' %}" class="btn">Back</a>
+    <h4 class="center">Posting as: {{ user.username }}</h4>
+    <div class="card-panel add-padding">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col s12">
+                    {{ form.title | as_crispy_field }}
+                </div>
+                <div class="col s12">
+                    {{ form.summary| as_crispy_field }}
+                </div>
+                <div class="col s12">
+                    {{ form.content | as_crispy_field }}
+                </div>
+                <div class="col s12">
+                    <p>Upload or reupload a featured image for your blog:</p>
+                    {{ form.featured_image }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <button type="submit" class="btn">Apply Edits</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <p class="center"><a href="{% url 'blog_list' %}" class="btn">Back</a></p>
+    </div>
 </div>
 {% endif %}
 {% else %}
 <div class="container">
-    <p>You must be signed AND have the correct permissions to edit this blog post</p>
+    <div class="card-panel">
+        <p class="center">You must be signed AND have the correct permissions to edit this blog post</p>
+    </div>
 </div>
 {% endif %}
 
