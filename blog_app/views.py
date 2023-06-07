@@ -135,17 +135,15 @@ class UpdateBlog(generic.UpdateView):
         )
 
     def post(self, request, slug, *args, **kwargs):
+        blog = get_object_or_404(BlogPost, slug=slug)
         updateblog_form = UpdateBlogForm(request.POST, request.FILES)
 
         if updateblog_form.is_valid():
             messages.success(request, 'BLOG POST UPDATED SUCCESSFULLY')
             updateblog_form.instance.posted_by = request.user
+            updateblog_form.instance.slug = blog.slug
             updateblog_form.save()
         else:
-            print(updateblog_form.instance.title)
-            print(updateblog_form.instance.summary)
-            print(updateblog_form.instance.content)
-            print(updateblog_form.instance.featured_image)
             messages.error(
                 request, 'PLEASE COMPLETE ALL FIELDS BEFORE SUBMITTING')
             updateblog_form = BlogPostForm()

@@ -50,7 +50,7 @@ class CreateJobPosting(generic.CreateView):
     template_name = 'create-job-post.html'
 
     def post(self, request, *args, **kwargs):
-        jobpost_form = JobPostingForm(data=request.POST)
+        jobpost_form = JobPostingForm(request.POST, request.FILES)
 
         if jobpost_form.is_valid():
             jobpost_form.instance.posted_by = request.user
