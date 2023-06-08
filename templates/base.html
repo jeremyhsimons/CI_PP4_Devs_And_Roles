@@ -183,6 +183,19 @@
             let modalsInstances = M.Modal.init(modals);
         });
 
+        //Open Edit Warning Modals
+        document.addEventListener('DOMContentLoaded', function () {
+            const editBlog = document.getElementById('editblogmodal');
+            let instance = M.Modal.init(editBlog);
+            instance.open()
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const editJob = document.getElementById('editjobmodal');
+            let instance = M.Modal.init(editJob);
+            instance.open();
+        });
+
         //Initialise dropdown
         document.addEventListener('DOMContentLoaded', function () {
             let dropdowns = document.querySelectorAll('.dropdown-trigger');

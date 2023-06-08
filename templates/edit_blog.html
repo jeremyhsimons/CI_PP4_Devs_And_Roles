@@ -3,6 +3,8 @@
 
 {% load crispy_forms_tags %}
 
+{% block edit_blog_modal %}{% include 'edit_blog_modal.html' %}{% endblock edit_blog_modal %}
+
 {% if user.is_authenticated %}
 {% if user == blog.posted_by %}
 <div class="container light-green-bg add-padding">

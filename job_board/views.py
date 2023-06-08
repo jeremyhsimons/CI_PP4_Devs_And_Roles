@@ -105,7 +105,10 @@ class UpdateJobPosting(generic.UpdateView):
         return render(
             request,
             'update-job-post.html',
-            {'form': form, }
+            {
+                'form': form,
+                'jobpost': jobpost,
+            }
         )
 
     def post(self, request, pk, *args, **kwargs):

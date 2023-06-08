@@ -3,15 +3,65 @@
 
 {% load crispy_forms_tags %}
 
+{% block edit_job_modal %}{% include 'edit_job_modal.html' %}{% endblock edit_job_modal %}
+
 {% if user.is_authenticated %}
 <div class="container">
-    <h1>Edit your job posting</h1>
-    <p>Posting as: {{ user.username }}</p>
-    <form method="POST">
-        {{ form.as_p }}
-        {% csrf_token %}
-        <button type="submit" class="btn">submit</button>
-    </form>
+    <div class="row dark-bg add-padding">
+        <h1 class="center white-text">Edit your job posting</h1>
+    </div>
+    <div class="card-panel">
+        <p>Posting as: {{ user.username }}</p>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col s12 l6">
+                    {{ form.title | as_crispy_field }}
+                </div>
+                <div class="col s12 l6">
+                    {{ form.salary | as_crispy_field }}
+                </div>
+                <div class="col s12 l6">
+                    {{ form.location | as_crispy_field }}
+                </div>
+                <div class="col s12 l6">
+                    {{ form.closing_date | as_crispy_field }}
+                </div>
+            </div>
+            <div class="row light-green-bg">
+                <div class="col s12">
+                    <p>
+                        <p class="bold">Upload or reupload a featured image for your job posting:</p>
+                        {{ form.featured_image }}
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    {{ form.company_overview | as_crispy_field }}
+                </div>
+                <div class="col s12">
+                    {{ form.job_description | as_crispy_field }}
+                </div>
+                <div class="col s12">
+                    {{ form.requirements | as_crispy_field }}
+                </div>
+                <div class="col s12">
+                    {{ form.benefits | as_crispy_field }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <button type="submit" class="btn">Apply Edits</button>
+                </div>
+                <div class="row"></div>
+                <div class="col s12 ">
+                    <a href="{% url 'job-post-detail' jobpost.pk %}" class="btn">BACK</a>
+                </div>
+            </div>
+            
+        </form>
+    </div>
 </div>
 {% else %}
 <div class="container">
