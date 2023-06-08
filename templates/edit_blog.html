@@ -13,7 +13,7 @@
 <div class="container">
     <h4 class="center">Posting as: {{ user.username }}</h4>
     <div class="card-panel add-padding">
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="row">
                 <div class="col s12">

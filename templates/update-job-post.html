@@ -12,7 +12,7 @@
     </div>
     <div class="card-panel">
         <p>Posting as: {{ user.username }}</p>
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="row">
                 <div class="col s12 l6">
@@ -32,7 +32,7 @@
                 <div class="col s12">
                     <p>
                         <p class="bold">Upload or reupload a featured image for your job posting:</p>
-                        {{ form.featured_image }}
+                        {{ form.featured_image | as_crispy_field }}
                     </p>
                 </div>
             </div>

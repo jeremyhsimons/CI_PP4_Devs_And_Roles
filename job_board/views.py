@@ -114,7 +114,9 @@ class UpdateJobPosting(generic.UpdateView):
     def post(self, request, pk, *args, **kwargs):
         queryset = JobPosting.objects.filter(approved=True)
         jobpost = get_object_or_404(queryset, pk=pk)
-        updated_form = JobPostingForm(data=request.POST, instance=jobpost)
+        updated_form = JobPostingForm(
+            request.POST, request.FILES, instance=jobpost
+            )
 
         if updated_form.is_valid():
             updated_form.instance.posted_by = request.user
@@ -128,7 +130,10 @@ class UpdateJobPosting(generic.UpdateView):
             return render(
                 request,
                 'update-job-post.html',
-                {'form': updated_form, }
+                {
+                    'form': form,
+                    'jobpost': jobpost,
+                }
             )
 
 

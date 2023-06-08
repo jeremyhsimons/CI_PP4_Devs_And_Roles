@@ -136,13 +136,11 @@ class UpdateBlog(generic.UpdateView):
 
     def post(self, request, slug, *args, **kwargs):
         blog = get_object_or_404(BlogPost, slug=slug)
-        updateblog_form = UpdateBlogForm(request.POST, request.FILES)
+        updateblog_form = UpdateBlogForm(
+            request.POST, request.FILES, instance=blog
+            )
 
         if updateblog_form.is_valid():
-            try:
-                blog.delete()
-            except BlogPost.DoesNotExist:
-                pass
             updateblog_form.instance.posted_by = request.user
             updateblog_form.instance.slug = blog.slug
             updateblog_form.instance.created_on = blog.created_on
@@ -153,7 +151,7 @@ class UpdateBlog(generic.UpdateView):
             messages.error(
                 request, 'PLEASE COMPLETE ALL FIELDS BEFORE SUBMITTING')
             updateblog_form = BlogPostForm()
-            return redirect('edit_blog')
+            return redirect('blog_list')
 
 
 @login_required
