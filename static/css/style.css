@@ -112,6 +112,7 @@ nav {
     font-size: 110%;
     max-width: 500px;
     margin: auto;
+    border-radius: 20px;
 }
 
 #bottom-footer {

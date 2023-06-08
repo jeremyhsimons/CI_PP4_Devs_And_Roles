@@ -2,24 +2,24 @@
 {% block content %}
 <section>
     <div class="row no-margin-bottom c">
-        <div class="col s12 l2 side-nav pinned offset-l1">
-            <h5 class="bold center-align">Options:</h5>
+        <div class="col s12 l2 side-nav offset-l1">
+            <h5 class="bold center">Options:</h5>
             <div class="divider"></div>
             <div class="row"></div>
             <ul>
-                <li class="container center-align">
+                <li class="container center">
                     <a class="btn" href="{% url 'edit_profile' %}">Edit</a>
                 </li>
                 <div class="row"></div>
-                <li class="container center-align">
+                <li class="container center">
                     <a class="btn red lighten-1" href="{% url 'delete_profile' %}">Delete</a>
                 </li>
                 <div class="row"></div>
-                <li class="container center-align">
+                <li class="container center">
                     <a class="btn" href="#messages">Messages</a>
                 </li>
                 <div class="row"></div>
-                <li class="container center-align">
+                <li class="container center">
                     <a class="btn" href="{% url 'home' %}">Back</a>
                 </li>
             </ul>
@@ -33,19 +33,19 @@
                         <h5>Details:</h5>
                         <div class="row">
                             <div class="col s12 l6">
-                                <p>Location: {{ profile.location }}</p>
+                                <p>- Location: {{ profile.location }}</p>
                             </div>
                             <div class="col s12 l6">
-                                <p>Years of experience: {{ profile.years_experience }}</p>
+                                <p>- Years of experience: {{ profile.years_experience }}</p>
                             </div>
                             <div class="col s12 l6">
                                 {% if profile.job_seeker %}
-                                <p>I'm currently open to new roles!</p>
+                                <p>- I'm currently open to new roles!</p>
                                 {% endif %}
                             </div>
                             <div class="col s12 l6">
                                 {% if profile.recruiter %}
-                                <p>I'm currently hiring! Connect with me on my social links below!</p>
+                                <p>- I'm currently hiring! Connect with me on my social links below!</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -97,8 +97,8 @@
                         </div>
                         {% endfor %}
                         {% else %}
-                        <div class="card-panel">
-                            <p>You do not have any messages.</p>
+                        <div class="card-panel dark-bg">
+                            <p>You do not currently have any messages.</p>
                         </div>
                         {% endif %}
                     </div>
