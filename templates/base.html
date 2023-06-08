@@ -225,6 +225,39 @@
         for (asterisk of asterisks) {
             asterisk.remove()
         };
+
+        document.addEventListener('DOMContentLoaded', function(){
+            const applyButton = document.getElementById('apply');
+            applyButton.addEventListener('mouseenter', () => {
+                console.log(applyButton)
+                M.toast({ html: 'WARNING: Once you submit, You cannot change your application!', classes: 'red darken-4'});
+            }); 
+        });
+
+        document.addEventListener('DOMContentLoaded', function(){
+            // Alert the user to the permanent deletion of account.
+            const deleteButton = document.getElementById('delete');
+            deleteButton.addEventListener('mouseenter', () => {
+                console.log('hello');
+                M.toast({ html: 'WARNING: This action is not reversible.' , classes: 'red darken-4'});
+            });
+
+        });
+
+        // // Dismiss toasts when clicked.
+        // let toastElement = document.querySelector('.toast');
+        // toastElement.addEventListener('click', () => {
+        //     let toastInstance = M.Toast.getInstance(toastElement);
+        //     return toastInstance.dismiss();
+        // })
+
+        let jobSeekerDiv = document.getElementById('div_id_job_seeker');
+        let jobSeekerInput = document.getElementById('id_job_seeker');
+        jobSeekerDiv.replaceWith(jobSeekerInput);
+
+        let recruiterDiv = document.getElementById('div_id_recruiter');
+        let recruiterInput = document.getElementById('id_recruiter');
+        recruiterDiv.replaceWith(recruiterInput);
     </script>
 
 </body>

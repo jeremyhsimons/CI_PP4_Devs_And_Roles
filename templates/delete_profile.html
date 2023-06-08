@@ -1,35 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 <section>
-    <div class="container">
-        <h1>Are you sure you want to delete your profie?</h1>
-        <h2>
+    <div class="container add-padding dark-bg">
+        <h2 class="white-text">Are you sure you want to delete your profie?</h2>
+        <h4 class="white-text">
             Deleting your profile will also delete your account, 
             and your username and password will be un-usable for this site in future.
-        </h2>
+        </h4>
     </div>
     <div class="container">
-        <div class="card-panel">
-            <form method="POST" height="200px">
-                {% csrf_token %}
-                <button type="submit" id="delete" class="btn">Delete</button>
-            </form>
-            <a href="{% url 'view_profile' %}" class="btn">Back</a>
+        <form method="POST" class="center add-padding">
+            {% csrf_token %}
+            <button type="submit" id="delete" class="btn red center">Delete</button>
+        </form>
+        <div class="row">
+            <div class="col s12 center">
+                <a href="{% url 'view_profile' %}" class="btn center-align">Back</a>
+            </div>
         </div>
+
+
     </div>
 </section>
-<script>
-    // Alert the user to the permanent deletion of account.
-    let deleteButton = document.getElementById('delete');
-    deleteButton.addEventListener('mouseenter', () => {
-        M.toast({ html: 'This action is not reversible.' })
-    })
 
-    // Dismiss the alert when clicked.
-    let toastElement = document.querySelector('.toast');
-    toastElement.addEventListener('click', () => {
-        let toastInstance = M.Toast.getInstance(toastElement);
-        return toastInstance.dismiss();
-    })
-</script>
 {% endblock %}
