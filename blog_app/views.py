@@ -139,19 +139,21 @@ class UpdateBlog(generic.UpdateView):
         updateblog_form = UpdateBlogForm(request.POST, request.FILES)
 
         if updateblog_form.is_valid():
-            messages.success(request, 'BLOG POST UPDATED SUCCESSFULLY')
+            try:
+                blog.delete()
+            except BlogPost.DoesNotExist:
+                pass
             updateblog_form.instance.posted_by = request.user
             updateblog_form.instance.slug = blog.slug
+            updateblog_form.instance.created_on = blog.created_on
+            messages.success(request, 'BLOG POST UPDATED SUCCESSFULLY')
             updateblog_form.save()
+            return redirect('blog_list')
         else:
             messages.error(
                 request, 'PLEASE COMPLETE ALL FIELDS BEFORE SUBMITTING')
             updateblog_form = BlogPostForm()
-
-        return render(
-            request,
-            'edit_blog.html'
-        )
+            return redirect('edit_blog')
 
 
 @login_required
