@@ -42,17 +42,24 @@
         {% endfor %}
     </div>
     {% if is_paginated %}
-    <nav aria-label="Page navigation" class="pagination-card">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li class="pagination-control left"><a href="?page={{ page_obj.previous_page_number }}" class="page-link white-text left-align">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li class="pagination-control right"><a href="?page={{ page_obj.next_page_number }}" class="white-text right-align"> NEXT &raquo;</a></li>
+    <div class="row">
+        <div class="col s12">
+            <nav aria-label="Page navigation" class="pagination-card">
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                    <li class="pagination-control left"><a href="?page={{ page_obj.previous_page_number }}"
+                            class="page-link white-text left-align">&laquo; PREV </a></li>
+                    {% endif %}
+                    {% if page_obj.has_next %}
+                    <li class="pagination-control right"><a href="?page={{ page_obj.next_page_number }}"
+                            class="white-text right-align"> NEXT &raquo;</a></li>
+            
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
 
-            {% endif %}
-        </ul>
-    </nav>
     {% endif %}
 
     {% endblock %}
