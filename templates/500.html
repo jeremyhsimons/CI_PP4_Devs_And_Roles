@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row container">
+    <div class="col s12 card-panel dark-bg add-padding">
+        <h1 class="white-text center">500 - Internal Server Error</h1>
+        <p class="white-text center">Please excuse us while we have a minor meltdown...</p>
+        <a href="{% url 'home' %}" class="btn">RETURN HOME</a>
+    </div>
+</div>
+
+{% endblock %}

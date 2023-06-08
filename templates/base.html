@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <!--Materialize CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Devs & Roles</title>
 </head>
 
@@ -45,7 +47,6 @@
                     <a href="{% url 'see_all' %}">Candidates</a>
                 </li>
             </ul>
-            
             {% endif %}
             {% if profile.job_seeker %}
             <li>
@@ -171,94 +172,10 @@
 
     <!--Fontawesome-->
     <script src="https://kit.fontawesome.com/7f6a607fdc.js" crossorigin="anonymous"></script>
-    <!--JQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <!--Materialize.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <script>
-        //Initialise modals
-        document.addEventListener('DOMContentLoaded', function () {
-            let modals = document.querySelectorAll('.modal');
-            let modalsInstances = M.Modal.init(modals);
-        });
-
-        //Open Edit Warning Modals
-        document.addEventListener('DOMContentLoaded', function () {
-            const editBlog = document.getElementById('editblogmodal');
-            let instance = M.Modal.init(editBlog);
-            instance.open()
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const editJob = document.getElementById('editjobmodal');
-            let instance = M.Modal.init(editJob);
-            instance.open();
-        });
-
-        //Initialise dropdown
-        document.addEventListener('DOMContentLoaded', function () {
-            let dropdowns = document.querySelectorAll('.dropdown-trigger');
-            let dropdownsInstances = M.Dropdown.init(dropdowns);
-        });
-
-        //Initialise sidenav
-        document.addEventListener('DOMContentLoaded', function () {
-            let sidenavs = document.querySelectorAll('.sidenav');
-            var sidenavInstances = M.Sidenav.init(sidenavs);
-        });
-
-        //Fix bug that doesn't auto-apply materialize styles to textareas
-        let textareas = document.querySelectorAll('.textarea');
-        for (let i = 0; i < textareas.length; i++) {
-            textareas[i].className = 'materialize-textarea';
-        };
-
-        //Alter form labels to be a darker shade.
-        let labels = document.querySelectorAll('label');
-        for (let i = 0; i < labels.length; i++) {
-            labels[i].className = 'black-text';
-        };
-
-        //Remove asterisks from forms
-        let asterisks = document.querySelectorAll('.asterisk');
-        for (asterisk of asterisks) {
-            asterisk.remove()
-        };
-
-        document.addEventListener('DOMContentLoaded', function(){
-            const applyButton = document.getElementById('apply');
-            applyButton.addEventListener('mouseenter', () => {
-                console.log(applyButton)
-                M.toast({ html: 'WARNING: Once you submit, You cannot change your application!', classes: 'red darken-4'});
-            }); 
-        });
-
-        document.addEventListener('DOMContentLoaded', function(){
-            // Alert the user to the permanent deletion of account.
-            const deleteButton = document.getElementById('delete');
-            deleteButton.addEventListener('mouseenter', () => {
-                console.log('hello');
-                M.toast({ html: 'WARNING: This action is not reversible.' , classes: 'red darken-4'});
-            });
-
-        });
-
-        // // Dismiss toasts when clicked.
-        // let toastElement = document.querySelector('.toast');
-        // toastElement.addEventListener('click', () => {
-        //     let toastInstance = M.Toast.getInstance(toastElement);
-        //     return toastInstance.dismiss();
-        // })
-
-        let jobSeekerDiv = document.getElementById('div_id_job_seeker');
-        let jobSeekerInput = document.getElementById('id_job_seeker');
-        jobSeekerDiv.replaceWith(jobSeekerInput);
-
-        let recruiterDiv = document.getElementById('div_id_recruiter');
-        let recruiterInput = document.getElementById('id_recruiter');
-        recruiterDiv.replaceWith(recruiterInput);
-    </script>
+    <!--Custom JS-->
+    <script defer type="text/javascript" src="{% static 'js/script.js' %}"></script>
 
 </body>
 
