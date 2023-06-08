@@ -108,10 +108,10 @@ nav {
     background-color: #CDF4DC;
 }
 
-.chip {
-    padding-left: 10px;
-    padding-right: 10px;
+.message-popup {
     font-size: 110%;
+    max-width: 500px;
+    margin: auto;
 }
 
 #bottom-footer {
@@ -153,6 +153,7 @@ nav {
 
 .pagination-card {
     width: 40%;
+    min-width: 200px;
     margin: auto;
     margin-bottom: 50px;
 }
@@ -234,7 +235,40 @@ nav {
 
 /*------------------------------------------------------------- Media Queries */
 
+@media screen and (max-width: 600px) {
+
+    #logo {
+        font-size: 300%;
+    }
+
+    main {
+        background: rgb(190, 204, 188);
+    }
+
+    h1 {
+        font-size: 220%;
+    }
+
+    h2 {
+        font-size: 220%;
+    }
+
+    h3 {
+        font-size: 150%;
+    }
+
+    h4, h5 {
+        font-size: 120%;
+    }
+
+    .message-popup {
+        min-width: 100%;
+        min-height: 20px;
+    }
+}
+
 @media screen and (max-width: 992px) {
+
     .side-nav {
         position: relative;
     }

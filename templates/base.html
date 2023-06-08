@@ -3,33 +3,97 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="Devs & Roles job board and blog for tech professionals to connect and converse.">
-    <meta name="keywords" content="jobs,blog,application,messaging,job-seeker,recruiter,careers,social">
-    <meta name="author" content="Jeremy Simons">
-    <!--Google fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <!--Materialize CDN-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!--Favicon-->
-    <link rel="icon" type="image/xicon" href="{% static 'favicon/favicon.png' %}">
-    <title>Devs & Roles</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta name="description" content="Devs & Roles job board and blog for tech professionals to connect and converse.">
+        <meta name="keywords" content="jobs,blog,application,messaging,job-seeker,recruiter,careers,social">
+        <meta name="author" content="Jeremy Simons">
+        <!--Google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+        <!--Materialize CDN-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <!--Favicon-->
+        <link rel="icon" type="image/xicon" href="{% static 'favicon/favicon.png' %}">
+        <title>Devs & Roles</title>
+    </head>
 
-<body>
-    <!--Navigation for desktop-->
-    <header>
-        <h1>DEVS_&_ROLES</h1>
-    </header>
-    <nav>
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-        <ul class="hide-on-med-and-down">
+    <body>
+        <!--Navigation for desktop-->
+        <header>
+            <h1 id="logo">DEVS_&_ROLES</h1>
+        </header>
+        <nav>
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+            <ul class="hide-on-med-and-down">
+                <li>
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'contact' %}">Contact</a>
+                </li>
+                {% for profile in userprofiles %}
+                {% if profile.user == user %}
+                {% if profile.recruiter %}
+                <li>
+                    <a class='dropdown-trigger' href='#' data-target='dropdown1'>RECRUITERS</a>
+                </li>
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li>
+                        <a href="{% url 'create-job-post' %}">Create a Job posting</a>
+                    </li>
+                    <li class="divider" tabindex="-1"></li>
+                    <li>
+                        <a href="{% url 'see_all' %}">Candidates</a>
+                    </li>
+                </ul>
+                {% endif %}
+                {% if profile.job_seeker %}
+                <li>
+                    <a href="{% url 'my_applications' %}">Track Applications</a>
+                </li>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+                <li>
+                    <a href="{% url 'blog_list' %}">Blog</a>
+                </li>
+                <li>
+                    <a href="{% url 'view_profile' %}">View Profile</a>
+                </li>
+                {% endif %}
+            </ul>
+            <ul class="right">
+                <li>
+                    <a class='dropdown-trigger' href='#' data-target='dropdown2'><i class="fa-solid fa-user"></i><span class="hide-on-med-and-down"> Account</span></a>
+                </li>
+            </ul>
+
+            <ul id='dropdown2' class='dropdown-content'>
+                {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'account_logout' %}">Logout</a>
+                </li>
+                <li class="divider" tabindex="-1"></li>
+                {% else %}
+                <li>
+                    <a href="{% url 'account_signup' %}">Register</a>
+                </li>
+                <li class="divider" tabindex="-1"></li>
+                <li>
+                    <a href="{% url 'account_login' %}">Login</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+
+        <!--Sidenav-->
+        <ul id="slide-out" class="sidenav">
             <li>
                 <a href="{% url 'home' %}">Home</a>
             </li>
@@ -41,9 +105,9 @@
             {% if profile.user == user %}
             {% if profile.recruiter %}
             <li>
-                <a class='dropdown-trigger' href='#' data-target='dropdown1'>RECRUITERS</a>
+                <a class='dropdown-trigger' href='#' data-target='dropdown3'>RECRUITERS</a>
             </li>
-            <ul id='dropdown1' class='dropdown-content'>
+            <ul id='dropdown3' class='dropdown-content'>
                 <li>
                     <a href="{% url 'create-job-post' %}">Create a Job posting</a>
                 </li>
@@ -52,6 +116,7 @@
                     <a href="{% url 'see_all' %}">Candidates</a>
                 </li>
             </ul>
+        
             {% endif %}
             {% if profile.job_seeker %}
             <li>
@@ -68,120 +133,56 @@
             </li>
             {% endif %}
         </ul>
-        <ul class="right">
-            <li>
-                <a class='dropdown-trigger' href='#' data-target='dropdown2'><i class="fa-solid fa-user"></i><span class="hide-on-med-and-down"> Account</span></a>
-            </li>
-        </ul>
 
-        <ul id='dropdown2' class='dropdown-content'>
-            {% if user.is_authenticated %}
-            <li>
-                <a href="{% url 'account_logout' %}">Logout</a>
-            </li>
-            <li class="divider" tabindex="-1"></li>
-            {% else %}
-            <li>
-                <a href="{% url 'account_signup' %}">Register</a>
-            </li>
-            <li class="divider" tabindex="-1"></li>
-            <li>
-                <a href="{% url 'account_login' %}">Login</a>
-            </li>
-            {% endif %}
-        </ul>
-    </nav>
-
-    <!--Sidenav-->
-    <ul id="slide-out" class="sidenav">
-        <li>
-            <a href="{% url 'home' %}">Home</a>
-        </li>
-        {% if user.is_authenticated %}
-        <li>
-            <a href="{% url 'contact' %}">Contact</a>
-        </li>
-        {% for profile in userprofiles %}
-        {% if profile.user == user %}
-        {% if profile.recruiter %}
-        <li>
-            <a class='dropdown-trigger' href='#' data-target='dropdown3'>RECRUITERS</a>
-        </li>
-        <ul id='dropdown3' class='dropdown-content'>
-            <li>
-                <a href="{% url 'create-job-post' %}">Create a Job posting</a>
-            </li>
-            <li class="divider" tabindex="-1"></li>
-            <li>
-                <a href="{% url 'see_all' %}">Candidates</a>
-            </li>
-        </ul>
-    
-        {% endif %}
-        {% if profile.job_seeker %}
-        <li>
-            <a href="{% url 'my_applications' %}">Track Applications</a>
-        </li>
-        {% endif %}
-        {% endif %}
-        {% endfor %}
-        <li>
-            <a href="{% url 'blog_list' %}">Blog</a>
-        </li>
-        <li>
-            <a href="{% url 'view_profile' %}">View Profile</a>
-        </li>
-        {% endif %}
-    </ul>
-
-    <!--Page content-->
-    <main>
-        <div id="message-row" class="row add-padding">
-            <div class="center col s8 offset-s2">
-                {% for message in messages %}
-                <div class="chip {{ message.tags }}">
-                    {{ message | safe }}
-                    <i class="close fa-regular fa-circle-xmark"></i>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        {% block content %}
-        {% endblock content %}
-    </main>
-
-    <!--footer-->
-    <footer class="page-footer">
-        <div class="container hide-on-med-and-down">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Find Roles and Developers. Fast.</h5>
-                    <p class="grey-text text-lighten-4">Devs & Roles: The new community of software and hiring professionals.
-                    </p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Not happy with the site?</h5>
-                    <ul>
-                        <li><a class="waves-effect waves-light grey-text text-lighten-3" href="{% url 'contact' %}"><i class="fa-solid fa-envelope"></i> Reach out</a></li>
-                    </ul>
+        <!--Page content-->
+        <main>
+            <div id="message-row" class="row add-padding">
+                <div class="center col s8 offset-s2">
+                    {% for message in messages %}
+                    <div class="container">
+                        <div id="msg" class=" center card-panel message-popup {{ message.tags }}">
+                            {{ message | safe }}
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
-        </div>
-        <div id="bottom-footer" class="footer-copyright">
-            <div class="container">
-                © 2023 Jeremy Simons
-                <a class="grey-text text-lighten-4 right waves-effect waves-light" href=""><i class="fa-brands fa-github"></i> <span class="hide-on-med-and-down">Follow me on GitHub</span></a>
+            {% block content %}
+            {% endblock content %}
+        </main>
+
+        <!--footer-->
+        <footer class="page-footer">
+            <div class="container hide-on-med-and-down">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Find Roles and Developers. Fast.</h5>
+                        <p class="grey-text text-lighten-4">Devs & Roles: The new community of software and hiring professionals.
+                        </p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Not happy with the site?</h5>
+                        <ul>
+                            <li><a class="waves-effect waves-light grey-text text-lighten-3" href="{% url 'contact' %}"><i class="fa-solid fa-envelope"></i> Reach out</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+            <div id="bottom-footer" class="footer-copyright">
+                <div class="container">
+                    © 2023 Jeremy Simons
+                    <a class="grey-text text-lighten-4 right waves-effect waves-light" href=""><i class="fa-brands fa-github"></i> <span class="hide-on-med-and-down">Follow me on GitHub</span></a>
+                </div>
+            </div>
+        </footer>
 
-    <!--Fontawesome-->
-    <script src="https://kit.fontawesome.com/7f6a607fdc.js" crossorigin="anonymous"></script>
-    <!--Materialize.js-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!--Custom JS-->
-    <script defer type="text/javascript" src="{% static 'js/script.js' %}"></script>
+        <!--Fontawesome-->
+        <script src="https://kit.fontawesome.com/7f6a607fdc.js" crossorigin="anonymous"></script>
+        <!--Materialize.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!--Custom JS-->
+        <script defer type="text/javascript" src="{% static 'js/script.js' %}"></script>
 
-</body>
+    </body>
 
 </html>

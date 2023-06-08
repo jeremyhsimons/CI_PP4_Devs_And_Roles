@@ -1,5 +1,3 @@
-console.log('hello world')
-
 //Initialise modals
 document.addEventListener('DOMContentLoaded', function () {
     let modals = document.querySelectorAll('.modal');
@@ -48,6 +46,12 @@ let asterisks = document.querySelectorAll('.asterisk');
 for (asterisk of asterisks) {
     asterisk.remove();
 };
+
+//Messages disappear after 3 seconds.
+setTimeout(function () {
+    let message = document.getElementById("msg");
+    message.remove()
+}, 3000);
 
 document.addEventListener('DOMContentLoaded', function () {
     const applyButton = document.getElementById('apply');
