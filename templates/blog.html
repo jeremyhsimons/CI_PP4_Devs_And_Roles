@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
+
+{% load static %}
+
 <div class="container"></div>
     <h2 class="white-text center-align dark-bg container add-padding">View the latest posts from the community:</h2>
     <p class="center-align"><a href="{% url 'create_blog_post' %}" class="btn">Write a blog post...</a></p>
@@ -11,7 +14,7 @@
         <div class="card light-green-bg">
             <div class="card-image">
                 {% if "placeholder" in blog.featured_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="default picture of a laptop">
+                <img src="{% static 'images/typewriter.webp' %}" alt="default picture of a laptop">
                 {% else %}
                 <img src="{{ blog.featured_image.url }}" alt="job posting featured image">
                 {% endif %}

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% load static %}
 
 <!--Job posting list-->
 <div class="home-container">
@@ -23,7 +24,7 @@
                     <div class="row">
                         <div class="col s6">
                             {% if "placeholder" in job.featured_image.url %}
-                            <img class="home-featured-image" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="default picture of a laptop">
+                            <img class="home-featured-image" src="{% static 'images/code.webp' %}" alt="default picture of a laptop">
                             {% else %}
                             <img class="home-featured-image" src="{{ job.featured_image.url }}" alt="job posting featured image">
                             {% endif %}
