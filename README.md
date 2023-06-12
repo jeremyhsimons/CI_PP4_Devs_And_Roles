@@ -16,6 +16,8 @@ Developed by Jeremy Simons
     * [User requirements](#user-requirements)
     * [User Manual](#user-manual)
     * [User Stories](#user-stories)
+* [Design](#design)
+    * [wireframes](#wireframes)
 * [Technical Design](#technical-design)
     * [Data Models](#data-models)
     * [Database Schema](#database-schema)
@@ -45,8 +47,8 @@ Developed by Jeremy Simons
 
 ### User requirements
 
-
 ### User Manual
+
 Click the dropdown to view the user manual:
 <details>
 <summary>User Manual</summary>
@@ -90,6 +92,9 @@ Upon completing any of the above actions, the user should be notified with a pop
 
 #### As the site owner...
 
+## Design
+
+### Wireframes
 
 ## Technical Design
 
@@ -275,8 +280,10 @@ Unit test suites were written for all the models.py, forms.py, and views.py of e
 #### 3rd party Python libraries/modules
 
 #### Code found online when solving bugs in own code.
+* credits to the CI team for the code used to fetch/display git hub profile information
 
 ### Acknowledgements
 
 * Thanks to my Mentor Mo Shami for his immensely valuable feedback, advice and encouragement throughout this project. Thanks for pushing me to do the best I can!
-* Thanks to the wonderful CI London Community for all the moral support!
+* Thanks to the wonderful CI London Community for all the moral support!.
+* Thanks to Oli for his user acceptance tesing and feedback. Cheers for breaking my site...
