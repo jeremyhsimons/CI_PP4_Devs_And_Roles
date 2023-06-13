@@ -1,13 +1,21 @@
-# **Dungeon Escape**
+# **Devs and Roles**
+
 Developed by Jeremy Simons
 
 <img src="docs/amiresponsivepp3.png" alt="A screenshot of Am I Responsive representation of the website">
 
-[Link to live site](https://dungeonescape.herokuapp.com/)
+[Link to live site](https://devs-and-roles.herokuapp.com/)
 
 ## Introduction
 
+Devs and Roles is the proposed solution to platforms such as linkedIn which generate too much noise from professionals who are not from the tech industry. It aims to provide a community for software developers and other tech professionals to, firstly, gain access to new job opportunities. Secondly, the site aims to connect with tech professionals with other tech professionals and recruiters who are actively seeking quality talent for their clients or companies.
+
+With the blog feature, it allows professionals and recruiters alike to market themselves with long-format, high-quality content rather than the sound-bite feed of memes and platitudes on other platforms. Recruiters have the ability to search through a catalogue of job-seeking users to connect with them directly.
+
+The ultimate goal of these features is to expedite the recruitment process for tech workers and recruiters alike.
+
 ## Contents
+
 * [Project Goals](#project-goals)<br>
     * [For the user](#for-the-user)
     * [For the site owner](#for-the-site-owner)
@@ -37,15 +45,30 @@ Developed by Jeremy Simons
 
 ### ...For the user
 
+* To view job openings and apply for them to progress in one's own career
+* To gain access to potential candidates for a tech role that I may be needing to fill.
+* To interact with other members of the software development and hiring community in order to expand professional networks.
 
 ### ...For the site owner
 
+* To provide a platform for tech recruiters and tech workers to interact and to facilitate the hiring process.
+* To keep users safe from malicious or inappropriate content by having the ability to report and remove user-made content.
 
 ## User Experience
 
 ### Target audience
 
+The target audience of this website is threefold:
+    1. Non-committed users who just want to browse the job market without signing up or applying.
+    2. Committed job-seekers who are actively pursuing job opportunities.
+    3. Recruiters who are seeking to attract talent to their companies or clients.
+
 ### User requirements
+
+* Users must be able to share their thoughts/work/expertise in a community which allows them to interact and network with other users.
+* Users must have features tailored to what their aims are.
+* As job-seekers they must be able to apply for jobs and keep track of their applications.
+* As recruiters they must be able to view and message candidates via their candidate profiles. They must also be able to track who has applied to their job postings as well as view the details of each application.
 
 ### User Manual
 
@@ -94,7 +117,81 @@ Upon completing any of the above actions, the user should be notified with a pop
 
 ## Design
 
+#### Fonts
+
+Roboto mono was chosen as the main font for this website because of its readability and because of its similarity to fonts used in IDEs. This gives the site the feeling that it is a place that invites developers to interact with the site and contribute to the community. [Google Fonts](https://fonts.google.com/specimen/Roboto+Mono?query=roboto) were used to import Roboto mono to the site.
+
+#### Colours
+
+[Coolors.co](https://coolors.co/104f55-32746d-f4d8cd-01200f-011502 ) was used to generate the color palate of the site. The dark and light green combination was chosen because, coupled with roboto mono, the light-coloured text on the dark green background emulates a development terminal.
+
+
 ### Wireframes
+
+<details>
+    <summary>Small - Mobile</summary>
+    
+<details>
+    <summary>Authentication</summary>
+
+</details>
+<details>
+    <summary>Homepage</summary>
+
+</details>
+<details>
+    <summary>Homepage sidenav</summary>
+
+</details>
+<details>
+    <summary>Blog list</summary>
+
+</details>
+<details>
+    <summary>Candidate list</summary>
+
+</details>    
+<details>
+    <summary>Job form</summary>
+
+</details>
+<details>
+    <summary>Profile form</summary>
+
+</details>
+<details>
+    <summary>Blog form</summary>
+
+</details>
+<details>
+    <summary>Job details</summary>
+    <img src="docs/wireframes/job-phone.png" alt="wireframe for job detail page">
+</details>
+<details>
+    <summary>Profile details</summary>
+    <img src="docs/wireframes/profile-phone.png" alt="wireframe for profile detail page">
+</details>
+<details>
+    <summary>Blog details</summary>
+    <img src="docs/wireframes/blog-phone.png" alt="wireframe for blog detail page">
+</details>
+<details>
+    <summary>Error pages</summary>
+    <img src="docs/wireframes/404-phone.png" alt="wireframe for 404 page">
+</details>
+    
+
+</details>
+
+<details>
+    <summary>Medium - Tablet</summary>
+
+</details>
+
+<details>
+    <summary>Large - Desktop</summary>
+
+</details>
 
 ## Technical Design
 
@@ -103,9 +200,9 @@ Upon completing any of the above actions, the user should be notified with a pop
 A relational database schema was created using [Lucidchart](https://lucid.app/) to visualise the relationships between different collections of data.
 
 <details>
-    <summary>Flowchart</summary>
-    <p>Dungeon Escape game logic:</p>
-    <img src="docs/technical-design/flowchart.png" alt="A screenshot of the flowchart of game logic">
+    <summary>Diagram</summary>
+    <p>Database for Devs & Roles:</p>
+    <img src="docs/database/dbschema.png" alt="A screenshot of the database for the site">
 </details><br>
 
 ### Data Models
@@ -114,6 +211,7 @@ A relational database schema was created using [Lucidchart](https://lucid.app/) 
 * Data points are represented as attributes of the model (inheriting from django's model class).
 
 ## Features
+
 The website has fourteen pages and a variety of CRUD functionalites. Users are able to access a limited number of features without signing up. Different pages are accessbile to registered users depending on what their job-seeker/recruiter settings are toggled to on their profile.
 
 ### App Features:
