@@ -429,8 +429,8 @@ A relational database schema was created using [Lucidchart](https://lucid.app/) 
 | Key | Name | Type | Validation |
 |---|---|---|---|
 |  | name | char | max_length=80 |
-|  | body |  |  |
-|  | blog_post |  |  |
+|  | body | text |  |
+| fk | blog_post | BlogPost obj | on_delete=models.CASCADE |
 |  | created_on | datetime | auto_now_add=True |
 |  | approved | bool | default=True |
 |  | reported | bool | default=False |
@@ -438,11 +438,26 @@ A relational database schema was created using [Lucidchart](https://lucid.app/) 
 #### Job posting model
 
 * User (job post author) is a foreign key of the job post model. This takes all the data required for a user to post/view a job ad on the site.
-* If an instance is deleted, all related applications will also be deleted.#
+* If an instance is deleted, all related applications will also be deleted.
+* Job postings are not approved by default. They must be verified by site admin before they make it to the site/user. This is done to protect users from potentially malicious spam or fraudulent job postings.
+* text fields in the job posting model must be unique. This is done defensively to stop recruiters spamming the site with duplicate job ads which may crowd out other recruiters' ads. It makes sure everyone's ads gets a fair shot at being seen.
 
 | Key | Name | Type | Validation |
 |---|---|---|---|
-| Key | Name | Type | Validation |
+|  | title | char | max_length=200, unique=False |
+| fk | posted_by | User | on_delete=models.CASCADE |
+|  | salary | int |  |
+|  | location | char | max_length=200 |
+|  | closing_date | datetime |  |
+|  | featured_image | cloudinary | 'image', default='placeholder' |
+|  | created_on | datetime | auto_now_add=True |
+|  | company_overview | text | unique=True |
+|  | job_description | text | unique=True |
+|  | requirements | text | unique=True |
+|  | benefits | text | unique=True |
+|  | applicants | int | default=0 |
+|  | approved | bool | default=False |
+|  | reported | bool | default=False |
 
 #### Job application model
 
@@ -450,7 +465,17 @@ A relational database schema was created using [Lucidchart](https://lucid.app/) 
 
 | Key | Name | Type | Validation |
 |---|---|---|---|
-| Key | Name | Type | Validation |
+| fk | candidate | User | on_delete=models.CASCADE |
+| fk | job_posting | JobPosting | on_delete=models.CASCADE |
+|  | created_on | datetime | auto_now_add=True |
+|  | full_name | char | max_length=200 |
+|  | email | email | max_length=200 |
+|  | phone | int |  |
+|  | linkedin | char | max_length=200 |
+|  | github_username | char | max_length=200 |
+|  | why_company | text | max_length=2000 |
+|  | why_role | text | max_length=2000 |
+|  | why_you | text | max_length=2000 |
 
 #### User profile model
 
@@ -459,7 +484,22 @@ A relational database schema was created using [Lucidchart](https://lucid.app/) 
 
 | Key | Name | Type | Validation |
 |---|---|---|---|
-| Key | Name | Type | Validation |
+| fk | user | One-to-one field | on_delete=models.CASCADE |
+|  | created_on | datetime | auto_now_add=True |
+|  | first_name | char | max_length=200, blank=True |
+|  | last_name | char | max_length=200, blank=True |
+|  | linkedin | char | max_length=200, blank=True |
+|  | github_username | char | max_length=200, blank=True |
+|  | job_seeker | bool | default=False |
+|  | recruiter | bool | default=False |
+|  | location | char | max_length=200, blank=True |
+|  | years_experience | int | null=True |
+|  | education | text | blank=True |
+|  | work_experience | text | blank=True |
+|  | interests | text | blank=True |
+|  | roles_open_to | char | max_length=200, blank=True |
+|  | approved | bool | default=True |
+|  | reported | bool | default=False |
 
 #### message model
 
@@ -468,7 +508,12 @@ A relational database schema was created using [Lucidchart](https://lucid.app/) 
 
 | Key | Name | Type | Validation |
 |---|---|---|---|
-| Key | Name | Type | Validation |
+| fk | recipient | User | on_delete=models.CASCADE |
+|  | sent_on | datetime | auto_now_add=True |
+|  | first_name | char | max_length=80, blank=False |
+|  | last_name | char | max_length=80, blank=False |
+|  | message | text | blank=False |
+|  | email | email | blank=False |
 
 ## Features
 
