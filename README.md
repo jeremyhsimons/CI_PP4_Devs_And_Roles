@@ -287,6 +287,40 @@ Roboto mono was chosen as the main font for this website because of its readabil
 
 </details>
 
+## Agile workflow
+
+An agile methodology was employed for this project. Epics were created and each user story was assigned to an epic. Development of the project was organised into iterations where certain features were implemented to their completion before reviewing the backlog and re-assigning tasks for the next iteration.
+
+This was achieved and tracked using the github issues/projects/kanban board features.
+
+Any bugs found in the development process were also logged here and dealt with as backlog tasks.
+
+
+### User stories
+
+User stories and bug reports were uploaded to the project using Github issues templates. User stories were ranked with one of the following labels:
+
+* Must have
+* Should have
+* Could have
+* Wont have (decision made that the feature is not needed and improving other features is higher priority with remaining time)
+
+These categories were used to prioritise the workload.
+
+### Epics
+
+5 epics were created using Github milestones and the user stories (uploaded as issues in the project).
+
+<img src="docs/epics.png" alt="a screenshot of the project kanban board">
+
+The fifth epic for the news aggregation feed was categorised entirely as 'could have'. Towards the end of the development of other features, it became apparent that this needed to be moved to the 'wont have' category in order to maximise quality of the other features.
+
+### Kanban board
+
+GitHub Kanban boards were used to track the progress of development:
+
+<img src="docs/kanban.png" alt="a screenshot of the project kanban board">
+
 ## Technical Design
 
 ### Database Schema
