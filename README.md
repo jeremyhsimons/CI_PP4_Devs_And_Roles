@@ -109,11 +109,57 @@ Upon completing any of the above actions, the user should be notified with a pop
 
 #### As a job-seeker user...
 
+(1) As a new user I want to sign up to the job board so that I can view new job openings.
+
+(2) As a job seeker I want to view a paginated list of job opportunities so that I can find a role suitable for me.
+
+(3) As a job seeker I want to create a profile so that employers can find out more about me.
+
+(4) As a job seeker I want to easily navigate between job postings and my profile so that I can access the features I need.
+
+(5) As a job seeker I want to see which jobs I have already applied for so that I can keep track of the application/follow it up.
+
+(6) As a job seeker I want to fill out a form to apply for a job, so that I can be considered for it by the employer.
+
+(7) As a job seeker I want to be able to see how many other applicants have already applied to each role on the job board.
+
+(8) As a jobseeker I want to withdraw my application so that I can notify the employer I no longer wish to be considered for the role.
+
+(9) As a job seeker/recruiter I want to be able to create a blog post so that I can show employers more of my interest/skills or attract talent.
+
+(10) As a job seeker/recruiter I want to comment on blog posts so that I can interact with other users.
+
+(11) As a jobseeker I want to report any suspicious or malicious posts on the job board.
+
+(12) As the job seeker I want to contact the site owner about potential problems/bugs with the site so that they can be fixed.
 
 #### As a recruiter user... 
 
+(13) As a new user I want to sign up to the job board so that I can post new jobs and view profiles of existing candidates so that I can fill a role.
+
+(14) As an employer I want to create a job posting that can be approved and added to the job board so that I can advertise a role.
+
+(15) As an employer I want to take down a job posting when I have filled the role so that I don't get swamped with unnecessary applications for a job.
+
+(16) As an employer I want to edit my job posting so that I can keep it up to date with the requirements of the role I want to fill.
+
+(17) As an employer I want to scroll through a paginated list of candidates so that I can find a good fit for my open position.
+
+(18) As an employer I want to be able to send messages to potential candidates so that I can advertise roles that might be a good fit.
+
+(19) As an employer I want to see how many candidates have applied to each job I post so that I can gauge which of my advertised roles are the most popular.
+
+(20) As a recruiter or job seeker I want to delete my account if I no longer wish to use the service so that I can remove my personal data from the website.
+
+(21) As a recruiter or job seeker I want to update my account details so that I can use my most up-to-date contact details, etc.
 
 #### As the site owner...
+
+(22) As the site owner I want to be able to approve job ads before they are posted to the job board.
+
+(23) As the site owner I want to be able to revoke approval for a job ad if a jobseeker user has reported it for a legitimate reason, so that malicious posts are removed promptly.
+
+(24) As the site owner I want users to feedback about any problems on the site so that any bugs/issues can be addressed promptly.
 
 ## Design
 
@@ -345,35 +391,26 @@ The website has fourteen pages and a variety of CRUD functionalites. Users are a
 ### App Features:
 
 <details>
-    <summary>Game Title</summary>
-    <p>This is what the user sees upon loading the site. The title text appears with a simple animation for visual appeal. There is also a login/signup feature here.</p>
+    <summary>Home page</summary>
+    <p>This is what the user sees upon loading the site. It contains a paginated list of job ads on the site. Any user (authenticated or not) has access to this page.</p>
     <ul>
         <li>
-            <p>Sign up y/n options</p>
+            <p>Home page with job postings</p>
         </li>
         <li>
-            <img src="docs/features/signup.png" alt="A screenshot of the signup y/n feature">
+            <img src="docs/features/signup.png" alt="A screenshot of the home page">
         </li>
         <li>
-            <p>User story covered: 1, 7</p>
+            <p>Job details when clicking on a job posting</p>
         </li>
         <li>
-            <p>Authentication - you cannot log in with an account that doesn't exist.</p>
+            <img src="docs/features/signup.png" alt="A screenshot of a job detail page">
         </li>
         <li>
-            <img src="docs/features/authentication.png" alt="A screenshot of the login auth">
+            <p>navigator to get the next items</p>
         </li>
         <li>
-            <p>User story covered: 4, 11, 12</p>
-        </li>
-        <li>
-            <p>Validation - cannot sign up with invalid user data</p>
-        </li>
-        <li>
-            <img src="docs/features/signup-valid.png" alt="A screenshot of the login auth">
-        </li>
-        <li>
-            <p>User story covered: 4, 11, 12</p>
+            <img src="docs/features/signup.png" alt="A screenshot of the bottom nav element">
         </li>
     </ul>
 </details><br>
