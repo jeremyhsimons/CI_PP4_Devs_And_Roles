@@ -33,24 +33,24 @@ document.addEventListener('DOMContentLoaded', function () {
 let textareas = document.querySelectorAll('.textarea');
 for (let i = 0; i < textareas.length; i++) {
     textareas[i].className = 'materialize-textarea';
-};
+}
 
 //Alter form labels to be a darker shade.
 let labels = document.querySelectorAll('label');
 for (let i = 0; i < labels.length; i++) {
     labels[i].className = 'black-text';
-};
+}
 
 //Remove asterisks from forms
 let asterisks = document.querySelectorAll('.asterisk');
-for (asterisk of asterisks) {
+for (let asterisk of asterisks) {
     asterisk.remove();
-};
+}
 
 //Messages disappear after 3 seconds.
 setTimeout(function () {
     let message = document.getElementById("msg");
-    message.remove()
+    message.remove();
 }, 3000);
 
 document.addEventListener('DOMContentLoaded', function () {

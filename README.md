@@ -488,47 +488,26 @@ This repository can be cloned using the following process:
 1. Type the command '$ git clone'
 1. Paste the URL of the repository after this.
 1. Hit enter on your keyboard and the project will be cloned.
- 
-## Testing
-### Debugging
-The site was tested using the following browsers:
-* Google Chrome
-* Mozilla Firefox
-* Microsoft Edge
 
-The site was tested on the following devices:
-* Lenovo Ideapad 520S (Windows 10)
-* Huawei PSmart 2019 (EMUI version 12.0.0)
+## Validation
 
-### Validation
+### HTML
 
-#### PEP8 Python Validator (from Code Institute)
+### CSS
+
+### Accessibility (WAVE)
+
+### Performance (Lighthouse)
+
+### JavaScript
+
+### PEP8 Python Validator (from Code Institute)
 
 Code institute's own Python Linter [pep8](https://pep8ci.herokuapp.com/) was used to validate all Python code in this project.
 
-All code passed with no errors apart from the run.py file where the line limit of 80 characters had to be exceeded to display the title. These were the only errors that were found in this file.
+All code passed with no errors.
 
-### Manual Testing
-
-|User story|Feature|Test|Expected Result|Actual Result|
-|---|---|---|---|---|
-| 1. Sign up as a new player | Sign-up prompt | When prompted by the opening view of the game, answer 'n', enter new details and type 'enter' | Program accepts/signs user up. | Works as expected. |
-
-<details>
-    <summary>Screenshots</summary>
-    <img src="" alt="A screenshot of the sign up prompt."><br>
-</details><br>
-
-
-### Automated Testing
-Unit test suites were written for all the models.py, forms.py, and views.py of each app within this django project.
-
-<details>
-    <summary>Screenshots</summary>
-
-</details><br>
-
-### Bugs
+## Bugs
 
 The following bugs were documented during the development of this project:
 
