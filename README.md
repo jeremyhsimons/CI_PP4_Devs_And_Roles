@@ -227,6 +227,7 @@ Roboto mono was chosen as the main font for this website because of its readabil
 </details>
 
 </details>
+<hr/>
 
 <details>
     <summary>Medium - Tablet</summary>
@@ -281,6 +282,7 @@ Roboto mono was chosen as the main font for this website because of its readabil
 </details>
 
 </details>
+<hr/>
 
 <details>
     <summary>Large - Desktop</summary>
@@ -331,6 +333,7 @@ Roboto mono was chosen as the main font for this website because of its readabil
 </details>
 
 </details>
+<hr/>
 
 ## Agile workflow
 
@@ -381,6 +384,91 @@ A relational database schema was created using [Lucidchart](https://lucid.app/) 
 
 * Django models were used to represent the tables specified in the technical design of the backend.
 * Data points are represented as attributes of the model (inheriting from django's model class).
+* For this project, all tables' primary keys are the default django ids for object instances.
+
+#### User model
+
+* This was made using the django allauth library. This library handles all authentication out of the box. From the user it takes a username, email and password.
+
+#### Contact Message model
+* This includes the user who sent the contact message to the site owner as a foreign key.
+* The read attribute is only used by the site admin to toggle messages they have read, and filter them out from the admin panel.
+
+| Key | Name | Type | Validation |
+|---|---|---|---|
+|  | full_name | char | max_length=200, blank=False |
+|  | email | email | max_length=200, blank=False |
+| fk | user | User | on_delete=models.CASCADE, null=True, |
+|  | date_sent | DateTime | Validation |
+|  | message | Textfield | blank=False |
+|  | read | bool | default=False |
+
+
+#### Blog model
+
+* User (author) is a foreign key in the blog model.
+* If an instance is deleted, all related comments will also be deleted.
+* Approved and reported attributes appear on several models in this site. They all serve the same purpose - for the admin to filter by approved/not approved and by reported/not reported, so that they can add or remove content from the site as is necessary.
+
+| Key | Name | Type | Validation |
+|---|---|---|---|
+|  | title | char | max_length=200, unique=True |
+| fk | posted_by | User | on_delete=models.CASCADE |
+|  | slug | char | max_length=200, unique=True |
+|  | content | text |  |
+|  | summary | text |  |
+|  | featured_image | cloudinary | 'image', default='placeholder' |
+|  | created_on | datetime | auto_now_add=True |
+|  | approved | bool | default=True |
+|  | reported | bool | default=False |
+
+#### Comment model
+
+* Related blog post is a foreign key in the comment model.  
+
+| Key | Name | Type | Validation |
+|---|---|---|---|
+|  | name | char | max_length=80 |
+|  | body |  |  |
+|  | blog_post |  |  |
+|  | created_on | datetime | auto_now_add=True |
+|  | approved | bool | default=True |
+|  | reported | bool | default=False |
+
+#### Job posting model
+
+* User (job post author) is a foreign key of the job post model. This takes all the data required for a user to post/view a job ad on the site.
+* If an instance is deleted, all related applications will also be deleted.#
+
+| Key | Name | Type | Validation |
+|---|---|---|---|
+| Key | Name | Type | Validation |
+
+#### Job application model
+
+* User (appplicant) and the job posting are both foreign keys. This takes all the data required for a user to apply/view an application on the site.
+
+| Key | Name | Type | Validation |
+|---|---|---|---|
+| Key | Name | Type | Validation |
+
+#### User profile model
+
+* Has a one-to-one relationship with the Allauth user model
+* If deleted, the user essentially deletes their account (or makes it inactive according to Django).
+
+| Key | Name | Type | Validation |
+|---|---|---|---|
+| Key | Name | Type | Validation |
+
+#### message model
+
+* user profile model (message recipient) is a foregin key in the message mode.
+* This represents the many-to-one relationship between a profile and messages sent to it.
+
+| Key | Name | Type | Validation |
+|---|---|---|---|
+| Key | Name | Type | Validation |
 
 ## Features
 

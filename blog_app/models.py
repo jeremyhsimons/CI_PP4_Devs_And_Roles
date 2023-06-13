@@ -12,8 +12,8 @@ class BlogPost(models.Model):
     posted_by = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='blog')
     slug = models.SlugField(max_length=200, unique=True)
-    content = models.TextField()
-    summary = models.TextField()
+    content = models.TextField(blank=False)
+    summary = models.TextField(blank=False)
     featured_image = CloudinaryField('image', default='placeholder')
     created_on = models.DateField(auto_now_add=True)
     approved = models.BooleanField(default=True)
@@ -31,8 +31,8 @@ class Comment(models.Model):
     A class to represent the data needed for each
     comment on a blog post.
     """
-    name = models.CharField(max_length=80)
-    body = models.TextField()
+    name = models.CharField(max_length=80, blank=False)
+    body = models.TextField(blank=False)
     blog_post = models.ForeignKey(
         BlogPost, on_delete=models.CASCADE, related_name='comment')
     created_on = models.DateField(auto_now_add=True)
