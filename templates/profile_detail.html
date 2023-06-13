@@ -71,13 +71,28 @@
                     </div>
                     <div class="divider"></div>
                     <div class="section">
-                        <h5>Connect with {{ profile.first_name }}:</h5>
+                        <h5 class="bold">Connect with {{ profile.first_name }} on LinkedIn:</h5>
                         <ul>
                             <li>
                                 {{ profile.linkedin }}
                             </li>
+                            <div class=""></div>
                             <li>
-                                {{ profile.github_username }}
+                                <h5 class="bold">View {{ profile.first_name }}'s GitHub stats!</h5>
+                                <!--Code adapted from CI tutorial: Bootstrap Resume part 2-->
+                                <div class="card-panel add-padding light-green-bg">
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <input type="text" id="gh-username" class="black-text" value="{{ profile.github_username }}" />
+                                        </div>
+                                        <div class="col s12">
+                                            <div id="gh-user-data"></div>
+                                        </div>
+                                        <div class="col s12">
+                                            <div id="gh-repo-data"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </div>

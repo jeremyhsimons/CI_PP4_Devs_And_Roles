@@ -18,7 +18,6 @@
                     <li class="personal-details-item"><i class="fa-solid fa-hand-point-right"></i> Email Address: {{ application.email }}</li>
                     <li class="personal-details-item"><i class="fa-solid fa-hand-point-right"></i> Phone Number: {{ application.phone }}</li>
                     <li class="personal-details-item"><i class="fa-solid fa-hand-point-right"></i> LinkedIn Profile: {{ application.linkedin }}</li>
-                    <li class="personal-details-item"><i class="fa-solid fa-hand-point-right"></i> GitHub Username: {{ application.github_username }}</li>
                 </ul>
             </div>
         </div>
@@ -26,6 +25,23 @@
 </div>
 
 <div class="row container">
+    <div class="col s12">
+        <h5 class="bold">View {{ profile.first_name }}'s GitHub stats!</h5>
+        <!--Code adapted from CI tutorial: Bootstrap Resume part 2-->
+        <div class="card-panel add-padding light-green-bg">
+            <div class="row">
+                <div class="col s12">
+                    <input type="text" id="gh-username" class="black-text" value="{{ profile.github_username }}" />
+                </div>
+                <div class="col s12">
+                    <div id="gh-user-data"></div>
+                </div>
+                <div class="col s12">
+                    <div id="gh-repo-data"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="col s12 card-panel">
         <h4>Why would you like to work for this company?</h4>
         <div class="divider"></div>
