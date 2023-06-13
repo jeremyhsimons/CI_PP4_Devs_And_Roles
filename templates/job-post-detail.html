@@ -42,7 +42,7 @@
         <div class="card dark-bg">
             <div class="card-image waves-effect waves-block waves-light container">
                 {% if "placeholder" in jobpost.featured_image.url %}
-                <img src="{% static 'images/code.webp' %}" alt="default picture of a laptop">
+                <img src="https://res.cloudinary.com/dpvq4invf/image/upload/v1686647003/codeimg_afcr3y.webp" alt="default picture of a laptop">
                 {% else %}
                 <img src="{{ jobpost.featured_image.url }}" alt="job posting featured image">
                 {% endif %}

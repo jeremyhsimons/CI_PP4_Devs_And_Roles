@@ -24,7 +24,7 @@ header > h1 {
 
 main {
     flex: 1 0 auto;
-    background: url(../images/dandrbg.webp) no-repeat top center #fff;
+    background: url('https://res.cloudinary.com/dpvq4invf/image/upload/v1686646937/dandrbg_jvjudm.webp') no-repeat top center #fff;
     background-size: 100%;
     background-attachment: fixed;
 }

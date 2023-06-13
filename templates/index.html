@@ -24,7 +24,7 @@
                     <div class="row">
                         <div class="col s6">
                             {% if "placeholder" in job.featured_image.url %}
-                            <img class="home-featured-image" src="{% static 'images/code.webp' %}" alt="default picture of a laptop">
+                            <img class="home-featured-image" src="https://res.cloudinary.com/dpvq4invf/image/upload/v1686647003/codeimg_afcr3y.webp" alt="default picture of a laptop">
                             {% else %}
                             <img class="home-featured-image" src="{{ job.featured_image.url }}" alt="job posting featured image">
                             {% endif %}

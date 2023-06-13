@@ -51,7 +51,7 @@
                 <div class="divider"></div>
                 <div class="section container">
                     {% if "placeholder" in blog.featured_image.url %}
-                    <img class="hero circle responsive-img" src="{% static 'images/typewriter.webp' %}" alt="default picture of a laptop">
+                    <img class="hero circle responsive-img" src="https://res.cloudinary.com/dpvq4invf/image/upload/v1686647004/typewriterimg_fqfafk.webp" alt="default picture of a laptop">
                     {% else %}
                     <img class="hero responsive-img" src="{{ blog.featured_image.url }}" alt="job posting featured image">
                     {% endif %}
