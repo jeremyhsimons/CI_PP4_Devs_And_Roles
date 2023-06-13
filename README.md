@@ -130,38 +130,38 @@ Roboto mono was chosen as the main font for this website because of its readabil
 
 <details>
     <summary>Small - Mobile</summary>
-    
+
 <details>
     <summary>Authentication</summary>
-
+    <img src="docs/wireframes/login-phone.png" alt="wireframe for login page">
 </details>
 <details>
     <summary>Homepage</summary>
-
+    <img src="docs/wireframes/home-phone.png" alt="wireframe for home page">
 </details>
 <details>
     <summary>Homepage sidenav</summary>
-
+    <img src="docs/wireframes/sidenav.png" alt="wireframe for menu sidenav">
 </details>
 <details>
     <summary>Blog list</summary>
-
+    <img src="docs/wireframes/blog-list-phone.png" alt="wireframe for blogs page">
 </details>
 <details>
     <summary>Candidate list</summary>
-
+    <img src="docs/wireframes/candidates-phone.png" alt="wireframe for candidates page">
 </details>    
 <details>
     <summary>Job form</summary>
-
+    <img src="docs/wireframes/create-job-phone.png" alt="wireframe for job form page">
 </details>
 <details>
     <summary>Profile form</summary>
-
+    <img src="docs/wireframes/profile-form-phone.png" alt="wireframe for profile form page">
 </details>
 <details>
     <summary>Blog form</summary>
-
+    <img src="docs/wireframes/blog-form-phone.png" alt="wireframe for blog form page">
 </details>
 <details>
     <summary>Job details</summary>
@@ -179,17 +179,111 @@ Roboto mono was chosen as the main font for this website because of its readabil
     <summary>Error pages</summary>
     <img src="docs/wireframes/404-phone.png" alt="wireframe for 404 page">
 </details>
-    
+
 
 </details>
 
 <details>
     <summary>Medium - Tablet</summary>
 
+<details>
+    <summary>Authentication</summary>
+    <img src="docs/wireframes/login-tab.png" alt="wireframe for login page">
+</details>
+<details>
+    <summary>Homepage</summary>
+    <img src="docs/wireframes/home-tablet.png" alt="wireframe for home page">
+</details>
+<details>
+    <summary>Homepage sidenav</summary>
+    <img src="docs/wireframes/sidenav.png" alt="wireframe for menu sidenav">
+</details>
+<details>
+    <summary>Blog list</summary>
+    <img src="docs/wireframes/blog-list-tab.png" alt="wireframe for blogs page">
+</details>
+<details>
+    <summary>Candidate list</summary>
+    <img src="docs/wireframes/candidates-tab.png" alt="wireframe for candidates page">
+</details>
+<details>
+    <summary>Job form</summary>
+    <img src="docs/wireframes/create-job-tab.png" alt="wireframe for job form page">
+</details>
+<details>
+    <summary>Profile form</summary>
+    <img src="docs/wireframes/profile-form-tab.png" alt="wireframe for profile form page">
+</details>
+<details>
+    <summary>Blog form</summary>
+    <img src="docs/wireframes/blog-form-tab.png" alt="wireframe for blog form page">
+</details>
+<details>
+    <summary>Job details</summary>
+    <img src="docs/wireframes/job-tablet.png" alt="wireframe for job detail page">
+</details>
+<details>
+    <summary>Profile details</summary>
+    <img src="docs/wireframes/profile-tab.png" alt="wireframe for profile detail page">
+</details>
+<details>
+    <summary>Blog details</summary>
+    <img src="docs/wireframes/blog-tab.png" alt="wireframe for blog detail page">
+</details>
+<details>
+    <summary>Error pages</summary>
+    <img src="docs/wireframes/404-tab.png" alt="wireframe for 404 page">
+</details>
+
 </details>
 
 <details>
     <summary>Large - Desktop</summary>
+
+<details>
+    <summary>Authentication</summary>
+    <img src="docs/wireframes/login.png" alt="wireframe for login page">
+</details>
+<details>
+    <summary>Homepage</summary>
+    <img src="docs/wireframes/home-desktop.png" alt="wireframe for home page">
+</details>
+<details>
+    <summary>Blog list</summary>
+    <img src="docs/wireframes/blog-list-desktop.png" alt="wireframe for blogs page">
+</details>
+<details>
+    <summary>Candidate list</summary>
+    <img src="docs/wireframes/candidates-desktop.png" alt="wireframe for candidates page">
+</details>
+<details>
+    <summary>Job form</summary>
+    <img src="docs/wireframes/create-job-desktop.png" alt="wireframe for job form page">
+</details>
+<details>
+    <summary>Profile form</summary>
+    <img src="docs/wireframes/profile-form-desktop.png" alt="wireframe for profile form page">
+</details>
+<details>
+    <summary>Blog form</summary>
+    <img src="docs/wireframes/blog-form-desktop.png" alt="wireframe for blog form page">
+</details>
+<details>
+    <summary>Job details</summary>
+    <img src="docs/wireframes/job-desktop.png" alt="wireframe for job detail page">
+</details>
+<details>
+    <summary>Profile details</summary>
+    <img src="docs/wireframes/profile-desktop.png" alt="wireframe for profile detail page">
+</details>
+<details>
+    <summary>Blog details</summary>
+    <img src="docs/wireframes/blog-desktop.png" alt="wireframe for blog detail page">
+</details>
+<details>
+    <summary>Error pages</summary>
+    <img src="docs/wireframes/404-desktop.png" alt="wireframe for 404 page">
+</details>
 
 </details>
 
