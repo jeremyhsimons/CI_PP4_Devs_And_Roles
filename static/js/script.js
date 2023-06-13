@@ -78,3 +78,8 @@ jobSeekerDiv.replaceWith(jobSeekerInput);
 let recruiterDiv = document.getElementById('div_id_recruiter');
 let recruiterInput = document.getElementById('id_recruiter');
 recruiterDiv.replaceWith(recruiterInput);
+
+let rememberDiv = document.getElementById('div_id_remember');
+let resetLink = rememberDiv.nextElementSibling;
+resetLink.remove();
+rememberDiv.remove();

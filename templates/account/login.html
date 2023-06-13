@@ -45,7 +45,7 @@
             <div class="card-panel">
                 <form class="login" method="POST" action="{% url 'account_login' %}">
                     {% csrf_token %}
-                    {{ form | crispy }}
+                    {{ form.as_p }}
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
@@ -56,12 +56,5 @@
         </div>
     </div>
 </div>
-
-<script>
-    let rememberDiv = document.getElementById('div_id_remember');
-    let resetLink = rememberDiv.nextElementSibling;
-    resetLink.remove()
-    rememberDiv.remove()
-</script>
 
 {% endblock %}
