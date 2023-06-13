@@ -226,7 +226,6 @@ Roboto mono was chosen as the main font for this website because of its readabil
     <img src="docs/wireframes/404-phone.png" alt="wireframe for 404 page">
 </details>
 
-
 </details>
 
 <details>
@@ -340,7 +339,6 @@ An agile methodology was employed for this project. Epics were created and each 
 This was achieved and tracked using the github issues/projects/kanban board features.
 
 Any bugs found in the development process were also logged here and dealt with as backlog tasks.
-
 
 ### User stories
 
@@ -532,9 +530,51 @@ Unit test suites were written for all the models.py, forms.py, and views.py of e
 
 ### Bugs
 
-| Bug Description  | Action Taken to Fix  |
-|---|---|
+The following bugs were documented during the development of this project:
 
+* User object does not have userprofile attribute
+<details>
+<summary>screenshot:</summary>
+<img src="docs/bugs/bug1.png" alt="a screenshot of bug 1">
+</details>
+
+* Materialize Checkboxes not displaying properly
+<details>
+<summary>screenshot:</summary>
+<img src="docs/bugs/bug2.png" alt="a screenshot of bug 2">
+</details>
+
+* Submitting form to create a user profile resulted in a database error.
+<details>
+<summary>screenshot:</summary>
+<img src="docs/bugs/bug3.png" alt="a screenshot of bug 3">
+</details>
+
+* Textarea fields in all forms are too short (vertically)
+<details>
+<summary>screenshot:</summary>
+<img src="docs/bugs/bug4.png" alt="a screenshot of bug 4">
+</details>
+
+* Materialize Crispy Form rendering of image fields caused visual bugs with labels
+<details>
+<summary>screenshot:</summary>
+<img src="docs/bugs/bug5.png" alt="a screenshot of bug 5">
+</details>
+
+The following issues remain unfixed, and as a consequence the features were removed so as to maintain a strong user experience without error messages to interrupt it.
+
+* Sending reset password request results in 504 error
+<details>
+<summary>screenshot:</summary>
+<img src="docs/bugs/bugnotfixed1.png" alt="a screenshot of bugnotfixed1">
+</details>
+
+* Cannot access uploaded pdf cv file from job application.
+<details>
+<summary>screenshot:</summary>
+<img src="docs/bugs/bugnotfixed2.png" alt="a screenshot of bugnotfixed2">
+</details>
 
 ## Credits
 
@@ -548,5 +588,7 @@ Unit test suites were written for all the models.py, forms.py, and views.py of e
 ### Acknowledgements
 
 * Thanks to my Mentor Mo Shami for his immensely valuable feedback, advice and encouragement throughout this project. Thanks for pushing me to do the best I can!
+* Thanks to the CI tutors for all their help with bugs that I couldn't get my head round! Thanks also for helping me out when Codeanywhere did weird things and required extra adjustment!
+* Thanks for the CI slack community for all your valuable input and help bugfixing!
 * Thanks to the wonderful CI London Community for all the moral support!.
 * Thanks to Oli for his user acceptance tesing and feedback. Cheers for breaking my site...
