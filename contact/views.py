@@ -1,7 +1,9 @@
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 3rd Party
 from django.shortcuts import render, redirect
 from django.views import generic, View
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal
 from .models import ContactMessage
 from .forms import ContactForm
 
