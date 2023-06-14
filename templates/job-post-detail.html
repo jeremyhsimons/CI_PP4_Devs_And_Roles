@@ -81,37 +81,42 @@
     </div>
 </div>
 <div class="container">
-    <div class="card-panel">
-        <h3>Company overview:</h3>
-        <p>{{ jobpost.company_overview | safe }}</p>
+    <div class="card-panel dark-bg">
+        <div class="container">
+            <div class="card-panel">
+                <h3>Company overview:</h3>
+                <p>{{ jobpost.company_overview | safe }}</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card-panel">
+                <h3>Job description:</h3>
+                <p>{{ jobpost.job_description | safe }}</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card-panel">
+                <h3>Candidate requirements:</h3>
+                <p>{{ jobpost.requirements | safe }}</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card-panel">
+                <h3>Benefits:</h3>
+                <p>{{ jobpost.benefits | safe }}</p>
+            </div>
+        </div>
     </div>
 </div>
-<div class="container">
-    <div class="card-panel">
-        <h3>Job description:</h3>
-        <p>{{ jobpost.job_description | safe }}</p>
-    </div>
-</div>
-<div class="container">
-    <div class="card-panel">
-        <h3>Candidate requirements:</h3>
-        <p>{{ jobpost.requirements | safe }}</p>
-    </div>
-</div>
-<div class="container">
-    <div class="card-panel">
-        <h3>Benefits:</h3>
-        <p>{{ jobpost.benefits | safe }}</p>
-    </div>
-</div>
-
 {% if user.is_authenticated %}
 {% for profile in userprofiles %}
 {% if profile.user == user %}
 {% if profile.job_seeker %}
 <div class="container">
     <div class="card-panel">
-        <a class="btn center-align" href="{% url 'apply' jobpost.pk %}">Apply</a>
+        <div class="center">
+            <a class="btn" href="{% url 'apply' jobpost.pk %}">Apply</a>
+        </div>
     </div>
 </div>
 {% else %}
