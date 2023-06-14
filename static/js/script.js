@@ -1,8 +1,11 @@
 // delete remember me button in login page
 let rememberDiv = document.getElementById('id_remember');
 let checkBox = rememberDiv.previousElementSibling;
-checkBox.remove();
-rememberDiv.remove();
+if (rememberDiv) {
+    checkBox.remove();
+    rememberDiv.remove();
+};
+
 
 //Initialise modals
 document.addEventListener('DOMContentLoaded', function () {
@@ -15,40 +18,46 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     const editBlog = document.getElementById('editblogmodal');
     let instance = M.Modal.init(editBlog);
-    instance.open();
+    if (editBlog) {
+        instance.open();
+    };
 });
 
 document.addEventListener('DOMContentLoaded', function () {
     const editJob = document.getElementById('editjobmodal');
     let instance = M.Modal.init(editJob);
-    instance.open();
+    if (editJob) {
+        instance.open();
+    };
 });
 
 //Initialise dropdown
 document.addEventListener('DOMContentLoaded', function () {
     let dropdowns = document.querySelectorAll('.dropdown-trigger');
     let dropdownsInstances = M.Dropdown.init(dropdowns);
-    console.log('i am working')
 });
 
 //Initialise sidenav
 document.addEventListener('DOMContentLoaded', function () {
     let sidenavs = document.querySelectorAll('.sidenav');
     var sidenavInstances = M.Sidenav.init(sidenavs);
-    console.log('i am working');
 });
 
 //Fix bug that doesn't auto-apply materialize styles to textareas
 let textareas = document.querySelectorAll('.textarea');
-for (let i = 0; i < textareas.length; i++) {
-    textareas[i].className = 'materialize-textarea';
-}
+if(textareas.length > 0){
+    for (let i = 0; i < textareas.length; i++) {
+        textareas[i].className = 'materialize-textarea';
+    }
+};
 
 //Alter all form labels to be a darker shade.
 let labels = document.querySelectorAll('label');
-for (let i = 0; i < labels.length; i++) {
-    labels[i].className = 'black-text';
-}
+if (labels.length > 0) {
+    for (let i = 0; i < labels.length; i++) {
+        labels[i].className = 'black-text';
+    }
+};
 
 //Remove asterisks from forms
 let asterisks = document.querySelectorAll('.asterisk');
@@ -63,6 +72,7 @@ setTimeout(function () {
 }, 3000);
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Alert the user to their inability to change applications once submitted.
     const applyButton = document.getElementById('apply');
     applyButton.addEventListener('mouseenter', () => {
         console.log(applyButton);
