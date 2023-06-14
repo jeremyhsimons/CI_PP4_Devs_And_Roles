@@ -3,8 +3,8 @@
 {% load crispy_forms_tags %}
 <div class="container">
     <div class="card-panel">
-        <h1>Edit your profile details:</h1>
-        <form method="POST">
+        <h2>Edit your profile details:</h2>
+        <form method="POST" class="light-green-bg add add-padding">
             {% csrf_token %}
             <div class="row">
                 <div class="col l6">
@@ -19,6 +19,7 @@
                 <div class="col l6">
                     {{ form.github_username|as_crispy_field }}
                 </div>
+                <div class="row"></div>
                 <div class="col l12">
                     <label>
                         {{ form.job_seeker|as_crispy_field  }}
@@ -31,12 +32,14 @@
                         <span>Are you looking for candidates to fill a role?</span>
                     </label>
                 </div>
+                <div class="row"></div>
                 <div class="col12">
-                    <h3>
+                    <h4>
                         Note: if you are a recruiter, you do not need
                         to fill in the following fields.
-                    </h3>
+                    </h4>
                 </div>
+                <div class="row"></div>
                 <div class="col l6">
                     {{ form.location|as_crispy_field }}
                 </div>
@@ -58,7 +61,11 @@
             </div>
             <button type="submit" class="btn">submit</button>
         </form>
-        <a class="btn" href="{% url 'view_profile' %}">Back</a>
+        <div class="container add-padding">
+            <div class="center">
+                <a class="btn" href="{% url 'view_profile' %}">Back</a>
+            </div>
+        </div>
     </div>
 </div>
 

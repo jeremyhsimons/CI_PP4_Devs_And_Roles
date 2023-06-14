@@ -517,7 +517,7 @@ A relational database schema was created using [Lucidchart](https://lucid.app/) 
 
 ## Features
 
-The website has fourteen pages and a variety of CRUD functionalites. Users are able to access a limited number of features without signing up. Different pages are accessbile to registered users depending on what their job-seeker/recruiter settings are toggled to on their profile.
+The website has 27 pages (including error pages) and a variety of CRUD functionalites. Users are able to access a limited number of features without signing up. Different pages are accessbile to registered users depending on what their job-seeker/recruiter settings are toggled to on their profile.
 
 ### App Features:
 

@@ -398,10 +398,6 @@ nav {
         font-size: 300%;
     }
 
-    main {
-        background: rgb(190, 204, 188);
-    }
-
     h1 {
         font-size: 220%;
     }
@@ -428,5 +424,9 @@ nav {
 
     .side-nav {
         position: relative;
+    }
+
+    main {
+        background: rgb(190, 204, 188);
     }
 }
