@@ -63,6 +63,11 @@ textarea {
     border: solid 2px #011502;
 }
 
+.green-bg {
+    background-color: #104F55;
+    border: solid 2px #CDF4DC;
+}
+
 .add-padding{
     padding: 20px;
 }
@@ -113,6 +118,11 @@ nav {
 
 #bottom-footer {
     background-color: #104F55;
+}
+
+.btn {
+    background-color: #104F55;
+    color:#104F55;
 }
 
 /*---------------------------------------------------------- home page styles */ 

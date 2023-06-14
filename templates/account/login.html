@@ -33,9 +33,9 @@
 
         {% else %}
         <div class="container">
-            <div class="card-panel">
-                <p>{% blocktrans %}If you have not created an account yet, then please
-                    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+            <div class="card-panel green-bg">
+                <p class="white-text">{% blocktrans %}If you have not created an account yet, then please
+                    <a class="white-text bold">{% href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
                 </p>
             </div>
         </div>
@@ -45,7 +45,12 @@
             <div class="card-panel">
                 <form class="login" method="POST" action="{% url 'account_login' %}">
                     {% csrf_token %}
-                    {{ form.as_p }}
+                    <p>
+                        {{ form.login }}
+                    </p>
+                    <p>
+                        {{ form.password }}
+                    </p>
                     <div class="center">
                         <button class="primaryAction btn" type="submit">{% trans "Sign In" %}</button>
                     </div>

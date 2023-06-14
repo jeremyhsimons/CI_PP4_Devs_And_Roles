@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     let modals = document.querySelectorAll('.modal');
     let modalsInstances = M.Modal.init(modals);
-    console.log('i am working');
 });
 
 //Initialise dropdown
@@ -44,14 +43,6 @@ setTimeout(function () {
     let message = document.getElementById("msg");
     message.remove();
 }, 3000);
-
-// delete remember me button in login page
-let rememberDiv = document.getElementById('id_remember');
-let checkBox = rememberDiv.previousElementSibling;
-if (rememberDiv == true) {
-    checkBox.remove();
-    rememberDiv.remove();
-};
 
 document.addEventListener('DOMContentLoaded', function () {
     // Alert the user to their inability to change applications once submitted.
