@@ -1,5 +1,6 @@
-from . import views
 from django.urls import path
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal
+from . import views
 
 
 urlpatterns = [
