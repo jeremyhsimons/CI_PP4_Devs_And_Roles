@@ -3,7 +3,7 @@
 
 {% load static %}
 
-<div class="container"></div>
+<div class="container">
     <h2 class="white-text center-align dark-bg container add-padding">View the latest posts from the community:</h2>
     <p class="center-align"><a href="{% url 'create_blog_post' %}" class="btn">Write a blog post...</a></p>
 </div>
@@ -32,6 +32,7 @@
 
 {% endif %}
 {% endfor %}
+</div>
 
 {% if is_paginated %}
 <div class="row">

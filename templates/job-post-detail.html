@@ -19,7 +19,8 @@
     </div>
     <div class="col s12 l3">
         <p class="center">
-            <a class="btn red lighten-1" href="{% url 'delete-job-post' jobpost.pk %}">Delete</a>
+            <a class="waves-effect waves-light btn red lighten-1 modal-trigger" href="#jobmodal">Delete</a>
+            {% block delete_job_modal %}{% include 'delete_job_modal.html' %}{% endblock delete_job_modal %}
         </p>
     </div>
     {% endif %}

@@ -14,32 +14,43 @@
             <ul>
                 {% if user == blog.posted_by %}
                 <li class="container center">
-                    <a class="btn left" href="{% url 'edit_blog' blog.slug %}">Edit</a>
+                    <a class="btn" href="{% url 'edit_blog' blog.slug %}">Edit</a>
                 </li>
-                <div class="row"></div>
+                <li>
+                    <div class="row"></div>
+                </li>
                 <li class="container center">
-                    <a class="waves-effect waves-light btn left red lighten-1 modal-trigger" href="#blogmodal">Delete</a>
+                    <a class="waves-effect waves-light btn red lighten-1 modal-trigger" href="#blogmodal">Delete</a>
                     {% block delete_blog_modal %}{% include 'delete_blog_modal.html' %}{% endblock delete_blog_modal %}
                 </li>
-                <div class="row"></div>
-
+                <li>
+                    <div class="row"></div>
+                </li>
                 {% endif %}
                 <li class="container center">
                     <a class="btn" href="#title">Title</a>
                 </li>
-                <div class="row"></div>
+                <li>
+                    <div class="row"></div>
+                </li>
                 <li class="container center">
                     <a class="btn" href="#comment-section">Comments</a>
                 </li>
-                <div class="row"></div>
+                <li>
+                    <div class="row"></div>
+                </li>
                 <li class="container center">
                     <a class="btn amber" href="{% url 'report_blog' blog.slug %}">Report</a>
                 </li>
-                <div class="row"></div>
+                <li>
+                    <div class="row"></div>
+                </li>
                 <li class="container center">
                     <a class="btn" href="{% url 'blog_list' %}">Back</a>
                 </li>
-                <div class="row"></div>
+                <li>
+                    <div class="row"></div>
+                </li>
             </ul>
         </div>
         <div class="col s12 l10 container offset-l2">
@@ -72,6 +83,7 @@
                                 <button type="submit" class="btn">Submit</button>
                             </div>
                         </div>
+                    </div>
                     </form>
                 </div>
                 <div class="divider"></div>
