@@ -221,10 +221,12 @@ class CreateJobApplication(generic.CreateView):
 
         else:
             messages.error(request, 'PLEASE SUBMIT A VALID APPLICATION FORM')
-            application_form = JobApplicationForm()
             return render(
                 request,
-                'create-job-application.html'
+                'create-job-application.html',
+                {
+                    'form': application_form,
+                }
             )
 
 
