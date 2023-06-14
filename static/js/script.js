@@ -1,8 +1,8 @@
-// // delete remember me button in login page
-// let rememberDiv = document.getElementById('id_remember');
-// let checkBox = rememberDiv.previousElementSibling;
-// checkBox.remove();
-// rememberDiv.remove();
+// delete remember me button in login page
+let rememberDiv = document.getElementById('id_remember');
+let checkBox = rememberDiv.previousElementSibling;
+checkBox.remove();
+rememberDiv.remove();
 
 //Initialise modals
 document.addEventListener('DOMContentLoaded', function () {

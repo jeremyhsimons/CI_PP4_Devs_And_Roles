@@ -10,7 +10,7 @@
 </div>
 <div class="container">
     <div class="card-panel">
-        <form method="POST" height="200px">
+        <form method="POST">
             {{ form | crispy }}
             {% csrf_token %}
             <button type="submit" class="btn">Send message</button>
