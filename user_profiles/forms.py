@@ -29,16 +29,16 @@ class AddUserProfileForm(forms.ModelForm):
         labels = {
             'first_name': 'First Name',
             'last_name': 'Last Name',
-            'linkedin': 'Provide a url to your LinkedIn page',
-            'github_username': 'Provide your GitHub username',
+            'linkedin': 'LinkedIn URL',
+            'github_username': 'GitHub username',
             'job_seeker': 'Tick the box if you are seeking work',
             'recruiter': 'Tick the box if you are hiring',
-            'location': 'Where are you currently based?',
-            'years_experience': 'Years experience. If none, put 0.',
-            'education': 'Provide details of your education history',
-            'work_experience': 'Provide details of your work history',
-            'interests': 'Provide details of your interests outside of work',
-            'roles_open_to': 'Give examples of roles you are pursuing',
+            'location': "Where you're based?",
+            'years_experience': 'Years of experience',
+            'education': 'Education History',
+            'work_experience': 'Work History',
+            'interests': 'Interests',
+            'roles_open_to': 'Your Ideal Roles',
         }
 
     def __init__(self, *args, **kwargs):
