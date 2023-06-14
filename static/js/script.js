@@ -1,13 +1,14 @@
-// delete remember me button in login page
-let rememberDiv = document.getElementById('id_remember');
-let checkBox = rememberDiv.previousElementSibling;
-checkBox.remove();
-rememberDiv.remove();
+// // delete remember me button in login page
+// let rememberDiv = document.getElementById('id_remember');
+// let checkBox = rememberDiv.previousElementSibling;
+// checkBox.remove();
+// rememberDiv.remove();
 
 //Initialise modals
 document.addEventListener('DOMContentLoaded', function () {
     let modals = document.querySelectorAll('.modal');
     let modalsInstances = M.Modal.init(modals);
+    console.log('i am working');
 });
 
 //Open Edit Warning Modals
@@ -27,12 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     let dropdowns = document.querySelectorAll('.dropdown-trigger');
     let dropdownsInstances = M.Dropdown.init(dropdowns);
+    console.log('i am working')
 });
 
 //Initialise sidenav
 document.addEventListener('DOMContentLoaded', function () {
     let sidenavs = document.querySelectorAll('.sidenav');
     var sidenavInstances = M.Sidenav.init(sidenavs);
+    console.log('i am working');
 });
 
 //Fix bug that doesn't auto-apply materialize styles to textareas
