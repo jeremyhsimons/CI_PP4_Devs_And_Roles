@@ -1,6 +1,8 @@
-from django.db import models
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 3rd Party
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal
+from django.db import models
 
 
 class BlogPost(models.Model):

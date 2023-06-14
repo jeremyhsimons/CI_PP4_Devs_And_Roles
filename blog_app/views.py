@@ -156,6 +156,10 @@ class UpdateBlog(generic.UpdateView):
 
 @login_required
 def delete_blog(request, slug):
+    """
+    A view to get and delete the specified
+    blog if the author is the authorised user.
+    """
     blog = get_object_or_404(BlogPost, slug=slug)
     if request.user == blog.posted_by:
         messages.success(request, 'BLOG POST DELETED SUCCESSFULLY')
@@ -170,6 +174,10 @@ def delete_blog(request, slug):
 
 @login_required
 def delete_comment(request, comment_id):
+    """
+    A view to get and delete the specified
+    comment if the author is the authorised user.
+    """
     comment = get_object_or_404(Comment, pk=comment_id)
     if request.user.username == comment.name:
         messages.success(request, 'COMMENT DELETED SUCCESSFULLY.')

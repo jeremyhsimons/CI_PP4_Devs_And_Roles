@@ -1,6 +1,8 @@
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 3rd party
 from django.contrib import admin
-from .models import BlogPost, Comment
 from django_summernote.admin import SummernoteModelAdmin
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal
+from .models import BlogPost, Comment
 
 
 @admin.register(BlogPost)
