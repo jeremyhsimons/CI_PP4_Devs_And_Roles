@@ -1,10 +1,14 @@
 from django_summernote.admin import SummernoteModelAdmin
 from django.contrib import admin
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Internal
 from .models import UserProfile, Message
 
 
 @admin.register(UserProfile)
 class UserProfileAdmin(SummernoteModelAdmin):
+    """
+    A class handle user profile data management in the admin page.
+    """
     list_display = ('first_name', 'last_name', 'user', 'created_on',
                     'approved', 'reported',)
     list_filter = ('approved', 'reported',)
@@ -20,6 +24,9 @@ class UserProfileAdmin(SummernoteModelAdmin):
 
 @admin.register(Message)
 class MessageAdmin(SummernoteModelAdmin):
+    """
+    A class handle message data management in the admin page.
+    """
     list_display = ('recipient', 'first_name', 'last_name', 'sent_on')
     list_filter = ('recipient', 'sent_on')
     search_fields = [

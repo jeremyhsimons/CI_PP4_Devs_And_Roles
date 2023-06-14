@@ -1,4 +1,3 @@
-# ~~~ IMPORTS
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 3rd party
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, reverse, get_object_or_404
