@@ -150,8 +150,14 @@ class UpdateBlog(generic.UpdateView):
         else:
             messages.error(
                 request, 'PLEASE COMPLETE ALL FIELDS BEFORE SUBMITTING')
-            updateblog_form = BlogPostForm()
-            return redirect('blog_list')
+            return render(
+                request,
+                'edit_blog.html',
+                {
+                    'blog': blog,
+                    'form': updateblog_form,
+                }
+            )
 
 
 @login_required
