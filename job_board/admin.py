@@ -29,4 +29,4 @@ class JobApplicationAdmin(SummernoteModelAdmin):
     """
     list_filter = ('candidate', 'job_posting',)
     list_display = ('candidate', 'full_name', 'created_on')
-    search_fields = ['full_name',]
+    search_fields = ['full_name', ]

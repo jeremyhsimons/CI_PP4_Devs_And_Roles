@@ -39,7 +39,7 @@ class JobApplicationForm(forms.ModelForm):
             'phone': 'Phone number',
             'linkedIn': 'A url to your LinkedIn account is required',
             'github_username': 'Your GitHub username is required',
-            'why_company': 'Explain your interest in the company. (2000 chars)',
-            'why_role': 'Explain your interest in the role. (2000 chars)',
-            'why_you': 'Explain your suitability. (2000 chars)',
+            'why_company': 'Explain your interest in the company. (2000 char)',
+            'why_role': 'Explain your interest in the role. (2000 char)',
+            'why_you': 'Explain your suitability. (2000 char)',
         }

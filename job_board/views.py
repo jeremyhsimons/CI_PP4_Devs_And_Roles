@@ -174,7 +174,7 @@ def report_job_posting(request, jobpost_id):
         return HttpResponseRedirect(reverse('home'))
 
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Views to handle all job application logic.
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Views to handle all job application logic.
 
 
 class ViewApplicationDetails(View):

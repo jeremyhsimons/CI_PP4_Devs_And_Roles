@@ -554,6 +554,8 @@ features and feedback to users. Some ideas include:
 * A functioning smtp to run password reset emails, and other notifications to users in the case of applications being made/responded to.
 * A news aggregation page that uses the mediastack API to scrape tech news and display it in a paginated list of news articles on the site.
 * Modifying the job application model, and wiring up another media hosting service, so that users can upload a pdf CV/resume, and recruiters can download it when reviewing applications.
+* Exploring LinkedIn API to auto display candidate profiles from their provided linkedin urls
+* Exploring DWP APIs to direct job-seeking users to apply for universal credit if they are eligible.
   
 ## Technologies Used
 

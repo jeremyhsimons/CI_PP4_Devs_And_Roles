@@ -13,7 +13,7 @@ class UserProfileAdmin(SummernoteModelAdmin):
                     'approved', 'reported',)
     list_filter = ('approved', 'reported',)
     search_fields = ['first_name', 'last_name', 'user']
-    actions = ['approve_profiles', 'disapprove_profiles',]
+    actions = ['approve_profiles', 'disapprove_profiles', ]
 
     def approve_files(self, request, queryset):
         queryset.update(approved=True)
