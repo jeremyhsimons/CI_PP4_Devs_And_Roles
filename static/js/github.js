@@ -8,7 +8,7 @@ function userInformationHTML(user) {
         </span>
     </h2>
     <div class="gh-content">
-        <div class="gh-avatar light-green-bg">
+        <div class="gh-avatar">
             <a href="${user.html_url}" target="_blank">
                 <img src="${user.avatar_url}" width="80" height="80" alt="${user.login}">
             </a>
