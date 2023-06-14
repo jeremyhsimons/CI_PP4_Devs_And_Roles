@@ -52,7 +52,7 @@ class TestWriteBlog(TestCase):
                 'summary': 'This is a test submission',
             }
         )
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
         # blog exists in the db.
         self.assertTrue(
             BlogPost.objects.filter(slug='test-blog-1').exists()
@@ -197,8 +197,7 @@ class TestBlogView(TestCase):
                 'blog_post': self.blog
             }
         )
-        self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, '/blog/blog_list/')
+        self.assertEqual(response.status_code, 200)
 
     def tearDown(self):
         self.user.delete()

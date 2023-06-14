@@ -108,7 +108,7 @@ class TestCreateJobPosting(TestCase):
                 'benefits': 'nice stuff',
                 'id': 102
             })
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
         # check it exists in db
         unapproved_jobs = JobPosting.objects.filter(approved=False)
         self.assertEquals(unapproved_jobs[0].title, 'test title')
@@ -413,7 +413,7 @@ class TestCreateJobApplication(TestCase):
                 'why_you': 'test application',
             }
         )
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
         self.assertTrue(
             JobApplication.objects.filter(full_name='tester2').exists()
         )

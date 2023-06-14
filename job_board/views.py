@@ -73,10 +73,12 @@ class CreateJobPosting(generic.CreateView):
                            PLEASE ENSURE YOU COMPLETE
                            ALL FORM FIELDS CORRECTLY.
                            """)
-            jobpost_form = JobPostingForm()
             return render(
                 request,
-                'create-job-post.html'
+                'create-job-post.html',
+                {
+                    'form': jobpost_form
+                }
             )
 
 
@@ -133,7 +135,7 @@ class UpdateJobPosting(generic.UpdateView):
                 request,
                 'update-job-post.html',
                 {
-                    'form': form,
+                    'form': updated_form,
                     'jobpost': jobpost,
                 }
             )
