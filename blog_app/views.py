@@ -92,7 +92,6 @@ class BlogView(View):
         else:
             comment_form = CommentForm()
             messages.error(request, 'PLEASE SUBMIT A VALID COMMENT.')
-            return redirect('blog_list')
 
         return render(
             request,
