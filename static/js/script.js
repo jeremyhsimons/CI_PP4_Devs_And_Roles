@@ -1,34 +1,8 @@
-// delete remember me button in login page
-let rememberDiv = document.getElementById('id_remember');
-let checkBox = rememberDiv.previousElementSibling;
-if (rememberDiv) {
-    checkBox.remove();
-    rememberDiv.remove();
-};
-
-
 //Initialise modals
 document.addEventListener('DOMContentLoaded', function () {
     let modals = document.querySelectorAll('.modal');
     let modalsInstances = M.Modal.init(modals);
     console.log('i am working');
-});
-
-//Open Edit Warning Modals
-document.addEventListener('DOMContentLoaded', function () {
-    const editBlog = document.getElementById('editblogmodal');
-    let instance = M.Modal.init(editBlog);
-    if (editBlog) {
-        instance.open();
-    };
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const editJob = document.getElementById('editjobmodal');
-    let instance = M.Modal.init(editJob);
-    if (editJob) {
-        instance.open();
-    };
 });
 
 //Initialise dropdown
@@ -70,6 +44,14 @@ setTimeout(function () {
     let message = document.getElementById("msg");
     message.remove();
 }, 3000);
+
+// delete remember me button in login page
+let rememberDiv = document.getElementById('id_remember');
+let checkBox = rememberDiv.previousElementSibling;
+if (rememberDiv == true) {
+    checkBox.remove();
+    rememberDiv.remove();
+};
 
 document.addEventListener('DOMContentLoaded', function () {
     // Alert the user to their inability to change applications once submitted.
