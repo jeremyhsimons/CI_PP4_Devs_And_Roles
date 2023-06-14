@@ -10,8 +10,8 @@
 
 
 <div class="row container light-green-bg">
-{% if user.is_authenticated %}
-{% if user == jobpost.posted_by %}
+    {% if user.is_authenticated %}
+    {% if user == jobpost.posted_by %}
     <div class="col s12 l3">
         <p class="center">
             <a class="btn" href="{% url 'update-job-post' jobpost.pk %}">Edit</a>
@@ -42,35 +42,37 @@
         <div class="card dark-bg">
             <div class="card-image waves-effect waves-block waves-light container">
                 {% if "placeholder" in jobpost.featured_image.url %}
-                <img src="https://res.cloudinary.com/dpvq4invf/image/upload/v1686647003/codeimg_afcr3y.webp" alt="default picture of a laptop">
+                <img src="https://res.cloudinary.com/dpvq4invf/image/upload/v1686647003/codeimg_afcr3y.webp"
+                    alt="default picture of a laptop">
                 {% else %}
                 <img src="{{ jobpost.featured_image.url }}" alt="job posting featured image">
                 {% endif %}
             </div>
             <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Click Here for More Details About This Opportunity<i
-                        class="fa-solid fa-ellipsis-vertical right"></i></span>
+                <span class="card-title activator grey-text text-darken-4">Click Here for More Details About This
+                    Opportunity<i class="fa-solid fa-ellipsis-vertical right"></i></span>
             </div>
             <div class="card-reveal light-green-bg">
-                <span class="card-title grey-text text-darken-4"><i class="close fa-regular fa-circle-xmark right"></i></span>
+                <span class="card-title grey-text text-darken-4"><i
+                        class="close fa-regular fa-circle-xmark right"></i></span>
                 <ul class="job-detail-list">
                     <li class="job-detail-list-item">
                         <h4>{</h4>
                     </li>
                     <li class="job-detail-list-item">
-                        <h4>  SALARY: '£{{ jobpost.salary }}',</h4>
+                        <h4> SALARY: '£{{ jobpost.salary }}',</h4>
                     </li>
                     <li class="job-detail-list-item">
-                        <h4>  LOCATION: '{{ jobpost.location }}',</h4>
+                        <h4> LOCATION: '{{ jobpost.location }}',</h4>
                     </li>
                     <li class="job-detail-list-item">
-                        <h4>  CLOSING DATE: '{{ jobpost.closing_date }}',</h4>
+                        <h4> CLOSING DATE: '{{ jobpost.closing_date }}',</h4>
                     </li>
                     <li class="job-detail-list-item">
-                        <h4>  JOB POSTED ON: '{{ jobpost.created_on }}',</h4>
+                        <h4> JOB POSTED ON: '{{ jobpost.created_on }}',</h4>
                     </li>
                     <li class="job-detail-list-item">
-                        <h4>  CURRENT APPLICANTS: '{{ jobpost.applicants }}',</h4>
+                        <h4> CURRENT APPLICANTS: '{{ jobpost.applicants }}',</h4>
                     </li>
                     <li class="job-detail-list-item">
                         <h4>}</h4>
@@ -134,7 +136,7 @@
 {% endif %}
 
 <div class="container">
-    <p class="center bold">Posted By: {{ jobpost.posted_by }}  | Applicants: {{ jobpost.applicants }}</p>
+    <p class="center bold">Posted By: {{ jobpost.posted_by }} | Applicants: {{ jobpost.applicants }}</p>
 </div>
 
 {% if user == jobpost.posted_by %}
@@ -148,9 +150,9 @@
                 <div class="row">
                     <div class="col s6">
                         <p>APPLICANT: {{ application.full_name }}</p>
-                    </div>                
+                    </div>
                     <div class="col s6">
-                        <p>EMAIL ADDRESS: {{ application.email }}</p>                
+                        <p>EMAIL ADDRESS: {{ application.email }}</p>
                     </div>
                     <div class="col s6">
                         <p>LINKEDIN: {{ application.linkedin }}</p>

@@ -1,3 +1,9 @@
+// delete remember me button in login page
+let rememberDiv = document.getElementById('id_remember');
+let checkBox = rememberDiv.previousElementSibling;
+checkBox.remove();
+rememberDiv.remove();
+
 //Initialise modals
 document.addEventListener('DOMContentLoaded', function () {
     let modals = document.querySelectorAll('.modal');
@@ -35,7 +41,7 @@ for (let i = 0; i < textareas.length; i++) {
     textareas[i].className = 'materialize-textarea';
 }
 
-//Alter form labels to be a darker shade.
+//Alter all form labels to be a darker shade.
 let labels = document.querySelectorAll('label');
 for (let i = 0; i < labels.length; i++) {
     labels[i].className = 'black-text';
@@ -78,8 +84,3 @@ jobSeekerDiv.replaceWith(jobSeekerInput);
 let recruiterDiv = document.getElementById('div_id_recruiter');
 let recruiterInput = document.getElementById('id_recruiter');
 recruiterDiv.replaceWith(recruiterInput);
-
-let rememberDiv = document.getElementById('div_id_remember');
-let resetLink = rememberDiv.nextElementSibling;
-resetLink.remove();
-rememberDiv.remove();
