@@ -122,7 +122,17 @@ nav {
 
 .btn {
     background-color: #104F55;
-    color:#104F55;
+    color:#fff;
+}
+
+.btn:hover {
+    color:black;
+}
+
+/*-------------------------------------------------------- login page styles */
+
+.sign-up-link:hover {
+    text-decoration: underline;
 }
 
 /*---------------------------------------------------------- home page styles */ 
