@@ -19,14 +19,14 @@
     </div>
     <div class="col s12 l3">
         <p class="center">
-            <a class="waves-effect waves-light btn red lighten-1 modal-trigger" href="#jobmodal">Delete</a>
+            <a class="waves-effect waves-light btn red darken-4 modal-trigger" href="#jobmodal">Delete</a>
             {% block delete_job_modal %}{% include 'delete_job_modal.html' %}{% endblock delete_job_modal %}
         </p>
     </div>
     {% endif %}
     <div class="col s12 l3">
         <p class="center">
-            <a class="btn amber" href="{% url 'report-job-post' jobpost.pk %}">Report</a>
+            <a class="btn amber black-text" href="{% url 'report-job-post' jobpost.pk %}">Report</a>
         </p>
     </div>
     {% endif %}

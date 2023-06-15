@@ -171,6 +171,12 @@ Roboto mono was chosen as the main font for this website because of its readabil
 
 [Coolors.co](https://coolors.co/104f55-32746d-f4d8cd-01200f-011502 ) was used to generate the color palate of the site. The dark and light green combination was chosen because, coupled with roboto mono, the light-coloured text on the dark green background emulates a development terminal.
 
+### Front End Libraries
+The [Materialize](https://materializecss.com/) CSS and JavaScript library was used to create the layout of the front end. The classes included in this library were used to make the site fully responsive and also to provide satisfying feedback to users regarding their actions.
+
+* The grid system (rows and columns) was used to generate the layout of job postings, blog posts, and candidate list on the site.
+* In conjunction with the [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) library, Materialize forms were used to generate clean and attractive form fields.
+* Materialize 'modals' and 'toasts' were used to defensively programme delete functionality in the site. These features provide users with adequate notification of the consequences of their actions without redirecting them unnecessarily to extra pages.
 
 ### Wireframes
 
@@ -403,7 +409,6 @@ A relational database schema was created using [Lucidchart](https://lucid.app/) 
 |  | message | Textfield | blank=False |
 |  | read | bool | default=False |
 
-
 #### Blog model
 
 * User (author) is a foreign key in the blog model.
@@ -519,7 +524,7 @@ A relational database schema was created using [Lucidchart](https://lucid.app/) 
 
 The website has 20 pages (including error pages) and a variety of CRUD functionalites. Users are able to access a limited number of features without signing up. Different pages are accessbile to registered users depending on what their job-seeker/recruiter settings are toggled to on their profile.
 
-### App Features:
+### Pre-authentication:
 
 <details>
     <summary>Home page</summary>
@@ -546,6 +551,110 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
     </ul>
 </details><br>
 
+<details>
+    <summary>Job detail page</summary>
+</details>
+
+<details>
+    <summary>Sign up/Log in</summary>
+</details>
+
+<details>
+    <summary>Sign out</summary>
+</details>
+
+### Job Seeker Authentication
+
+<details>
+    <summary>Create Profile</summary>
+</details>
+
+<details>
+    <summary>View Own Profile</summary>
+</details>
+
+<details>
+    <summary>Edit profile details</summary>
+</details>
+
+<details>
+    <summary>Delete Profile</summary>
+</details>
+
+<details>
+    <summary>Job application page</summary>
+</details>
+
+<details>
+    <summary>View applications</summary>
+</details>
+
+<details>
+    <summary>Withdraw applications</summary>
+</details>
+
+### Recruiter Authentication
+
+<details>
+    <summary>Create job posting page</summary>
+</details>
+
+<details>
+    <summary>Update job posting page</summary>
+</details>
+
+<details>
+    <summary>Delete job posting</summary>
+</details>
+
+<details>
+    <summary>View Candidates</summary>
+</details>
+
+<details>
+    <summary>Message Candidates</summary>
+</details>
+
+### Admin Authentication
+
+<details>
+    <summary>Approve jobs/revoke approval</summary>
+</details>
+
+<details>
+    <summary>View contact messages from users.</summary>
+</details>
+
+### Features available to all authenticated users
+
+<details>
+    <summary>Create blog post</summary>
+</details>
+
+<details>
+    <summary>View blog post</summary>
+</details>
+
+<details>
+    <summary>Update blog post</summary>
+</details>
+
+<details>
+    <summary>Delete blog post</summary>
+</details>
+
+<details>
+    <summary>Comment on blog post</summary>
+</details>
+
+<details>
+    <summary>Delete comment</summary>
+</details>
+
+<details>
+    <summary>Submit a contact form to site admin</summary>
+</details>
+
 ### Feature ideas for future development
 
 In future the website could be further developed and improved to offer more
@@ -555,7 +664,7 @@ features and feedback to users. Some ideas include:
 * A news aggregation page that uses the mediastack API to scrape tech news and display it in a paginated list of news articles on the site.
 * Modifying the job application model, and wiring up another media hosting service, so that users can upload a pdf CV/resume, and recruiters can download it when reviewing applications.
 * Exploring LinkedIn API to auto display candidate profiles from their provided linkedin urls
-* Exploring DWP APIs to direct job-seeking users to apply for universal credit if they are eligible.
+* Exploring DWP APIs to direct job-seeking users to apply for UK universal credit if they are eligible.
   
 ## Technologies Used
 
@@ -566,7 +675,20 @@ features and feedback to users. Some ideas include:
 * CSS
 * JavaScript
 
+### Frameworks/3rd party Libraries used for Python, CSS, JS
+
+* [Django]() for building the MVT architecture of the site.
+* [Django Summernote]() for implementing a text editor in the admin panel
+* [Cloudinary]() for hosting static files.
+* [Django Crispy Forms]() for rendering/formatting forms in django templates
+* [Django Allauth]() for handling all user authentication features in the site.
+* [Coverage] for displaying the extent of python unit testing un django apps.
+* [Materialize CSS]() for frontend design/layout/responsiveness.
+
 ### Other tools/websites/libraries used
+* [Figma] for creating site witeframes.
+* [Favicon.io] for designing and creating site favicon.
+* [Coolors.co] for selecting the site colour palate.
 * [Lucidchart](https://lucid.app/) was used to create wireframes.
 * [Git](https://git-scm.com/) was used for version control.
 * [GitHub](https://github.com/) was used for saving and storing files.
@@ -693,6 +815,7 @@ The following issues remain unfixed, and as a consequence the features were remo
 ## Credits
 
 ### 3rd party code used
+* The code for the GitHub 
 
 #### 3rd party Python libraries/modules
 

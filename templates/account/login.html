@@ -46,9 +46,11 @@
                 <form class="login" method="POST" action="{% url 'account_login' %}">
                     {% csrf_token %}
                     <p>
+                        <label for="id_login">Username:</label>
                         {{ form.login }}
                     </p>
                     <p>
+                        <label for="id_password">Password:</label>
                         {{ form.password }}
                     </p>
                     <div class="center">

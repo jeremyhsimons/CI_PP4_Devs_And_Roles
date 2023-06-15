@@ -9,7 +9,7 @@
         <div class="card-panel light-green-bg">
             <h3>{{ application.job_posting.title }}</h3>
             <a class="btn" href="{% url 'application-detail' application.pk %}">View Details</a>
-            <a  class="btn red modal-trigger" href="#applicationmodal">Withdraw application </a>
+            <a  class="btn red darken-4 modal-trigger" href="#applicationmodal">Withdraw application </a>
             {% block delete_application_modal %}{% include 'delete_application_modal.html' %}{% endblock delete_application_modal %}
         </div>
     </div>
