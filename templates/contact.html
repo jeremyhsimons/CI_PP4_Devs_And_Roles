@@ -11,9 +11,19 @@
 <div class="container">
     <div class="card-panel">
         <form method="POST">
-            {{ form | crispy }}
+            <div class="container">
+                {{ form.full_name | as_crispy_field }}
+            </div>
+            <div class="container">
+                {{ form.email | as_crispy_field }}
+            </div>
+            <div class="container">
+                {{ form.message | as_crispy_field }}
+            </div>
             {% csrf_token %}
-            <button type="submit" class="btn">Send message</button>
+            <div class="center">
+                <button type="submit" class="btn">Send message</button>
+            </div>
         </form>
     </div>
 </div>
