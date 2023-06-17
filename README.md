@@ -534,51 +534,162 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <p>Home page with job postings</p>
         </li>
         <li>
-            <img src="docs/features/signup.png" alt="A screenshot of the home page">
+            <img src="" alt="A screenshot of the home page">
         </li>
         <li>
             <p>Job details when clicking on a job posting</p>
         </li>
         <li>
-            <img src="docs/features/signup.png" alt="A screenshot of a job detail page">
+            <img src="" alt="A screenshot of a job detail page">
         </li>
         <li>
             <p>navigator to get the next items</p>
         </li>
         <li>
-            <img src="docs/features/signup.png" alt="A screenshot of the bottom nav element">
+            <img src="" alt="A screenshot of the bottom nav element">
+        </li>
+        <li>
+            <p>User Stories covered:</p>
         </li>
     </ul>
 </details><br>
 
 <details>
     <summary>Job detail page</summary>
+    <ul>
+        <li>
+            <p>Page with job postings. Top nav bar with optios to report, edit / delete, the job posting depending on which user is logged in.</p>
+        </li>
+        <li>
+            <img src="" alt="A screenshot of the job details page navbar with different coloured buttons.">
+        </li>
+        <li>
+            <p>Hero image with clickable card to access primary job details. cards displaying other job info.</p>
+        </li>
+        <li>
+            <img src="" alt="the hero image: code background and button for more details">
+        </li>
+            <li>
+            <img src="" alt="the main body of text for the job description">
+        </li>
+        <li>
+            <p>User Stories covered:</p>
+        </li>
+    </ul>
 </details>
 
 <details>
     <summary>Sign up/Log in</summary>
+    <ul>
+        <li>
+            <p>Sign up and log in pages for users to create and revisit their accounts on the site.</p>
+        </li>
+        <li>
+            <img src="" alt="the sign up/lgin options in navbar.">
+            <img src="" alt="the login form.">
+        </li>
+        <li>
+            <img src="" alt="the signup form.">
+        </li>
+        <li>
+            <p>User Stories covered:</p>
+        </li>
+    </ul>
 </details>
 
 <details>
     <summary>Sign out</summary>
+    <ul>
+        <li>
+            <p>Separate page for authorised users to confirm sign out</p>
+        </li>
+        <li>
+            <img src="" alt="the sign out option in navbar.">
+        </li>
+        <li>
+            <img src="" alt="the sign out form.">
+        </li>
+        <li>
+            <p>User Stories covered:</p>
+        </li>
+    </ul>  
 </details>
 
 ### Job Seeker Authentication
 
 <details>
     <summary>Create Profile</summary>
+    <ul>
+        <li>
+            <p>Form that successful new sign ups are automatically redirected to after the registration form</p>
+        </li>
+        <li>
+            <img src="" alt="the form for creating profiles.">
+        </li>
+        <li>
+            <p>Options for the type of account the user wishes to have. This will change which features of the site they have access to. Note, users can sign up as both job-seeker and recruiter if they wish.</p>
+        </li>
+        <li>
+            <img src="" alt="the options to sign up as recruiter or job seeker">
+        </li>
+        <li>
+            <p>User Stories covered:</p>
+        </li>
+    </ul>
 </details>
 
 <details>
     <summary>View Own Profile</summary>
+    <ul>
+        <li>
+            <p>Users can access their profiles from the nav bar once signed up. This takes them to their profile page (if it is a job seeker profile, this will be the same page of information that recruiters can view).</p>
+        </li>
+        <li>
+            <img src="" alt="the button on the navbar for accessing the user's own profile.">
+        </li>
+        <li>
+            <img src="" alt="the details of the user displayed.">
+        </li>
+        <li>
+            <p>Options for the user to edit/delete their profile/account, or view their messages from recruiters.</p>
+        </li>
+        <li>
+            <img src="" alt="the options element and the buttons displaying options.">
+        </li>
+        <li>
+            <p>User Stories covered:</p>
+        </li>
+    </ul>
 </details>
 
 <details>
     <summary>Edit profile details</summary>
+    <ul>
+        <li>
+            <p>Form for users to edit their profile details.</p>
+        </li>
+        <li>
+            <img src="" alt="edit profile form.">
+        </li>
+        <li>
+            <p>User Stories covered:</p>
+        </li>
+    </ul>
 </details>
 
 <details>
     <summary>Delete Profile</summary>
+        <ul>
+        <li>
+            <p>Page warning users of the permanent deletion of their account if they delete their profile.</p>
+        </li>
+        <li>
+            <img src="" alt="delete profile warning text adnd.">
+        </li>
+        <li>
+            <p>User Stories covered:</p>
+        </li>
+    </ul>
 </details>
 
 <details>
