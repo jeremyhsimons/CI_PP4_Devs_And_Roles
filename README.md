@@ -549,7 +549,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <img src="" alt="A screenshot of the bottom nav element">
         </li>
         <li>
-            <p>User Stories covered:</p>
+            <p>User Stories covered:1, 2</p>
         </li>
     </ul>
 </details><br>
@@ -564,7 +564,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <img src="" alt="A screenshot of the job details page navbar with different coloured buttons.">
         </li>
         <li>
-            <p>Hero image with clickable card to access primary job details. cards displaying other job info.</p>
+            <p>Hero image with clickable card to access primary job details. cards displaying other job info, including the number of applicants the job already has.</p>
         </li>
         <li>
             <img src="" alt="the hero image: code background and button for more details">
@@ -573,7 +573,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <img src="" alt="the main body of text for the job description">
         </li>
         <li>
-            <p>User Stories covered:</p>
+            <p>User Stories covered: 1, 7, 19</p>
         </li>
     </ul>
 </details>
@@ -585,14 +585,14 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <p>Sign up and log in pages for users to create and revisit their accounts on the site.</p>
         </li>
         <li>
-            <img src="" alt="the sign up/lgin options in navbar.">
+            <img src="" alt="the sign up/lgin options in navbar."><br>
             <img src="" alt="the login form.">
         </li>
         <li>
             <img src="" alt="the signup form.">
         </li>
         <li>
-            <p>User Stories covered:</p>
+            <p>User Stories covered:1, 13</p>
         </li>
     </ul>
 </details>
@@ -610,7 +610,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <img src="" alt="the sign out form.">
         </li>
         <li>
-            <p>User Stories covered:</p>
+            <p>User Stories covered: 1, 13</p>
         </li>
     </ul>  
 </details>
@@ -633,7 +633,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <img src="" alt="the options to sign up as recruiter or job seeker">
         </li>
         <li>
-            <p>User Stories covered:</p>
+            <p>User Stories covered: 3</p>
         </li>
     </ul>
 </details>
@@ -657,7 +657,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <img src="" alt="the options element and the buttons displaying options.">
         </li>
         <li>
-            <p>User Stories covered:</p>
+            <p>User Stories covered: 3, 4</p>
         </li>
     </ul>
 </details>
@@ -672,7 +672,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <img src="" alt="edit profile form.">
         </li>
         <li>
-            <p>User Stories covered:</p>
+            <p>User Stories covered: 3, 21</p>
         </li>
     </ul>
 </details>
@@ -680,90 +680,200 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
 <details>
     <summary>Delete Profile</summary>
         <ul>
-        <li>
-            <p>Page warning users of the permanent deletion of their account if they delete their profile.</p>
-        </li>
-        <li>
-            <img src="" alt="delete profile warning text adnd.">
-        </li>
-        <li>
-            <p>User Stories covered:</p>
-        </li>
-    </ul>
+            <li>
+                <p>Page warning users of the permanent deletion of their account if they delete their profile.</p>
+            </li>
+            <li>
+                <img src="" alt="delete profile warning text adnd.">
+            </li>
+            <li>
+                <p>User Stories covered: 20</p>
+            </li>
+        </ul>
 </details>
 
 <details>
     <summary>Job application page</summary>
+        <ul>
+            <li>
+                <p>Page with a form to complete in order to apply for a job.</p>
+            </li>
+            <li>
+                <img src="" alt="empty form that the user must complete to apply.">
+            </li>
+            <li>
+                <p>User Stories covered: 6</p>
+            </li>
+        </ul>
 </details>
 
 <details>
     <summary>View applications</summary>
+        <ul>
+            <li>
+                <p>Page with a list of applications already made. Options are included to withdraw applications or view the job description again.</p>
+            </li>
+            <li>
+                <img src="" alt="list of cards showing jobs the user has already applied for.">
+            </li>
+            <li>
+                <p>User Stories covered: 5</p>
+            </li>
+        </ul>
 </details>
 
 <details>
     <summary>Withdraw applications</summary>
+        <ul>
+            <li>
+                <p>What the job-seeker user views upon selecting the withdraw application button.</p>
+            </li>
+            <li>
+                <img src="" alt="Popup warning users they are about to delete their job application">
+            </li>
+            <li>
+                <p>User Stories covered: 8</p>
+            </li>
+        </ul>
 </details>
 
 ### Recruiter Authentication
 
 <details>
     <summary>Create job posting page</summary>
+        <ul>
+            <li>
+                <p>The dropdown menu recruiters get to create job ads and view job-seekers</p>
+            </li>
+            <li>
+                <img src="" alt="The navbar options only available to recruiters.">
+            </li>
+            <li>
+                <p>The form that users complete to submit a job ad to the site admin for approval.</p>
+            </li>
+            <li>
+                <img src="" alt="the form for recruiters to submit a job ad">
+            </li>
+            <li>
+                <p>User Stories covered: 14</p>
+            </li>
+        </ul>
 </details>
 
 <details>
     <summary>Update job posting page</summary>
+        <ul>
+            <li>
+                <p>button for recruiter to edit job ad.</p>
+            </li>
+            <li>
+                <img src="" alt="button for recruiter to edit job ad.">
+            </li>
+            <li>
+                <p>The form that users complete to submit updates a job ad.</p>
+            </li>
+            <li>
+                <img src="" alt="The form that users complete to submit updates a job ad.">
+            </li>
+            <li>
+                <p>User Stories covered: 16</p>
+            </li>
+        </ul>
 </details>
 
 <details>
     <summary>Delete job posting</summary>
+        <ul>
+            <li>
+                <p>button for recruiter to delete a job ad.</p>
+            </li>
+            <li>
+                <img src="" alt="button for recruiter to edit job ad.">
+            </li>
+            <li>
+                <p>The popup that appears when users opt to delete a job ad.</p>
+            </li>
+            <li>
+                <img src="" alt="The popup that appears when users opt to delete a job ad.">
+            </li>
+            <li>
+                <p>User Stories covered: 15</p>
+            </li>
+        </ul>
 </details>
 
 <details>
     <summary>View Candidates</summary>
+        <ul>
+            <li>
+                <p>The dropdown menu recruiters get to create job ads and view job-seekers</p>
+            </li>
+            <li>
+                <img src="" alt="The navbar options only available to recruiters.">
+            </li>
+            <li>
+                <p>The paginated list of candidates recruiters can contact</p>
+            </li>
+            <li>
+                <img src="" alt="The paginated list of candidates recruiters can contact">
+            </li>
+            <li>
+                <p>User Stories covered: 17</p>
+            </li>
+        </ul>
 </details>
 
 <details>
     <summary>Message Candidates</summary>
+        <ul>
+            <li>
+                <p>The profile page accessible to the recruiter via the list of candidates.</p>
+            </li>
+            <li>
+                <img src="" alt="The profile page accessible to the recruiter via the list of candidates.">
+            </li>
+            <li>
+                <p>The messaging form that allows recruiters to send messages to job-seekers inviting them to chat more.</p>
+            </li>
+            <li>
+                <img src="" alt="The paginated list of candidates recruiters can contact">
+            </li>
+            <li>
+                <p>User Stories covered: 18</p>
+            </li>
+        </ul>
 </details>
 
 ### Admin Authentication
 
 <details>
     <summary>Approve jobs/revoke approval</summary>
+        <ul>
+            <li>
+                <p>The admin dashboard that allows the site controller to manage the site. This feature enables admin to approve or disapprove multiple job postings in one go.</p>
+            </li>
+            <li>
+                <img src="" alt="the admin dashboard with the option selected to approve multiple jobs.">
+            </li>
+            <li>
+                <p>User Stories covered: 22, 23</p>
+            </li>
+        </ul>
 </details>
 
 <details>
     <summary>View contact messages from users.</summary>
-</details>
-
-### Features available to all authenticated users
-
-<details>
-    <summary>Create blog post</summary>
-</details>
-
-<details>
-    <summary>View blog post</summary>
-</details>
-
-<details>
-    <summary>Update blog post</summary>
-</details>
-
-<details>
-    <summary>Delete blog post</summary>
-</details>
-
-<details>
-    <summary>Comment on blog post</summary>
-</details>
-
-<details>
-    <summary>Delete comment</summary>
-</details>
-
-<details>
-    <summary>Submit a contact form to site admin</summary>
+        <ul>
+            <li>
+                <p>The admin dashboard page that lists the contact messages from users filling out the site contact form.</p>
+            </li>
+            <li>
+                <img src="" alt="the admin dashboard with the option selected to approve multiple jobs.">
+            </li>
+            <li>
+                <p>User Stories covered: 24</p>
+            </li>
+        </ul>
 </details>
 
 ### Feature ideas for future development
