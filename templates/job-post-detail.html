@@ -40,7 +40,7 @@
 
 <div class="row container">
     <div class="col s12">
-        <div class="card dark-bg">
+        <div id="job-hero" class="card dark-bg">
             <div class="card-image waves-effect waves-block waves-light container">
                 {% if "placeholder" in jobpost.featured_image.url %}
                 <img src="https://res.cloudinary.com/dpvq4invf/image/upload/v1686647003/codeimg_afcr3y.webp"
@@ -58,9 +58,6 @@
                         class="close fa-regular fa-circle-xmark right"></i></span>
                 <ul class="job-detail-list">
                     <li class="job-detail-list-item">
-                        <h4>{</h4>
-                    </li>
-                    <li class="job-detail-list-item">
                         <h4> SALARY: '£{{ jobpost.salary }}',</h4>
                     </li>
                     <li class="job-detail-list-item">
@@ -74,9 +71,6 @@
                     </li>
                     <li class="job-detail-list-item">
                         <h4> CURRENT APPLICANTS: '{{ jobpost.applicants }}',</h4>
-                    </li>
-                    <li class="job-detail-list-item">
-                        <h4>}</h4>
                     </li>
                 </ul>
             </div>

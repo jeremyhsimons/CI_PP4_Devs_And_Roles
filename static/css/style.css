@@ -34,7 +34,9 @@ textarea {
 }
 
 img {
-    max-width: 100%;
+    max-width: 70%;
+    max-height: 100%;
+    margin: auto;
 }
 
 :focus-visible {
@@ -115,6 +117,7 @@ nav {
 
 .card-image {
     width: 100%;
+    max-height: 500px;
 }
 
 .message-popup {
@@ -188,6 +191,10 @@ nav {
 }
 
 /*-------------------------------------------------- Job Detail page styles */
+
+#job-hero {
+    max-height: 700px;
+}
 
 .job-detail-list {
     padding-top: 20px;
@@ -456,6 +463,11 @@ nav {
     .message-popup {
         min-width: 100%;
         min-height: 20px;
+    }
+
+    .job-detail-list-item > h4 {
+        font-size: 100%;
+        font-weight: 700;
     }
 }
 
