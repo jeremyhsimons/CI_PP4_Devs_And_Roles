@@ -874,34 +874,140 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
                 <p>User Stories covered: 24</p>
             </li>
         </ul>
-<<<<<<< HEAD
-=======
 </details>
 
 ### Features available to all authenticated users
 
 <details>
     <summary>Create blog post</summary>
+    <ul>
+        <li>
+            <p>The navbar option to access the blog list</p>
+        </li>
+        <li>
+            <img src="" alt="The navbar option to access the blog list">
+        </li>
+        <li>
+            <p>The button to create a new blog post</p>
+        </li>
+        <li>
+            <img src="" alt="The button to create a new blog post">
+        </li>
+        <li>
+            <p>The form that allows users to submit a blog post to the site.</p>
+        </li>
+        <li>
+            <img src="" alt="The form that allows users to submit a blog post to the site.">
+        </li>
+        <li>
+            <p>User Stories covered: 9</p>
+        </li>
+    </ul>
 </details>
 
 <details>
     <summary>View blog post</summary>
+    <ul>
+        <li>
+            <p>The navbar option to access the blog list</p>
+        </li>
+        <li>
+            <img src="" alt="The navbar option to access the blog list">
+        </li>
+        <li>
+            <p>Selecting one of the blog posts by clicking the 'read' button</p>
+        </li>
+        <li>
+            <img src="" alt="Selecting one of the blog posts by clicking the 'read' button">
+        </li>
+        <li>
+            <p>The blog detail page which features all the blog information plus page navigation menu and comment section</p>
+        </li>
+        <li>
+            <img src="" alt="The blog detail page which features all the blog information plus page navigation menu and comment section.">
+        </li>
+        <li>
+            <p>User Stories covered: 9, 10</p>
+        </li>
+    </ul>
 </details>
 
 <details>
     <summary>Update blog post</summary>
+    <ul>
+        <li>
+            <p>The button that users can click to edit their own blog posts.</p>
+        </li>
+        <li>
+            <img src="" alt="The button that users can click to edit their own blog posts.">
+        </li>
+        <li>
+            <p>The form that users must fill out to submit edits to their posts. There is a popup warning them not to resubmit the same data.</p>
+        </li>
+        <li>
+            <img src="" alt="The form that users must fill out to submit edits to their posts. There is a popup warning them not to resubmit the same data.">
+        </li>
+        <li>
+            <p>User Stories covered: 9</p>
+        </li>
+    </ul>
 </details>
 
 <details>
     <summary>Delete blog post</summary>
+    <ul>
+        <li>
+            <p>The button that users can click to delete their own blog posts.</p>
+        </li>
+        <li>
+            <img src="" alt="The button that users can click to delete their own blog posts.">
+        </li>
+        <li>
+            <p>The modal that appears when users try to delete their blog to warn them this is a permanent action.</p>
+        </li>
+        <li>
+            <img src="" alt="The modal that appears when users try to delete their blog to warn them this is a permanent action.">
+        </li>
+        <li>
+            <p>User Stories covered: 9</p>
+        </li>
+    </ul>
 </details>
 
 <details>
     <summary>Comment on blog post</summary>
+    <ul>
+        <li>
+            <p>The Comment section of the blog detail page and the form that allows users to add their own comments to the post.</p>
+        </li>
+        <li>
+            <img src="" alt="The Comment section of the blog detail page and the form that allows users to add their own comments to the post.">
+        </li>
+        <li>
+            <p>User Stories covered: 10</p>
+        </li>
+    </ul>
 </details>
 
 <details>
     <summary>Delete comment</summary>
+    <ul>
+        <li>
+            <p>The button that the user can select to delete their own comment</p>
+        </li>
+        <li>
+            <img src="" alt="The button that the user can select to delete their own comment.">
+        </li>
+        <li>
+            <p>The popup that appears when users opt to delete comments, warning them that this is a permanent action.</p>
+        </li>
+        <li>
+            <img src="" alt="The popup that appears when users opt to delete comments, warning them that this is a permanent action.">
+        </li>
+        <li>
+            <p>User Stories covered: 10</p>
+        </li>
+    </ul>
 </details>
 
 <details>
@@ -917,7 +1023,6 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
                 <p>User Stories covered: 12</p>
             </li>
         </ul>
->>>>>>> f525ceb815c78ae8f2f59ab5072eb7fb150bcecb
 </details>
 
 ### Feature ideas for future development
