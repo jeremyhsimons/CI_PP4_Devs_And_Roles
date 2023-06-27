@@ -874,6 +874,50 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
                 <p>User Stories covered: 24</p>
             </li>
         </ul>
+<<<<<<< HEAD
+=======
+</details>
+
+### Features available to all authenticated users
+
+<details>
+    <summary>Create blog post</summary>
+</details>
+
+<details>
+    <summary>View blog post</summary>
+</details>
+
+<details>
+    <summary>Update blog post</summary>
+</details>
+
+<details>
+    <summary>Delete blog post</summary>
+</details>
+
+<details>
+    <summary>Comment on blog post</summary>
+</details>
+
+<details>
+    <summary>Delete comment</summary>
+</details>
+
+<details>
+    <summary>Submit a contact form to site admin</summary>
+        <ul>
+            <li>
+                <p>The contact page that allows authorized users to contact the site admin directly.</p>
+            </li>
+            <li>
+                <img src="" alt="The contact page that allows authorized users to contact the site admin directly.">
+            </li>
+            <li>
+                <p>User Stories covered: 12</p>
+            </li>
+        </ul>
+>>>>>>> f525ceb815c78ae8f2f59ab5072eb7fb150bcecb
 </details>
 
 ### Feature ideas for future development
