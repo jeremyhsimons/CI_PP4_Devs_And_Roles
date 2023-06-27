@@ -33,6 +33,10 @@ textarea {
     border-width: 0;
 }
 
+img {
+    max-width: 100%;
+}
+
 :focus-visible {
     outline: 0;
 }
@@ -107,6 +111,10 @@ nav {
 
 .card-content {
     background-color: #CDF4DC;
+}
+
+.card-image {
+    width: 100%;
 }
 
 .message-popup {
@@ -241,6 +249,12 @@ nav {
 
 #update-blog-image {
     background-color: #f4d8cd;
+    border: 2px solid #011502;
+    padding: 10px;
+}
+
+#update-blog-image > a {
+    color: #011502;
 }
 
 /*-------------------------------------------------- profile list page styles */

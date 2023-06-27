@@ -10,15 +10,21 @@
                 <li class="container center">
                     <a class="btn" href="{% url 'edit_profile' %}">Edit</a>
                 </li>
-                <div class="row"></div>
+                <li>
+                    <div class="row"></div>
+                </li>
                 <li class="container center">
                     <a class="btn red darken-4" href="{% url 'delete_profile' %}">Delete</a>
                 </li>
-                <div class="row"></div>
+                <li>
+                    <div class="row"></div>
+                </li>
                 <li class="container center">
                     <a class="btn" href="#messages">Messages</a>
                 </li>
-                <div class="row"></div>
+                <li>
+                    <div class="row"></div>
+                </li>
                 <li class="container center">
                     <a class="btn" href="{% url 'home' %}">Back</a>
                 </li>
@@ -79,7 +85,9 @@
                             <li>
                                 {{ profile.linkedin }}
                             </li>
-                            <div class="row"></div>
+                            <li>
+                                <div class="row"></div>
+                            </li>
                             <li>
                                 <h5 class="bold">View {{ profile.first_name }}'s GitHub stats!</h5>
                                 <!--Code adapted from CI tutorial: Bootstrap Resume part 2-->
