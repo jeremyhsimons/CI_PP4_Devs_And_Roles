@@ -585,7 +585,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <p>Sign up and log in pages for users to create and revisit their accounts on the site.</p>
         </li>
         <li>
-            <img src="" alt="the sign up/lgin options in navbar.">
+            <img src="" alt="the sign up/lgin options in navbar."><br>
             <img src="" alt="the login form.">
         </li>
         <li>
@@ -904,6 +904,17 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
 
 <details>
     <summary>Submit a contact form to site admin</summary>
+        <ul>
+            <li>
+                <p>The contact page that allows authorized users to contact the site admin directly.</p>
+            </li>
+            <li>
+                <img src="" alt="The contact page that allows authorized users to contact the site admin directly.">
+            </li>
+            <li>
+                <p>User Stories covered: 12</p>
+            </li>
+        </ul>
 </details>
 
 ### Feature ideas for future development
