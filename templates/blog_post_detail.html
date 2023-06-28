@@ -40,7 +40,11 @@
                     <div class="row"></div>
                 </li>
                 <li class="container center">
+                    {% if blog.reported %}
+                    <p class="bold">This blog post has been reported.</p>
+                    {% else %}
                     <a class="btn amber waves-effect waves-light black-text" href="{% url 'report_blog' blog.slug %}">Report</a>
+                    {% endif %}
                 </li>
                 <li>
                     <div class="row"></div>
@@ -94,7 +98,11 @@
                     <div class="card-panel comment">
                         <span class="bold">{{ comment.name }} | {{ comment.created_on }}</span>
                         <p>{{ comment.body }}</p>
+                        {% if comment.reported %}
+                        <p class="bold">This comment has been reported</p>
+                        {% else %}
                         <a class="waves-effect waves-light btn modal-trigger black-text amber" href="{% url 'report_comment' comment.pk %}">REPORT</a>
+                        {% endif %}
                         {% if user.username == comment.name %}
                         <a class="waves-effect waves-light btn red lighten-1 modal-trigger" href="#commentmodal">Delete</a>
                         {% block delete_comment_modal %}{% include 'delete_comment_modal.html' %}{% endblock delete_comment_modal %}

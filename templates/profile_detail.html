@@ -9,7 +9,11 @@
             <div class="divider"></div>
             <ul>
                 <li class="center">
+                    {% if profile.reported %}
+                    <p class="bold">This profile has been reported</p>
+                    {% else %}
                     <a class="btn amber black-text" href="{% url 'report_profile' profile.pk %}">Report</a>
+                    {% endif %}
                 </li>
                 <li>
                     <div class="row"></div>

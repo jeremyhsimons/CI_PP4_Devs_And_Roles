@@ -25,9 +25,13 @@
     </div>
     {% endif %}
     <div class="col s12 l3">
+        {% if jobpost.reported %}
+        <p>This job has been reported.</p>
+        {% else %}
         <p class="center">
             <a class="btn amber black-text" href="{% url 'report-job-post' jobpost.pk %}">Report</a>
         </p>
+        {% endif %}
     </div>
     {% endif %}
     <div class="col s12 l3">
