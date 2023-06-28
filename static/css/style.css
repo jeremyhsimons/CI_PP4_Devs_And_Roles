@@ -340,6 +340,7 @@ nav {
 }
 
 .repo-list ul li a {
+    max-width: 100%;
     font-weight: bold;
     padding: 6px 9px;
     display: block;
@@ -436,6 +437,10 @@ nav {
 
 /*----------------------------END OF BORROWED STYLES------------------------- */
 
+.gh-avatar {
+    max-width: 200px;
+}
+
 /*------------------------------------------------------------- Media Queries */
 
 @media screen and (max-width: 600px) {
@@ -479,5 +484,9 @@ nav {
 
     main {
         background: rgb(190, 204, 188);
+    }
+
+    .repo-list ul li a {
+        font-size: 80%;
     }
 }
