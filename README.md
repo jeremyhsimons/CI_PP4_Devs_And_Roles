@@ -30,15 +30,16 @@ The ultimate goal of these features is to expedite the recruitment process for t
     * [Data Models](#data-models)
     * [Database Schema](#database-schema)
 * [Features](#features)
-    * [App Features](#app-features)
     * [Feature Ideas for future development](#feature-ideas-for-future-development)
 * [Technologies Used](#technologies-used)
 * [Deployment & Local Development](#deployment--local-development)
+    * [Database](#database)
+    * [Heroku deployment](#heroku-deployment)
+    * [Forking GitHub Repository](#forking-github-repository)
+    * [Cloning GitHub Repository](#cloning-github-repository)
 * [Testing](#testing)
-    * [Validation](#validation)
-    * [Manual Testing](#manual-testing)
-    * [Automated Testing](#automated-testing)
-    * [Bugs](#bugs)
+* [Validation](#validation)
+* [Bugs](#bugs)
 * [Credits](#credits)
 
 ## Project Goals
@@ -1070,6 +1071,14 @@ features and feedback to users. Some ideas include:
 
 ## Deployment & Local Development
 
+### Database
+
+### Heroku Deployment
+
+### Forking GitHub Repository
+
+### Cloning GitHub Repository
+
 The website was deployed to [Heroku](https://id.heroku.com/) using the following process:
 1. Login or create an account at [Heroku](https://dashboard.heroku.com/)
 <img src="docs/heroku/heroku1.png">
@@ -1115,6 +1124,10 @@ This repository can be cloned using the following process:
 1. Type the command '$ git clone'
 1. Paste the URL of the repository after this.
 1. Hit enter on your keyboard and the project will be cloned.
+
+## Testing
+
+A detailed description of all automated and manual tests carried out can be found in a separate testing.md file [here](https://github.com/jeremyhsimons/CI_PP4_Devs_And_Roles/blob/main/TESTING.md)
 
 ## Validation
 
