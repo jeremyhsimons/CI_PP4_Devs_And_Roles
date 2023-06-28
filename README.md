@@ -1071,15 +1071,43 @@ features and feedback to users. Some ideas include:
 
 ## Deployment & Local Development
 
+For ease of development, the production database was set up at the beginning of the project to ensure that everything worked correctly. This was especially important for ensuring the accessibility of static files.
+
 ### Database
+
+1. To create a managed PostgreSQL database. Create an account or sign up to [ElephantSQL](#https://www.elephantsql.com/).
+
+1. Once logged in, click the 'Create New Instance' button.
+
+<img src="" alt="">
+
+1. Give your database an appropriate name and select the 'Tiny Turtle' payment plan. This is the option to select if you wish to have a free, hosted database. Larger projects with greater storage needs may require a paid plan.
+
+<img src="" alt="">
+
+1. Select your preferred region (i.e. geographically, which data center your database will be hosted at.) and confirm to create your database.
+
+<img src="" alt="">
+
+1. After creating your database, navigate to the 'instances' page and select the database you just created. Copy the PostgreSQL URL from the details section. This is required for linking the django project and the deployed heroku version to the production database.
+
+<img src="" alt="">
 
 ### Heroku Deployment
 
-### Forking GitHub Repository
+Before deploying to Heroku, environment variables must be defined in the django project so that local development functions correctly. Once these environment variables are set up in the workspace, the project can be deployed and the environment variables can be copied into heroku as config vars (to ensure the deployed app works correctly with 3rd party dependecies.)
 
-### Cloning GitHub Repository
+1. Create a file called env.py in the root directory of your workspace and ensure that the file is included in .gitignore. These variables should NOT be committed and pushed to GitHub.
+2. import os to the file.
+3. os.environ['DATABASE_URL'] = URL copied from ElephantSQL
+4. os.environ['SECRET_KEY'] = A randomly generated key of your choosing. This keeps django from serving data to/from an unauthorised source.
+5. os.environ['CLOUDINARY_URL'] = The URL from a cloudinary account. This can be found on the following page on the [cloudinary website](#https://cloudinary.com/)
+<img src="" alt="">
+
+These environment variables can now be accessed and configured in the settings.py file of the django project.
 
 The website was deployed to [Heroku](https://id.heroku.com/) using the following process:
+
 1. Login or create an account at [Heroku](https://dashboard.heroku.com/)
 <img src="docs/heroku/heroku1.png">
 1. Click on New > Create new app in the top right of the screen.
@@ -1087,43 +1115,45 @@ The website was deployed to [Heroku](https://id.heroku.com/) using the following
 1. Add an app name and select location, then click 'create app'.
 <img src="docs/heroku/heroku3.png">
 1. Under the deploy tab of the next page, select connect to GitHub.
-1. Log in to your GitHub account when prompted.
+2. Log in to your GitHub account when prompted.
 <img src="docs/heroku/heroku4.png">
 1. Select the repository that you want to be connected to the Heroku app.
 <img src="docs/heroku/heroku5.png">
 1. Click on the settings tab.
 <img src="docs/heroku/heroku6.png">
-1. Scroll down to the config vars section, and add 2 config vars:
-    * The first key is CREDS and the value here is the creds.json file that was generated for the google sheets API to work properly.
-    * The second key is PORT and the Value is 8000
+1. Scroll down to the config vars section, and add config vars specified at the start of this section of the README. They should look something like this:
+KEY: DATABASE_URL
+VALUE: postgresurlexample123.com
 <img src="docs/heroku/heroku7.png">
-1. Once you have set up the config vars, scroll down to buildpacks (still under the settings tab)
-1. Add the Python and Node.js buildpacks to your app and make sure that when they are displayed, they appear in the order:
-    * Python
-    * Node.JS
 <img src="docs/heroku/heroku8.png">
 1. Navigate back to the settings tab.
-1. Select automatic deploys to allow Heroku to build the site with new changes each time changes are pushed to GitHub.
+2. Select automatic deploys to allow Heroku to build the site with new changes each time changes are pushed to GitHub.
 <img src="docs/heroku/heroku9.png">
 1. In the 'manual deploy' section beneath this, make sure the branch selected is 'main' and click deploy branch.
 <img src="docs/heroku/heroku10.png">
 1. The site should now be built and Heroku should provide a url for the built site.
 
+### Forking GitHub Repository
+
 This repository can be forked using the following process:
+
 1. On the repository's page, go to the top-right of the page underneath the dark ribbon.
 1. Click on the fork button
-1. You can now work on a fork of this project. 
+1. You can now work on a fork of this project.
+
+### Cloning GitHub Repository
 
 This repository can be cloned using the following process:
+
 1. Go to this repository's page on GitHub.
 1. Click on the code button (not the one in the navbar, but the one right above the file list).
 1. Select an option, HTTPS, SSH, GitHub CLI.
-1. Copy the url below to your clipboard.
-1. Open Git Bash/your IDE terminal.
-1. Ensure the directory you are working in is the correct one you want to paste the project into.
-1. Type the command '$ git clone'
-1. Paste the URL of the repository after this.
-1. Hit enter on your keyboard and the project will be cloned.
+2. Copy the url below to your clipboard.
+3. Open Git Bash/your IDE terminal.
+4. Ensure the directory you are working in is the correct one you want to paste the project into.
+5. Type the command '$ git clone'
+6. Paste the URL of the repository after this.
+7. Hit enter on your keyboard and the project will be cloned.
 
 ## Testing
 
