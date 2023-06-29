@@ -1733,12 +1733,47 @@ The following issues remain unfixed, and as a consequence the features were remo
 ## Credits
 
 ### 3rd party code used
-* The code for the GitHub 
+* The code for the GitHub API fetching was borrowed from the Code Institute Bootstrap Resume Part 2 Walkthrough. The original can be found [here](#https://github.com/Code-Institute-Solutions/InteractiveFrontendDevelopment-Resume/tree/master/02-TheGitHubAPI/08-api_throttling)
 
-#### 3rd party Python libraries/modules
+### Tutorials used
+* Episodes 52 and 53 of Django World's tutorials were incredibly helpful for demonstrating how to create user profiles that are automatically created upon registration (using signals), as well as how to redirect users to complete their profiles after first authentication. The series can be found [here](#https://www.youtube.com/playlist?list=PLKnjLEpehhFnb210PantMg9sdQNrygxUL)
+* This [video](#<https://www.youtube.com/watch?v=_eWLaL2g1bo)> by Django Lessons helped me to build my own context processor to make user profile data accessible to all my other apps' views/templates.
 
-#### Code found online when solving bugs in own code.
-* credits to the CI team for the code used to fetch/display git hub profile information
+### 3rd party Python libraries/modules
+
+* Django
+* Summernote
+* Crispy Forms
+* Coverage
+* Django Cloudinary
+* Pylint
+* Django Allauth
+* Django Materialize CSS
+
+### Other 3rd party libraries and online tools used
+
+* MaterializeCSS
+* Google fonts
+* Fontawesome
+* Favicon.io
+* Lucidchart
+* Figma
+* Coolors.co
+* Github
+* Git
+* CodeAnywhere
+* W3C HTML Validator
+* W3C CSS Validator
+* JSHint
+* CI Pep8 validator
+* WebAIM wave validator
+* Chrome Developer tools
+
+### Hosting platforms used.
+
+* Heroku
+* Cloudinary
+* ElephantSQL
 
 ### Acknowledgements
 
