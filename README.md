@@ -1295,7 +1295,139 @@ Note: This result was for only the custom css written by the project author. The
 
 The WebAIM WAVE browser plugin was used to asses the site's accessibility. All pages passed with no errors or warnings.
 
+#### Application Detail
 
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/application-detail-access.png" alt="the webaim report for the application detail page.">
+</details>
+
+#### Blog detail
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/blog-detail-access.png" alt="the webaim report for the blog detail page.">
+</details>
+
+#### Blog list
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/blog-list-access.png" alt="the webaim report for the blog list page.">
+</details>
+
+#### Candidate list
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/candidates-access.png" alt="the webaim report for the candidate list page.">
+</details>
+
+#### Contact
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/contact-access.png" alt="the webaim report for the contact page.">
+</details>
+
+#### Create application
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/create-application-access.png" alt="the webaim report for the create application page.">
+</details>
+
+#### Create blog
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/create-blog-access.png" alt="the webaim report for the create blog page.">
+</details>
+
+#### Create job posting
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/create-job-post-access.png" alt="the webaim report for the create job page.">
+</details>
+
+#### Create profile
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/create-profile-access.png" alt="the webaim report for the create profile page.">
+</details>
+
+#### Delete profile
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/delete-profile-access.png" alt="the webaim report for the delete profile page.">
+</details>
+
+#### Edit blog
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/edit-blog-access.png" alt="the webaim report for the edit blog page.">
+</details>
+
+#### Home
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/home-access.png" alt="the webaim report for the home page.">
+</details>
+
+#### Login
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/login-access.png" alt="the webaim report for the login page.">
+</details>
+
+#### Job Detail
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/job-detail-access.png" alt="the webaim report for the job detail page.">
+</details>
+
+#### Track applications
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/my-applications-access.png" alt="the webaim report for the track applications page.">
+</details>
+
+#### Profile detail
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/profile-detail-access.png" alt="the webaim report for the profile details page.">
+</details>
+
+#### Register
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/register-access.png" alt="the webaim report for the profile signup page.">
+</details>
+
+#### Sign-out
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/sign-out-access.png" alt="the webaim report for the profile signout page.">
+</details>
+
+
+#### View profile
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/accessibility/view-profile-access.png" alt="the webaim report for the profile view profile page.">
+</details>
 
 ### Performance (Lighthouse)
 
