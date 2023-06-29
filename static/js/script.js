@@ -19,7 +19,7 @@ function fixTextareas() {
         for (let i = 0; i < textareas.length; i++) {
             textareas[i].className = 'materialize-textarea';
         }
-    };
+    }
 }
 
 function fixLabels() {
@@ -29,7 +29,7 @@ function fixLabels() {
             labels[i].classList.add('active');
             labels[i].classList.add('black-text');
         }
-    };
+    }
 }
 
 function fixAsterisks() {

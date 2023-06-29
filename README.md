@@ -1563,11 +1563,124 @@ When considering site performance it is important to consider that scores may va
 
 ### JavaScript
 
+The custom JavaScript was validated using the [JShint](#https://jshint.com/) online tool.
+
+All code passed with no errors or warnings
+
+#### script.js
+
+<img src="docs/validation/script-js-valid.png" alt="The validated code for script.js file">
+
+#### github.js
+
+<img src="docs/validation/github-js-valid.png" alt="The validated code for github.js file">
+
+
 ### PEP8 Python Validator (from Code Institute)
 
 Code institute's own Python Linter [pep8](https://pep8ci.herokuapp.com/) was used to validate all Python code in this project.
 
 All code passed with no errors.
+
+<details>
+<summary>Blog</summary>
+
+#### Admin
+
+<img src="docs/validation/python/blog/blog-admin-py.png" alt="the validated code for the blog admin.py file">
+
+#### Forms
+
+<img src="docs/validation/python/blog/blog-forms-py.png" alt="the validated code for the blog forms.py file">
+
+#### Models
+
+<img src="docs/validation/python/blog/blog-models-py.png" alt="the validated code for the blog models.py file">
+
+#### URLs
+
+<img src="docs/validation/python/blog/blog-urls-py.png" alt="the validated code for the blog urls.py file">
+
+#### Views
+
+<img src="docs/validation/python/blog/blog-views-py.png" alt="the validated code for the blog views.py file">
+
+</details>
+
+<details>
+<summary>Contact Form</summary>
+
+#### Admin
+
+<img src="docs/validation/python/contact/contact-admin-py.png" alt="the validated code for the contact admin.py file">
+
+#### Forms
+
+<img src="docs/validation/python/contact/contact-forms-py.png" alt="the validated code for the contact forms.py file">
+
+#### Models
+
+<img src="docs/validation/python/contact/contact-models-py.png" alt="the validated code for the contact models.py file">
+
+#### URLs
+
+<img src="docs/validation/python/contact/contact-urls-py.png" alt="the validated code for the contact urls.py file">
+
+#### Views
+
+<img src="docs/validation/python/contact/contact-views-py.png" alt="the validated code for the contact views.py file">
+
+</details>
+
+<details>
+<summary>Job Board</summary>
+
+#### Admin
+
+<img src="docs/validation/python/job_board/job-board-admin-py.png" alt="the validated code for the job board admin.py file">
+
+#### Forms
+
+<img src="docs/validation/python/job_board/job-board-forms-py.png" alt="the validated code for the job board forms.py file">
+
+#### Models
+
+<img src="docs/validation/python/job_board/job-board-models-py.png" alt="the validated code for the job board models.py file">
+
+#### URLs
+
+<img src="docs/validation/python/job_board/job-board-urls-py.png" alt="the validated code for the job board urls.py file">
+
+#### Views
+
+<img src="docs/validation/python/job_board/job-board-views-py.png" alt="the validated code for the job board views.py file">
+
+</details>
+
+<details>
+<summary>Profiles</summary>
+
+#### Admin
+
+<img src="docs/validation/python/user_profiles/profiles-admin-py.png" alt="the validated code for the profiles admin.py file">
+
+#### Forms
+
+<img src="docs/validation/python/user_profiles/profiles-forms-py.png" alt="the validated code for the profiles forms.py file">
+
+#### Models
+
+<img src="docs/validation/python/user_profiles/profiles-models-py.png" alt="the validated code for the profiles models.py file">
+
+#### URLs
+
+<img src="docs/validation/python/user_profiles/profiles-urls-py.png" alt="the validated code for the profiles urls.py file">
+
+#### Views
+
+<img src="docs/validation/python/user_profiles/profiles-views-py.png" alt="the validated code for the profiles views.py file">
+
+</details>
 
 ## Bugs
 
