@@ -1431,6 +1431,136 @@ The WebAIM WAVE browser plugin was used to asses the site's accessibility. All p
 
 ### Performance (Lighthouse)
 
+Google Chrome's lighthouse was used to test the performance of the pages of the site. Almost all pages got more than 90% in all categories (performance, accessibility, best practices). All pages got a score of more than 80%.
+
+When considering site performance it is important to consider that scores may vary depending on the strength of the internet connection and various other factors beyond the code.
+
+#### Application form
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/apply-perf.png" alt="the chrome lighthouse report for the job application page.">
+</details>
+
+#### Blog detail
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/blog-detail-perf.png" alt="the chrome lighthouse report for the blog detail page.">
+</details>
+
+#### Blog list
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/blog-list-perf.png" alt="the chrome lighthouse report for the blog list page.">
+</details>
+
+#### Candidates
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/candidates-perf.png" alt="the chrome lighthouse report for the candidate list page.">
+</details>
+
+#### Contact
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/contact-perf.png" alt="the chrome lighthouse report for the contact page.">
+</details>
+
+#### Create Job
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/create-job-perf.png" alt="the chrome lighthouse report for the create job page.">
+</details>
+
+#### Create blog
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/create-blog-perf.png" alt="the chrome lighthouse report for the create blog page.">
+</details>
+
+#### Delete profile
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/delete-profile-perf.png" alt="the chrome lighthouse report for the delete profile page.">
+</details>
+
+#### Edit blog
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/edit-blog-perf.png" alt="the chrome lighthouse report for the edit blog page.">
+</details>
+
+#### Edit profile
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/edit-profile-perf.png" alt="the chrome lighthouse report for the edit profile page.">
+</details>
+
+#### Home
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/home-perf.png" alt="the chrome lighthouse report for the home page.">
+</details>
+ 
+#### Job detail
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/job-detail-perf.png" alt="the chrome lighthouse report for the job detail page.">
+</details>
+
+#### Login
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/login-perf.png" alt="the chrome lighthouse report for the login page.">
+</details>
+
+#### Logout
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/logout-perf.png" alt="the chrome lighthouse report for the logout page.">
+</details>
+
+#### Profile detail
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/profile-detail-perf.png" alt="the chrome lighthouse report for the profile detail page.">
+</details>
+
+#### Register
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/register-perf.png" alt="the chrome lighthouse report for the register page.">
+</details>
+
+#### Track applications
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/track-applications-perf.png" alt="the chrome lighthouse report for the track applications page.">
+</details>
+
+#### View profile
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/lighthouse/view-profile-perf.png" alt="the chrome lighthouse report for the view profile page.">
+</details>
+
 ### JavaScript
 
 ### PEP8 Python Validator (from Code Institute)
