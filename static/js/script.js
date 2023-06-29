@@ -26,7 +26,8 @@ function fixLabels() {
     let labels = document.querySelectorAll('label');
     if (labels.length > 0) {
         for (let i = 0; i < labels.length; i++) {
-            labels[i].className = 'black-text';
+            labels[i].classList.add('active');
+            labels[i].classList.add('black-text');
         }
     };
 }

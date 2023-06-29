@@ -12,9 +12,7 @@ class BlogPostForm(forms.ModelForm):
         fields = ('title', 'slug', 'summary', 'content', 'featured_image',)
         labels = {
             'title': 'Blog Title',
-            'slug': """
-            Unique ID: Can only contain letters,
-            hyphens, numbers or underscores""",
+            'slug': 'ID (no spaces/special chars):',
             'summary': 'Blog Summary',
             'content': 'Blog Content',
             'featured': 'Add an image for your blog post (optional)',

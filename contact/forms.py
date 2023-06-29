@@ -13,5 +13,5 @@ class ContactForm(forms.ModelForm):
         labels = {
             'full_name': 'Write your name here',
             'email': 'Email address',
-            'message': 'Give details of the issue you would like to report.'
+            'message': 'Details of your issue.'
         }

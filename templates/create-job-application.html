@@ -15,6 +15,9 @@
                 <h3 class="center">Applying as: {{ user.username }}</h3>
                 {{ form | crispy }}
                 {% csrf_token %}
+                <div class="row">
+                    <p>For the last three questions, please make sure you answer with fewer than 2000 characters.</p>
+                </div>
                 <button id="apply" type="submit" class="btn">Submit Application</button>
             </form>
         </div>
