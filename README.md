@@ -1163,9 +1163,139 @@ A detailed description of all automated and manual tests carried out can be foun
 
 ### HTML
 
+All HTML pages that the W3C validator could get access to were validated with no warnings or errors in the HTML.
+
+#### 404
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/html/404-valid.png" alt="the w3c validation certificate for the 404 page.">
+</details>
+
+#### Application form
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/html/application-form-valid.png" alt="the w3c validation certificate for the job application page.">
+</details>
+
+#### Blog list
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/html/blog-list-valid.png" alt="the w3c validation certificate for the blog list page.">
+</details>
+
+#### Blog post detail
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/html/blog-detail-valid.png" alt="the w3c validation certificate for the blog detail page.">
+</details>
+
+#### Contact form
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/html/contact-valid.png" alt="the w3c validation certificate for the contact page.">
+</details>
+
+#### Create blog
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/html/create-blog-valid.png" alt="the w3c validation certificate for the create blog page.">
+</details>
+
+#### Create job posting
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/html/create-job-valid.png" alt="the w3c validation certificate for the create job posting page.">
+</details>
+
+#### Create Profile
+
+The one error on this page is caused by materialize crispy forms's rendering of the 'create profile' form.
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/html/create-profile-valid-minus-materialize-error.png" alt="the w3c validation certificate for the create profile page.">
+</details>
+
+#### Delete profile
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/html/delete-profile-valid.png" alt="the w3c validation certificate for the delete profile page.">
+</details>
+
+#### Edit blog
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/html/edit-blog-valid.png" alt="the w3c validation certificate for the edit blog page.">
+</details>
+
+#### Home page
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/html/home-valid.png" alt="the w3c validation certificate for the home page.">
+</details>
+
+#### Job post detail
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/html/job-detail-valid.png" alt="the w3c validation certificate for the job detail page.">
+</details>
+
+#### Update job posting
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/html/update-job-valid.png" alt="the w3c validation certificate for the update job page.">
+</details>
+
+#### Login
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/html/login-valid.png" alt="the w3c validation certificate for the update login page.">
+</details>
+
+#### Logout
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/html/sign-out-valid.png" alt="the w3c validation certificate for the update logout page.">
+</details>
+
+#### Sign up
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs/validation/html/signup-valid.png" alt="the w3c validation certificate for the update signup page.">
+</details>
+
+
 ### CSS
 
+All custom CSS was validated using the w3c css validator. The code passed with no errors or warnings.
+
+Note: This result was for only the custom css written by the project author. The MaterializeCSS styles are not covered by this validation report.
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/validation/css-valid.png" alt="the w3c validation certificate for style.css.">
+</details>
+
 ### Accessibility (WAVE)
+
+The WebAIM WAVE browser plugin was used to asses the site's accessibility. All pages passed with no errors or warnings.
+
+
 
 ### Performance (Lighthouse)
 

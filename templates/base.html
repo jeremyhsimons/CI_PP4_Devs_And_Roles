@@ -46,15 +46,17 @@
                 <li>
                     <a class='dropdown-trigger' href='#' data-target='dropdown1'>RECRUITERS</a>
                 </li>
-                <ul id='dropdown1' class='dropdown-content'>
-                    <li>
-                        <a href="{% url 'create-job-post' %}">Create a Job posting</a>
-                    </li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li>
-                        <a href="{% url 'see_all' %}">Candidates</a>
-                    </li>
-                </ul>
+                <li>
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li>
+                            <a href="{% url 'create-job-post' %}">Create a Job posting</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a href="{% url 'see_all' %}">Candidates</a>
+                        </li>
+                    </ul>
+                </li>
                 {% endif %}
                 {% if profile.job_seeker %}
                 <li>
