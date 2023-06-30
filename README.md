@@ -1036,7 +1036,7 @@ features and feedback to users. Some ideas include:
 * A news aggregation page that uses the mediastack API to scrape tech news and display it in a paginated list of news articles on the site.
 * Modifying the job application model, and wiring up another media hosting service, so that users can upload a pdf CV/resume, and recruiters can download it when reviewing applications.
 * Exploring LinkedIn API to auto display candidate profiles from their provided linkedin urls
-* Exploring DWP APIs to direct job-seeking users to apply for UK universal credit if they are eligible.
+* Exploring potential UK Department for Work and Pensions APIs to direct job-seeking users to apply for UK universal credit if they are eligible.
   
 ## Technologies Used
 
@@ -1080,19 +1080,19 @@ For ease of development, the production database was set up at the beginning of 
 
 1. Once logged in, click the 'Create New Instance' button.
 
-<img src="" alt="">
+<img src="docs/deployment/elephant-1.png">
 
 1. Give your database an appropriate name and select the 'Tiny Turtle' payment plan. This is the option to select if you wish to have a free, hosted database. Larger projects with greater storage needs may require a paid plan.
 
-<img src="" alt="">
+<img src="docs/deployment/elephant-2.png">
 
 1. Select your preferred region (i.e. geographically, which data center your database will be hosted at.) and confirm to create your database.
 
-<img src="" alt="">
+<img src="docs/deployment/elephant-3.png">
 
 1. After creating your database, navigate to the 'instances' page and select the database you just created. Copy the PostgreSQL URL from the details section. This is required for linking the django project and the deployed heroku version to the production database.
 
-<img src="" alt="">
+<img src="docs/deployment/elephant-4.png">
 
 ### Heroku Deployment
 
@@ -1103,36 +1103,35 @@ Before deploying to Heroku, environment variables must be defined in the django 
 3. os.environ['DATABASE_URL'] = URL copied from ElephantSQL
 4. os.environ['SECRET_KEY'] = A randomly generated key of your choosing. This keeps django from serving data to/from an unauthorised source.
 5. os.environ['CLOUDINARY_URL'] = The URL from a cloudinary account. This can be found on the following page on the [cloudinary website](#https://cloudinary.com/)
-<img src="" alt="">
+<img src="docs/deployment/cloudinary.png">
 
 These environment variables can now be accessed and configured in the settings.py file of the django project.
 
 The website was deployed to [Heroku](https://id.heroku.com/) using the following process:
 
 1. Login or create an account at [Heroku](https://dashboard.heroku.com/)
-<img src="docs/heroku/heroku1.png">
+<img src="docs/deployment/heroku1.png">
 1. Click on New > Create new app in the top right of the screen.
-<img src="docs/heroku/heroku2.png">
+<img src="docs/deployment/heroku2.png">
 1. Add an app name and select location, then click 'create app'.
-<img src="docs/heroku/heroku3.png">
+<img src="docs/deployment/heroku3.png">
 1. Under the deploy tab of the next page, select connect to GitHub.
 2. Log in to your GitHub account when prompted.
-<img src="docs/heroku/heroku4.png">
+<img src="docs/deployment/heroku4.png">
 1. Select the repository that you want to be connected to the Heroku app.
-<img src="docs/heroku/heroku5.png">
+<img src="docs/deployment/heroku5.png">
 1. Click on the settings tab.
-<img src="docs/heroku/heroku6.png">
-1. Scroll down to the config vars section, and add config vars specified at the start of this section of the README. They should look something like this:
+<img src="docs/deployment/heroku6.png">
+1. Scroll down to the config vars section, and add config vars specified at the start of this section of the README. Also, include a var with the key 'PORT' and value '8000' to avoid build errors. The end result should look something like this:
 KEY: DATABASE_URL
 VALUE: postgresurlexample123.com
-<img src="docs/heroku/heroku7.png">
-<img src="docs/heroku/heroku8.png">
-1. Navigate back to the settings tab.
-2. Select automatic deploys to allow Heroku to build the site with new changes each time changes are pushed to GitHub.
-<img src="docs/heroku/heroku9.png">
-1. In the 'manual deploy' section beneath this, make sure the branch selected is 'main' and click deploy branch.
-<img src="docs/heroku/heroku10.png">
-1. The site should now be built and Heroku should provide a url for the built site.
+<img src="docs/deployment/heroku-config.png">
+1. Navigate back to the 'deploy' tab.
+2.  Select automatic deploys to allow Heroku to build the site with new changes each time changes are pushed to GitHub.
+<img src="docs/deployment/heroku9.png">
+1.  In the 'manual deploy' section beneath this, make sure the branch selected is 'main' and click deploy branch.
+<img src="docs/deployment/heroku10.png">
+1.  The site should now be built and Heroku should provide a url for the built site.
 
 ### Forking GitHub Repository
 
