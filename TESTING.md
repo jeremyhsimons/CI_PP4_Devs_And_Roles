@@ -278,6 +278,53 @@ The site was tested on the following devices:
 Unit test suites were written for all the models.py, forms.py, and views.py of each app within this django project. the coverage library was used to measure the percentage of python code tested for each app. the results for each test suite, and each app's coverage are below.
 
 <details>
-    <summary>Screenshots</summary>
+    <summary>Blog</summary>
+
+#### Tests coverage
+
+<img src="docs/testing/unittests/blog-coverage.png">
+
+#### Tests pass
+
+<img src="docs/testing/unittests/blog-tests-pass.png">
+
+</details><br>
+
+<details>
+    <summary>Contact form</summary>
+
+#### Tests coverage
+
+<img src="docs/testing/unittests/contact-coverage.png">
+
+#### Tests pass
+
+<img src="docs/testing/unittests/contact-tests-pass.png">
+
+</details><br>
+
+<details>
+    <summary>Job board</summary>
+
+#### Tests coverage
+
+<img src="docs/testing/unittests/job-board-coverage.png">
+
+#### Tests pass
+
+<img src="docs/testing/unittests/job-board-tests-pass.png">
+
+</details><br>
+
+<details>
+    <summary>User profiles</summary>
+
+#### Tests coverage
+
+<img src="docs/testing/unittests/user-profiles-coverage.png">
+
+#### Tests pass
+
+<img src="docs/testing/unittests/user-profiles-tests-pass.png">
 
 </details><br>
