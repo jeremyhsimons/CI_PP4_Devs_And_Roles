@@ -569,8 +569,9 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
         </li>
         <li>
             <img src="" alt="the hero image: code background and button for more details">
+            <img src="" alt="the hero image: the basic job details">
         </li>
-            <li>
+        <li>
             <img src="" alt="the main body of text for the job description">
         </li>
         <li>
@@ -837,7 +838,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
                 <p>The messaging form that allows recruiters to send messages to job-seekers inviting them to chat more.</p>
             </li>
             <li>
-                <img src="" alt="The paginated list of candidates recruiters can contact">
+                <img src="" alt="The message section of the profile details page.">
             </li>
             <li>
                 <p>User Stories covered: 18</p>
@@ -1733,11 +1734,12 @@ The following issues remain unfixed, and as a consequence the features were remo
 ## Credits
 
 ### 3rd party code used
-* The code for the GitHub API fetching was borrowed from the Code Institute Bootstrap Resume Part 2 Walkthrough. The original can be found [here](#https://github.com/Code-Institute-Solutions/InteractiveFrontendDevelopment-Resume/tree/master/02-TheGitHubAPI/08-api_throttling)
+* The code for the GitHub API fetching was borrowed from the Code Institute Bootstrap Resume Part 2 Walkthrough. The original can be found [here](#https://github.com/Code-Institute-Solutions/InteractiveFrontendDevelopment-Resume/tree/master/02-TheGitHubAPI/08-api_throttling).
+* The main background for the site was taken from the [Canva](#) templates list.
 
 ### Tutorials used
 * Episodes 52 and 53 of Django World's tutorials were incredibly helpful for demonstrating how to create user profiles that are automatically created upon registration (using signals), as well as how to redirect users to complete their profiles after first authentication. The series can be found [here](#https://www.youtube.com/playlist?list=PLKnjLEpehhFnb210PantMg9sdQNrygxUL)
-* This [video](#<https://www.youtube.com/watch?v=_eWLaL2g1bo)> by Django Lessons helped me to build my own context processor to make user profile data accessible to all my other apps' views/templates.
+* This [video](#https://www.youtube.com/watch?v=_eWLaL2g1bo) by Django Lessons helped me to build my own context processor to make user profile data accessible to all my other apps' views/templates.
 
 ### 3rd party Python libraries/modules
 
@@ -1756,6 +1758,7 @@ The following issues remain unfixed, and as a consequence the features were remo
 * Google fonts
 * Fontawesome
 * Favicon.io
+* Canva
 * Lucidchart
 * Figma
 * Coolors.co
@@ -1779,6 +1782,6 @@ The following issues remain unfixed, and as a consequence the features were remo
 
 * Thanks to my Mentor Mo Shami for his immensely valuable feedback, advice and encouragement throughout this project. Thanks for pushing me to do the best I can!
 * Thanks to the CI tutors for all their help with bugs that I couldn't get my head round! Thanks also for helping me out when Codeanywhere did weird things and required extra adjustment!
-* Thanks for the CI slack community for all your valuable input and help bugfixing!
-* Thanks to the wonderful CI London Community for all the moral support!.
+* Thanks for the CI slack community for valuable input and help bugfixing.
+* Thanks to the wonderful CI London Community for all the moral support.
 * Thanks to Oli for his user acceptance tesing and feedback. Cheers for breaking my site...
