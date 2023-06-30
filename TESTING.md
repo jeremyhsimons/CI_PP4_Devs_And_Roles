@@ -12,56 +12,144 @@ The site was tested on the following devices:
 
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
-| 1. Sign up as a new user | Sign-up page | Clicking on register, entering details into the form, clicking submit | Site gives feedback to say registration is successful. | Works as expected. |
+| 1. Sign up as a new user | Sign-up page | Clicking on register, entering details into the form, clicking submit | User is directed to create their profile. | Works as expected. |
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="A screenshot of the sign up prompt."><br>
+    <img src="docs/testing/manualtests/us1-1.png"><br>
+    <img src="docs/testing/manualtests/us1-2.png"><br>
 </details><br>
 
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
 | 2. View paginated list of jobs | Home page | entering the url of the site into browser, hitting enter. | To be taken straight away to a list of jobs which I can click on and see the details. | Works as expected. |
 
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/testing/manualtests/us2-1.png"><br>
+</details><br>
+
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
 | 3. Create a profile for employers to find out more about me. | Create profile page | After signing up as a new user, get redirected to create profile page. Fill out the form with valid data and click submit. | When 'view profile' is now clicked in the navbar, user should see their profile details displayed correctly. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/testing/manualtests/us1-1.png"><br>
+    <img src="docs/testing/manualtests/us1-2.png"><br>
+    <img src="docs/testing/manualtests/us3-1.png"><br>
+    <img src="docs/testing/manualtests/us3-2.png"><br>
+    <img src="docs/testing/manualtests/us3-3.png"><br>
+    <img src="docs/testing/manualtests/us3-4.png"><br>
+</details><br>
 
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
 | 4. Easily navigate between site features. | Navbar | From the 'view profile' page, click on the home button to return to perusing the job ads. | To be redirected back to the home page with the job ads. | Works as expected. |
 
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/testing/manualtests/us4-1.png"><br>
+    <img src="docs/testing/manualtests/us4-2.png"><br>
+</details><br>
+
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
-| 5. See jobs already applied for. | Track applications page | (as an authorised job-seeker) From the home page, click on the 'track application' button to see jobs applied for. | To see a list of jobs I've made applications to. clicking on one will take the user to the details of the job. | Works as expected. |
+| 5. See jobs already applied for. | Track applications page | (as an authorised job-seeker) From the home page, click on the 'track application' button to see jobs applied for. | To see a list of jobs I've made applications to. clicking on one will take the user to the details of the application. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/testing/manualtests/us5-1.png"><br>
+    <img src="docs/testing/manualtests/us5-2.png"><br>
+    <img src="docs/testing/manualtests/us5-3.png"><br>
+</details><br>
 
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
 | 6. Apply for a job. | Create Application page | (as an authorised job-seeker) From the home page, click on a job to access the details. scroll down to the apply button and click it. Fill out the form that follows with valid data and click submit. | To see that an application for this job has appeared in my 'track applications page'. | Works as expected. |
 
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/testing/manualtests/us6-1.png"><br>
+    <img src="docs/testing/manualtests/us6-2.png"><br>
+    <img src="docs/testing/manualtests/us6-3.png"><br>
+    <img src="docs/testing/manualtests/us6-4.png"><br>
+    <img src="docs/testing/manualtests/us6-5.png"><br>
+    <img src="docs/testing/manualtests/us6-6.png"><br>
+</details><br>
+
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
 | 7. See how many applicants there are for a job. | Job detail page. | From the home page, click on a job to access the details. scroll down to the bottom of the page. | To see the number of applicants that there are for this job. | Works as expected. |
 
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/testing/manualtests/us7-1.png"><br>
+    <img src="docs/testing/manualtests/us7-2.png"><br>
+    <img src="docs/testing/manualtests/us7-3.png"><br>
+</details><br>
+
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
-| 8. Withdraw application. | Job detail page. | (as an authorised job-seeker) From the home page, click on the 'track applications' page and click the 'withdraw application button. Click 'delete' at the following modal. | From the admin panel, view the job applications list and see that the application is no longer there. | Works as expected. |
+| 8. Withdraw application. | Job detail page. | (as an authorised job-seeker) From the home page, click on the 'track applications' page and click the 'withdraw application button. Click 'delete' at the following modal. | Clicking again to the track applications page should reveal that the application is no longer listed. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/testing/manualtests/us5-1.png"><br>
+    <img src="docs/testing/manualtests/us8-2.png"><br>
+    <img src="docs/testing/manualtests/us8-3.png"><br>
+    <img src="docs/testing/manualtests/us5-1.png"><br>
+    <img src="docs/testing/manualtests/us8-5.png"><br>
+</details><br>
 
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
 | 9. Create blog post. | Create blog page. | (as an authorised job-seeker) From the home page, click on the 'blog' option and click the 'create blog post' button and fill out the following form, submitting it. | From the previous blog list page, the article should appear in the list and the data should be displayed correctly. | Works as expected. |
 
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/testing/manualtests/us9-1.png"><br>
+    <img src="docs/testing/manualtests/us9-2.png"><br>
+    <img src="docs/testing/manualtests/us9-3.png"><br>
+    <img src="docs/testing/manualtests/us9-4.png"><br>
+    <img src="docs/testing/manualtests/us9-5.png"><br>
+</details><br>
+
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
 | 10. Comment on a blog post. | blog detail page. | (as an authorised job-seeker) From the blog list page, click on a blog post and click the comments button on the side navigation panel. At the comment section, type a comment and hit the submit button. | The page should reload, and afterwards, the comment should appear in the list of comments below the form. | Works as expected. |
 
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/testing/manualtests/us10-1.png"><br>
+    <img src="docs/testing/manualtests/us10-2.png"><br>
+    <img src="docs/testing/manualtests/us10-3.png"><br>
+    <img src="docs/testing/manualtests/us10-4.png"><br>
+</details><br>
+
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
-| 11. Report Job Postings. | Job detail page. | (as an authorised job-seeker) From the home page, click on a job posting and click the amber 'report' button at the top of the page. | The user should be redirected to the home page and notified of the success of their action. The job reported status should be set to true in the admin panel. | Works as expected. |
+| 11. Report Job Postings. | Job detail page. | (as an authorised job-seeker) From the home page, click on a job posting and click the amber 'report' button at the top of the page. | The user should be redirected to the home page. When accessing the job again, the report button should disappear and be replaced with text informing users that the page has been reported. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/testing/manualtests/us11-1.png"><br>
+    <img src="docs/testing/manualtests/us11-2.png"><br>
+    <img src="docs/testing/manualtests/us11-3.png"><br>
+    <img src="docs/testing/manualtests/us11-4.png"><br>
+</details><br>
 
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
 | 12. Contact site admin. | Contact page. | (as an authorised job-seeker) From the home page, click on the 'contact' option on the navbar. Fill out the form and click submit on the contact page. | The user should be redirected to the home page and notified of the success of their action. The contact message should appear in the admin panel. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/testing/manualtests/us12-1.png"><br>
+    <img src="docs/testing/manualtests/us12-2.png"><br>
+    <img src="docs/testing/manualtests/us12-3.png"><br>
+    <img src="docs/testing/manualtests/us12-4.png"><br>
+</details><br>
 
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|

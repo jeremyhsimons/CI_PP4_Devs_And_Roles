@@ -626,7 +626,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <p>Form that successful new sign ups are automatically redirected to after the registration form</p>
         </li>
         <li>
-            <img src="docs/features/" alt="the form for creating profiles.">
+            <img src="docs/testing/manualtests/us1-2.png" alt="the form for creating profiles.">
         </li>
         <li>
             <p>Options for the type of account the user wishes to have. This will change which features of the site they have access to. Note, users can sign up as both job-seeker and recruiter if they wish.</p>
