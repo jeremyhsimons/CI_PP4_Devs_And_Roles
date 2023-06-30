@@ -535,19 +535,19 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <p>Home page with job postings</p>
         </li>
         <li>
-            <img src="" alt="A screenshot of the home page">
+            <img src="docs/features/home-1.png" alt="A screenshot of the home page">
         </li>
         <li>
             <p>Job details when clicking on a job posting</p>
         </li>
         <li>
-            <img src="" alt="A screenshot of a job detail page">
+            <img src="docs/features/home-2.png" alt="A screenshot of a job detail page">
         </li>
         <li>
             <p>navigator to get the next items</p>
         </li>
         <li>
-            <img src="" alt="A screenshot of the bottom nav element">
+            <img src="docs/features/home-3.png" alt="A screenshot of the bottom nav element">
         </li>
         <li>
             <p>User Stories covered:1, 2</p>
@@ -562,17 +562,17 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <p>Page with job postings. Top nav bar with optios to report, edit / delete, the job posting depending on which user is logged in.</p>
         </li>
         <li>
-            <img src="" alt="A screenshot of the job details page navbar with different coloured buttons.">
+            <img src="docs/features/job-detail-1.png" alt="A screenshot of the job details page navbar with different coloured buttons.">
         </li>
         <li>
             <p>Hero image with clickable card to access primary job details. cards displaying other job info, including the number of applicants the job already has.</p>
         </li>
         <li>
-            <img src="" alt="the hero image: code background and button for more details">
-            <img src="" alt="the hero image: the basic job details">
+            <img src="docs/features/job-detail-2.png" alt="the hero image: code background and button for more details">
+            <img src="docs/features/job-detail-3.png" alt="the hero image: the basic job details">
         </li>
         <li>
-            <img src="" alt="the main body of text for the job description">
+            <img src="docs/features/job-detail-4.png" alt="the main body of text for the job description">
         </li>
         <li>
             <p>User Stories covered: 1, 7, 19</p>
@@ -587,11 +587,11 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <p>Sign up and log in pages for users to create and revisit their accounts on the site.</p>
         </li>
         <li>
-            <img src="" alt="the sign up/lgin options in navbar."><br>
-            <img src="" alt="the login form.">
+            <img src="docs/features/signup-1.png" alt="the sign up/lgin options in navbar."><br>
+            <img src="docs/features/signup-2.png" alt="the login form.">
         </li>
         <li>
-            <img src="" alt="the signup form.">
+            <img src="docs/features/signup-3.png" alt="the signup form.">
         </li>
         <li>
             <p>User Stories covered:1, 13</p>
@@ -606,10 +606,10 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <p>Separate page for authorised users to confirm sign out</p>
         </li>
         <li>
-            <img src="" alt="the sign out option in navbar.">
+            <img src="docs/features/signout-1.png" alt="the sign out option in navbar.">
         </li>
         <li>
-            <img src="" alt="the sign out form.">
+            <img src="docs/features/signout-2.png" alt="the sign out form.">
         </li>
         <li>
             <p>User Stories covered: 1, 13</p>
@@ -626,13 +626,13 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <p>Form that successful new sign ups are automatically redirected to after the registration form</p>
         </li>
         <li>
-            <img src="" alt="the form for creating profiles.">
+            <img src="docs/features/" alt="the form for creating profiles.">
         </li>
         <li>
             <p>Options for the type of account the user wishes to have. This will change which features of the site they have access to. Note, users can sign up as both job-seeker and recruiter if they wish.</p>
         </li>
         <li>
-            <img src="" alt="the options to sign up as recruiter or job seeker">
+            <img src="docs/features/create-profile-2.png" alt="the options to sign up as recruiter or job seeker">
         </li>
         <li>
             <p>User Stories covered: 3</p>
@@ -647,16 +647,16 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <p>Users can access their profiles from the nav bar once signed up. This takes them to their profile page (if it is a job seeker profile, this will be the same page of information that recruiters can view).</p>
         </li>
         <li>
-            <img src="" alt="the button on the navbar for accessing the user's own profile.">
+            <img src="docs/features/view-profile-1.png" alt="the button on the navbar for accessing the user's own profile.">
         </li>
         <li>
-            <img src="" alt="the details of the user displayed.">
+            <img src="docs/features/view-profile-2.png" alt="the details of the user displayed.">
         </li>
         <li>
             <p>Options for the user to edit/delete their profile/account, or view their messages from recruiters.</p>
         </li>
         <li>
-            <img src="" alt="the options element and the buttons displaying options.">
+            <img src="docs/features/view-profile-3.png" alt="the options element and the buttons displaying options.">
         </li>
         <li>
             <p>User Stories covered: 3, 4</p>
@@ -671,7 +671,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <p>Form for users to edit their profile details.</p>
         </li>
         <li>
-            <img src="" alt="edit profile form.">
+            <img src="docs/features/edit-profile.png" alt="edit profile form.">
         </li>
         <li>
             <p>User Stories covered: 3, 21</p>
@@ -686,7 +686,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
                 <p>Page warning users of the permanent deletion of their account if they delete their profile.</p>
             </li>
             <li>
-                <img src="" alt="delete profile warning text adnd.">
+                <img src="docs/features/delete-profile.png" alt="delete profile warning text.">
             </li>
             <li>
                 <p>User Stories covered: 20</p>
@@ -701,7 +701,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
                 <p>Page with a form to complete in order to apply for a job.</p>
             </li>
             <li>
-                <img src="" alt="empty form that the user must complete to apply.">
+                <img src="docs/features/job-application-form.png" alt="empty form that the user must complete to apply.">
             </li>
             <li>
                 <p>User Stories covered: 6</p>
@@ -716,7 +716,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
                 <p>Page with a list of applications already made. Options are included to withdraw applications or view the job description again.</p>
             </li>
             <li>
-                <img src="" alt="list of cards showing jobs the user has already applied for.">
+                <img src="docs/features/view-applications.png" alt="list of cards showing jobs the user has already applied for.">
             </li>
             <li>
                 <p>User Stories covered: 5</p>
@@ -731,7 +731,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
                 <p>What the job-seeker user views upon selecting the withdraw application button.</p>
             </li>
             <li>
-                <img src="" alt="Popup warning users they are about to delete their job application">
+                <img src="docs/features/withdraw-application.png" alt="Popup warning users they are about to delete their job application">
             </li>
             <li>
                 <p>User Stories covered: 8</p>
@@ -748,13 +748,13 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
                 <p>The dropdown menu recruiters get to create job ads and view job-seekers</p>
             </li>
             <li>
-                <img src="" alt="The navbar options only available to recruiters.">
+                <img src="docs/features/create-job-1.png" alt="The navbar options only available to recruiters.">
             </li>
             <li>
                 <p>The form that users complete to submit a job ad to the site admin for approval.</p>
             </li>
             <li>
-                <img src="" alt="the form for recruiters to submit a job ad">
+                <img src="docs/features/create-job-2.png" alt="the form for recruiters to submit a job ad">
             </li>
             <li>
                 <p>User Stories covered: 14</p>
@@ -769,13 +769,13 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
                 <p>button for recruiter to edit job ad.</p>
             </li>
             <li>
-                <img src="" alt="button for recruiter to edit job ad.">
+                <img src="docs/features/update-job-1.png" alt="button for recruiter to edit job ad.">
             </li>
             <li>
                 <p>The form that users complete to submit updates a job ad.</p>
             </li>
             <li>
-                <img src="" alt="The form that users complete to submit updates a job ad.">
+                <img src="docs/features/update-job-2.png" alt="The form that users complete to submit updates a job ad.">
             </li>
             <li>
                 <p>User Stories covered: 16</p>
@@ -790,13 +790,13 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
                 <p>button for recruiter to delete a job ad.</p>
             </li>
             <li>
-                <img src="" alt="button for recruiter to edit job ad.">
+                <img src="docs/features/delete-job-1.png" alt="button for recruiter to edit job ad.">
             </li>
             <li>
                 <p>The popup that appears when users opt to delete a job ad.</p>
             </li>
             <li>
-                <img src="" alt="The popup that appears when users opt to delete a job ad.">
+                <img src="docs/features/delete-job-2.png" alt="The popup that appears when users opt to delete a job ad.">
             </li>
             <li>
                 <p>User Stories covered: 15</p>
@@ -811,13 +811,13 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
                 <p>The dropdown menu recruiters get to create job ads and view job-seekers</p>
             </li>
             <li>
-                <img src="" alt="The navbar options only available to recruiters.">
+                <img src="docs/features/create-job-1.png" alt="The navbar options only available to recruiters.">
             </li>
             <li>
                 <p>The paginated list of candidates recruiters can contact</p>
             </li>
             <li>
-                <img src="" alt="The paginated list of candidates recruiters can contact">
+                <img src="docs/features/candidates-2.png" alt="The paginated list of candidates recruiters can contact">
             </li>
             <li>
                 <p>User Stories covered: 17</p>
@@ -832,13 +832,13 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
                 <p>The profile page accessible to the recruiter via the list of candidates.</p>
             </li>
             <li>
-                <img src="" alt="The profile page accessible to the recruiter via the list of candidates.">
+                <img src="docs/features/message-1.png" alt="The profile page accessible to the recruiter via the list of candidates.">
             </li>
             <li>
                 <p>The messaging form that allows recruiters to send messages to job-seekers inviting them to chat more.</p>
             </li>
             <li>
-                <img src="" alt="The message section of the profile details page.">
+                <img src="docs/features/message-2.png" alt="The message section of the profile details page.">
             </li>
             <li>
                 <p>User Stories covered: 18</p>
@@ -855,7 +855,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
                 <p>The admin dashboard that allows the site controller to manage the site. This feature enables admin to approve or disapprove multiple job postings in one go.</p>
             </li>
             <li>
-                <img src="" alt="the admin dashboard with the option selected to approve multiple jobs.">
+                <img src="docs/features/admin-approve.png" alt="the admin dashboard with the option selected to approve multiple jobs.">
             </li>
             <li>
                 <p>User Stories covered: 22, 23</p>
@@ -870,7 +870,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
                 <p>The admin dashboard page that lists the contact messages from users filling out the site contact form.</p>
             </li>
             <li>
-                <img src="" alt="the admin dashboard with the option selected to approve multiple jobs.">
+                <img src="docs/features/admin-contact.png" alt="the admin dashboard with the option selected to approve multiple jobs.">
             </li>
             <li>
                 <p>User Stories covered: 24</p>
@@ -887,19 +887,19 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <p>The navbar option to access the blog list</p>
         </li>
         <li>
-            <img src="" alt="The navbar option to access the blog list">
+            <img src="docs/features/create-blog-1.png" alt="The navbar option to access the blog list">
         </li>
         <li>
             <p>The button to create a new blog post</p>
         </li>
         <li>
-            <img src="" alt="The button to create a new blog post">
+            <img src="docs/features/create-blog-2.png" alt="The button to create a new blog post">
         </li>
         <li>
             <p>The form that allows users to submit a blog post to the site.</p>
         </li>
         <li>
-            <img src="" alt="The form that allows users to submit a blog post to the site.">
+            <img src="docs/features/create-blog-3.png" alt="The form that allows users to submit a blog post to the site.">
         </li>
         <li>
             <p>User Stories covered: 9</p>
@@ -914,19 +914,19 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <p>The navbar option to access the blog list</p>
         </li>
         <li>
-            <img src="" alt="The navbar option to access the blog list">
+            <img src="docs/features/create-blog-1.png" alt="The navbar option to access the blog list">
         </li>
         <li>
             <p>Selecting one of the blog posts by clicking the 'read' button</p>
         </li>
         <li>
-            <img src="" alt="Selecting one of the blog posts by clicking the 'read' button">
+            <img src="docs/features/view-blog-2.png" alt="Selecting one of the blog posts by clicking the 'read' button">
         </li>
         <li>
             <p>The blog detail page which features all the blog information plus page navigation menu and comment section</p>
         </li>
         <li>
-            <img src="" alt="The blog detail page which features all the blog information plus page navigation menu and comment section.">
+            <img src="docs/features/view-blog-3.png" alt="The blog detail page which features all the blog information plus page navigation menu and comment section.">
         </li>
         <li>
             <p>User Stories covered: 9, 10</p>
@@ -941,13 +941,13 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <p>The button that users can click to edit their own blog posts.</p>
         </li>
         <li>
-            <img src="" alt="The button that users can click to edit their own blog posts.">
+            <img src="docs/features/update-blog-1.png" alt="The button that users can click to edit their own blog posts.">
         </li>
         <li>
             <p>The form that users must fill out to submit edits to their posts. There is a popup warning them not to resubmit the same data.</p>
         </li>
         <li>
-            <img src="" alt="The form that users must fill out to submit edits to their posts. There is a popup warning them not to resubmit the same data.">
+            <img src="docs/features/update-blog-2.png" alt="The form that users must fill out to submit edits to their posts. There is a popup warning them not to resubmit the same data.">
         </li>
         <li>
             <p>User Stories covered: 9</p>
@@ -962,13 +962,13 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <p>The button that users can click to delete their own blog posts.</p>
         </li>
         <li>
-            <img src="" alt="The button that users can click to delete their own blog posts.">
+            <img src="docs/features/delete-blog-1.png" alt="The button that users can click to delete their own blog posts.">
         </li>
         <li>
             <p>The modal that appears when users try to delete their blog to warn them this is a permanent action.</p>
         </li>
         <li>
-            <img src="" alt="The modal that appears when users try to delete their blog to warn them this is a permanent action.">
+            <img src="docs/features/delete-blog-2.png" alt="The modal that appears when users try to delete their blog to warn them this is a permanent action.">
         </li>
         <li>
             <p>User Stories covered: 9</p>
@@ -983,7 +983,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <p>The Comment section of the blog detail page and the form that allows users to add their own comments to the post.</p>
         </li>
         <li>
-            <img src="" alt="The Comment section of the blog detail page and the form that allows users to add their own comments to the post.">
+            <img src="docs/features/comment-1.png" alt="The Comment section of the blog detail page and the form that allows users to add their own comments to the post.">
         </li>
         <li>
             <p>User Stories covered: 10</p>
@@ -998,13 +998,13 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
             <p>The button that the user can select to delete their own comment</p>
         </li>
         <li>
-            <img src="" alt="The button that the user can select to delete their own comment.">
+            <img src="docs/features/delete-comment-1.png" alt="The button that the user can select to delete their own comment.">
         </li>
         <li>
             <p>The popup that appears when users opt to delete comments, warning them that this is a permanent action.</p>
         </li>
         <li>
-            <img src="" alt="The popup that appears when users opt to delete comments, warning them that this is a permanent action.">
+            <img src="docs/features/delete-comment-2.png" alt="The popup that appears when users opt to delete comments, warning them that this is a permanent action.">
         </li>
         <li>
             <p>User Stories covered: 10</p>
@@ -1019,7 +1019,7 @@ The website has 20 pages (including error pages) and a variety of CRUD functiona
                 <p>The contact page that allows authorized users to contact the site admin directly.</p>
             </li>
             <li>
-                <img src="" alt="The contact page that allows authorized users to contact the site admin directly.">
+                <img src="docs/features/contact-1.png" alt="The contact page that allows authorized users to contact the site admin directly.">
             </li>
             <li>
                 <p>User Stories covered: 12</p>
