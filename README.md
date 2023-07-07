@@ -2,7 +2,7 @@
 
 Developed by Jeremy Simons
 
-<img src="docs/amiresponsivepp3.png" alt="A screenshot of the homepage of the site">
+<img src="docs/docs-hero.png" alt="A screenshot of the homepage of the site">
 
 [Link to live site](https://devs-and-roles.herokuapp.com/)
 
