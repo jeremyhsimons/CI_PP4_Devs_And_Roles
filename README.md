@@ -2,7 +2,7 @@
 
 Developed by Jeremy Simons
 
-<img src="docs/amiresponsivepp3.png" alt="A screenshot of Am I Responsive representation of the website">
+<img src="docs/amiresponsivepp3.png" alt="A screenshot of the homepage of the site">
 
 [Link to live site](https://devs-and-roles.herokuapp.com/)
 
@@ -10,7 +10,7 @@ Developed by Jeremy Simons
 
 Devs and Roles is the proposed solution to platforms such as linkedIn which generate too much noise from professionals who are not from the tech industry. It aims to provide a community for software developers and other tech professionals to, firstly, gain access to new job opportunities. Secondly, the site aims to connect with tech professionals with other tech professionals and recruiters who are actively seeking quality talent for their clients or companies.
 
-With the blog feature, it allows professionals and recruiters alike to market themselves with long-format, high-quality content rather than the sound-bite feed of memes and platitudes on other platforms. Recruiters have the ability to search through a catalogue of job-seeking users to connect with them directly.
+With the blog feature, it allows professionals and recruiters alike to market themselves with long-format, high-quality content. Recruiters have the ability to search through a catalogue of job-seeking users to connect with them directly.
 
 The ultimate goal of these features is to expedite the recruitment process for tech workers and recruiters alike.
 
@@ -172,6 +172,10 @@ Roboto mono was chosen as the main font for this website because of its readabil
 
 [Coolors.co](https://coolors.co/104f55-32746d-f4d8cd-01200f-011502 ) was used to generate the color palate of the site. The dark and light green combination was chosen because, coupled with roboto mono, the light-coloured text on the dark green background emulates a development terminal.
 
+#### Backgrounds
+
+A custom background was created using [canva](https://www.canva.com/en_gb/). The background image present for desktop users was created by adapting a template to match the colour scheme of the site.  
+
 ### Front End Libraries
 The [Materialize](https://materializecss.com/) CSS and JavaScript library was used to create the layout of the front end. The classes included in this library were used to make the site fully responsive and also to provide satisfying feedback to users regarding their actions.
 
@@ -180,6 +184,8 @@ The [Materialize](https://materializecss.com/) CSS and JavaScript library was us
 * Materialize 'modals' and 'toasts' were used to defensively programme delete functionality in the site. These features provide users with adequate notification of the consequences of their actions without redirecting them unnecessarily to extra pages.
 
 ### Wireframes
+
+Figma was used to design and generate wireframes for the pages of the site.
 
 <details>
     <summary>Small - Mobile</summary>
@@ -1733,54 +1739,65 @@ The following issues remain unfixed, and as a consequence the features were remo
 ## Credits
 
 ### 3rd party code used
+
 * The code for the GitHub API fetching was borrowed from the Code Institute Bootstrap Resume Part 2 Walkthrough. The original can be found [here](#https://github.com/Code-Institute-Solutions/InteractiveFrontendDevelopment-Resume/tree/master/02-TheGitHubAPI/08-api_throttling).
-* The main background for the site was taken from the [Canva](#) templates list.
+* The code for the JavaScript setTimeout function to cancel the django messages was taken from the django blog walkthrough. Original can be found [here](https://github.com/Code-Institute-Solutions/Django3blog/tree/master/11_messages)
+* The main background for the site was taken from the [Canva](https://www.canva.com/en_gb/) templates list.
+
+### images used
+
+Default images for job ads and blog posts were sourced from [Unsplash](https://unsplash.com/). Below are the links to the images used and their creators.
+
+* Ilya Pavlov [Image of code](https://unsplash.com/photos/OqtafYT5kTw)
+* RetroSupply [Image of a typewriter](https://unsplash.com/photos/jLwVAUtLOAQ)
 
 ### Tutorials used
+
 * Episodes 52 and 53 of Django World's tutorials were incredibly helpful for demonstrating how to create user profiles that are automatically created upon registration (using signals), as well as how to redirect users to complete their profiles after first authentication. The series can be found [here](#https://www.youtube.com/playlist?list=PLKnjLEpehhFnb210PantMg9sdQNrygxUL)
 * This [video](#https://www.youtube.com/watch?v=_eWLaL2g1bo) by Django Lessons helped me to build my own context processor to make user profile data accessible to all my other apps' views/templates.
 
 ### 3rd party Python libraries/modules
 
-* Django
-* Summernote
-* Crispy Forms
-* Coverage
-* Django Cloudinary
-* Pylint
-* Django Allauth
-* Django Materialize CSS
+* [Django](https://pypi.org/project/Django/)
+* [Django Summernote](https://pypi.org/project/django-summernote/)
+* [Django Crispy Forms](https://pypi.org/project/django-crispy-forms/)
+* [Coverage](https://pypi.org/project/coverage/)
+* [Django Cloudinary](https://pypi.org/project/cloudinary/)
+* [Pylint](https://pypi.org/project/pylint/)
+* [Django Allauth](https://pypi.org/project/django-allauth/)
+* [Django Materialize CSS](https://pypi.org/project/django-materialize/)
 
 ### Other 3rd party libraries and online tools used
 
-* MaterializeCSS
-* Google fonts
-* Fontawesome
-* Favicon.io
-* Canva
-* Lucidchart
-* Figma
-* Coolors.co
-* Github
-* Git
-* CodeAnywhere
-* W3C HTML Validator
-* W3C CSS Validator
-* JSHint
-* CI Pep8 validator
-* WebAIM wave validator
-* Chrome Developer tools
+* [MaterializeCSS](https://materializecss.com/)
+* [Google fonts](https://fonts.google.com/)
+* [Fontawesome](https://fontawesome.com/)
+* [Favicon.io](https://favicon.io/)
+* [Canva](https://www.canva.com/en_gb/)
+* [Unsplash](https://unsplash.com/)
+* [Lucidchart](https://www.lucidchart.com/pages/)
+* [Figma](https://www.figma.com/)
+* [Coolors.co](https://coolors.co/)
+* [Github](https://github.com/)
+* [Git](https://git-scm.com/)
+* [CodeAnywhere](https://app.codeanywhere.com/) (Online IDE used for this project)
+* [W3C HTML Validator](https://validator.w3.org/)
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+* [JSHint](https://jshint.com/)
+* [CI Pep8 validator](https://pep8ci.herokuapp.com/)
+* [WebAIM wave validator](https://wave.webaim.org/)
+* Chrome Developer tools/Lighthouse
 
 ### Hosting platforms used.
 
-* Heroku
-* Cloudinary
-* ElephantSQL
+* [Heroku](https://id.heroku.com/)
+* [Cloudinary](https://cloudinary.com/)
+* [ElephantSQL](https://www.elephantsql.com/)
 
 ### Acknowledgements
 
 * Thanks to my Mentor Mo Shami for his immensely valuable feedback, advice and encouragement throughout this project. Thanks for pushing me to do the best I can!
 * Thanks to the CI tutors for all their help with bugs that I couldn't get my head round! Thanks also for helping me out when Codeanywhere did weird things and required extra adjustment!
-* Thanks for the CI slack community for valuable input and help bugfixing.
+* Thanks for the CI slack community for valuable input and help bug-fixing.
 * Thanks to the wonderful CI London Community for all the moral support.
-* Thanks to Oli for his user acceptance tesing and feedback. Cheers for breaking my site...
+* Thanks to Oli, Zac, Nathan, and Rob for their user acceptance tesing and feedback. Cheers for breaking my site, guys...
