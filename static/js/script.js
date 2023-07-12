@@ -59,7 +59,6 @@ function applicationToast() {
 function deletionToast() {
     const deleteButton = document.getElementById('delete');
     deleteButton.addEventListener('mouseenter', () => {
-        console.log('hello');
         M.toast({ html: 'WARNING: This action is not reversible.', classes: 'red darken-4' });
     });
 }
