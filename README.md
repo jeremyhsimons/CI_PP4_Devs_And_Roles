@@ -531,7 +531,7 @@ A relational database schema was created using [Lucidchart](https://lucid.app/) 
 
 The website has 20 pages (including error pages) and a variety of CRUD functionalites. Users are able to access a limited number of features without signing up. Different pages are accessbile to registered users depending on what their job-seeker/recruiter settings are toggled to on their profile.
 
-### Pre-authentication:
+### Pre-authentication
 
 <details>
     <summary>Home page</summary>
@@ -1118,27 +1118,27 @@ The website was deployed to Heroku using the following process:
 
 1. Login or create an account at [Heroku](https://dashboard.heroku.com/)
 <img src="docs/deployment/heroku1.png">
-1. Click on New > Create new app in the top right of the screen.
+2. Click on New > Create new app in the top right of the screen.
 <img src="docs/deployment/heroku2.png">
-1. Add an app name and select location, then click 'create app'.
+3. Add an app name and select location, then click 'create app'.
 <img src="docs/deployment/heroku3.png">
-1. Under the deploy tab of the next page, select connect to GitHub.
-2. Log in to your GitHub account when prompted.
+4. Under the deploy tab of the next page, select connect to GitHub.
+5. Log in to your GitHub account when prompted.
 <img src="docs/deployment/heroku4.png">
-1. Select the repository that you want to be connected to the Heroku app.
+6. Select the repository that you want to be connected to the Heroku app.
 <img src="docs/deployment/heroku5.png">
-1. Click on the settings tab.
+7. Click on the settings tab.
 <img src="docs/deployment/heroku6.png">
-1. Scroll down to the config vars section, and add config vars specified at the start of this section of the README. Also, include a var with the key 'PORT' and value '8000' to avoid build errors. The end result should look something like this:
+8. Scroll down to the config vars section, and add config vars specified at the start of this section of the README. Also, include a var with the key 'PORT' and value '8000' to avoid build errors. The end result should look something like this:
 KEY: DATABASE_URL
 VALUE: postgresurlexample123.com
 <img src="docs/deployment/heroku-config.png">
-1. Navigate back to the 'deploy' tab.
-2.  Select automatic deploys to allow Heroku to build the site with new changes each time changes are pushed to GitHub.
+9. Navigate back to the 'deploy' tab.
+10.  Select automatic deploys to allow Heroku to build the site with new changes each time changes are pushed to GitHub.
 <img src="docs/deployment/heroku9.png">
-1.  In the 'manual deploy' section beneath this, make sure the branch selected is 'main' and click deploy branch.
+11.  In the 'manual deploy' section beneath this, make sure the branch selected is 'main' and click deploy branch.
 <img src="docs/deployment/heroku10.png">
-1.  The site should now be built and Heroku should provide a url for the built site.
+12.  The site should now be built and Heroku should provide a url for the built site.
 
 ### Forking GitHub Repository
 
@@ -1155,12 +1155,12 @@ This repository can be cloned using the following process:
 1. Go to this repository's page on GitHub.
 1. Click on the code button (not the one in the navbar, but the one right above the file list).
 1. Select an option, HTTPS, SSH, GitHub CLI.
-2. Copy the url below to your clipboard.
-3. Open Git Bash/your IDE terminal.
-4. Ensure the directory you are working in is the correct one you want to paste the project into.
-5. Type the command '$ git clone'
-6. Paste the URL of the repository after this.
-7. Hit enter on your keyboard and the project will be cloned.
+1. Copy the url below to your clipboard.
+1. Open Git Bash/your IDE terminal.
+1. Ensure the directory you are working in is the correct one you want to paste the project into.
+1. Type the command '$ git clone'
+1. Paste the URL of the repository after this.
+1. Hit enter on your keyboard and the project will be cloned.
 
 ## Testing
 
@@ -1723,7 +1723,7 @@ The following bugs were documented during the development of this project:
 <img src="docs/bugs/bug5.png" alt="a screenshot of bug 5">
 </details>
 
-The following issues remain unfixed, and as a consequence the features were removed so as to maintain a strong user experience without error messages to interrupt it.
+The following issues remain unfixed, and as a consequence the features were not implemented so as to maintain a strong user experience without error messages to interrupt it.
 
 * Sending reset password request results in 504 error
 <details>
