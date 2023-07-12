@@ -259,8 +259,8 @@ def delete_application(request, application_id):
     application = get_object_or_404(JobApplication, pk=application_id)
     if request.user == application.candidate:
         application.delete()
-        messages.success(request, 'JOB POSTING SUCCESSFULLY DELETED')
+        messages.success(request, 'JOB APPLICATION SUCCESSFULLY DELETED')
         return HttpResponseRedirect(reverse('home'))
     else:
-        messages.error(request, "YOU CANNOT DELETE A POST YOU DIDN'T CREATE")
+        messages.error(request, "YOU DO NOT HAVE PERMISSION TO DELETE THIS")
         return HttpResponseRedirect(reverse('home'))
