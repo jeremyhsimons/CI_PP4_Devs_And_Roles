@@ -170,7 +170,7 @@ Roboto mono was chosen as the main font for this website because of its readabil
 
 #### Colours
 
-[Coolors.co](https://coolors.co/104f55-32746d-f4d8cd-01200f-011502 ) was used to generate the color palate of the site. The dark and light green combination was chosen because, coupled with roboto mono, the light-coloured text on the dark green background emulates a development terminal.
+[Coolors.co](https://coolors.co/104f55-32746d-f4d8cd-01200f-011502) was used to generate the color palate of the site. The dark and light green combination was chosen because, coupled with roboto mono, the light-coloured text on the dark green background emulates a development terminal.
 
 #### Backgrounds
 
@@ -1055,24 +1055,25 @@ features and feedback to users. Some ideas include:
 
 ### Frameworks/3rd party Libraries used for Python, CSS, JS
 
-* [Django]() for building the MVT architecture of the site.
-* [Django Summernote]() for implementing a text editor in the admin panel
-* [Cloudinary]() for hosting static files.
-* [Django Crispy Forms]() for rendering/formatting forms in django templates
-* [Django Allauth]() for handling all user authentication features in the site.
-* [Coverage] for displaying the extent of python unit testing un django apps.
-* [Materialize CSS]() for frontend design/layout/responsiveness.
+* [Django](https://www.djangoproject.com/) for building the MVT architecture of the site.
+* [Django Summernote](https://pypi.org/project/django-summernote/) for implementing a text editor in the admin panel
+* [Cloudinary](https://cloudinary.com/) for hosting static files.
+* [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) for rendering/formatting forms in django templates
+* [Django Allauth](https://django-allauth.readthedocs.io/en/latest/) for handling all user authentication features in the site.
+* [Coverage](https://pypi.org/project/coverage/) for displaying the extent of python unit testing un django apps.
+* [Materialize CSS](https://materializecss.com/) for frontend design/layout/responsiveness/interactivity.
 
 ### Other tools/websites/libraries used
-* [Figma] for creating site witeframes.
-* [Favicon.io] for designing and creating site favicon.
-* [Coolors.co] for selecting the site colour palate.
+* [Figma](https://www.figma.com/) was used for creating site witeframes.
+* [Favicon.io](https://favicon.io/) was used for designing and creating site favicon.
+* [Coolors.co](https://coolors.co/) was used for selecting the site colour palate.
+* [Google fonts](https://fonts.google.com/) was used for the site fonts.
 * [Lucidchart](https://lucid.app/) was used to create wireframes.
 * [Git](https://git-scm.com/) was used for version control.
 * [GitHub](https://github.com/) was used for saving and storing files.
 * [Codeanywhere](https://app.codeanywhere.com/) was the IDE used for writing and editing code.
 * [Heroku](https://id.heroku.com/) was used as the hosting platform for this site.
-* [amiresponsive](https://ui.dev/amiresponsive?url=https://jeremyhsimons.github.io/CI_PP2_SavvySaver/) was used to test the website across different screens and generate the picture in the [Design](#design) section.
+* [ElephantSQL](https://www.elephantsql.com/) was used to host the site's postgreSQL database.
 
 #### 3rd party Python Libraries used
 
@@ -1082,7 +1083,7 @@ For ease of development, the production database was set up at the beginning of 
 
 ### Database
 
-1. To create a managed PostgreSQL database. Create an account or sign up to [ElephantSQL](#https://www.elephantsql.com/).
+1. To create a managed PostgreSQL database. Create an account or sign up to [ElephantSQL](https://www.elephantsql.com/).
 
 1. Once logged in, click the 'Create New Instance' button.
 
@@ -1113,7 +1114,7 @@ Before deploying to Heroku, environment variables must be defined in the django 
 
 These environment variables can now be accessed and configured in the settings.py file of the django project.
 
-The website was deployed to [Heroku](https://id.heroku.com/) using the following process:
+The website was deployed to Heroku using the following process:
 
 1. Login or create an account at [Heroku](https://dashboard.heroku.com/)
 <img src="docs/deployment/heroku1.png">
@@ -1740,7 +1741,7 @@ The following issues remain unfixed, and as a consequence the features were remo
 
 ### 3rd party code used
 
-* The code for the GitHub API fetching was borrowed from the Code Institute Bootstrap Resume Part 2 Walkthrough. The original can be found [here](#https://github.com/Code-Institute-Solutions/InteractiveFrontendDevelopment-Resume/tree/master/02-TheGitHubAPI/08-api_throttling).
+* The code for the GitHub API fetching was borrowed from the Code Institute Bootstrap Resume Part 2 Walkthrough. The original can be found [here](https://github.com/Code-Institute-Solutions/InteractiveFrontendDevelopment-Resume/tree/master/02-TheGitHubAPI/08-api_throttling).
 * The code for the JavaScript setTimeout function to cancel the django messages was taken from the django blog walkthrough. Original can be found [here](https://github.com/Code-Institute-Solutions/Django3blog/tree/master/11_messages)
 * The main background for the site was taken from the [Canva](https://www.canva.com/en_gb/) templates list.
 
@@ -1753,8 +1754,8 @@ Default images for job ads and blog posts were sourced from [Unsplash](https://u
 
 ### Tutorials used
 
-* Episodes 52 and 53 of Django World's tutorials were incredibly helpful for demonstrating how to create user profiles that are automatically created upon registration (using signals), as well as how to redirect users to complete their profiles after first authentication. The series can be found [here](#https://www.youtube.com/playlist?list=PLKnjLEpehhFnb210PantMg9sdQNrygxUL)
-* This [video](#https://www.youtube.com/watch?v=_eWLaL2g1bo) by Django Lessons helped me to build my own context processor to make user profile data accessible to all my other apps' views/templates.
+* Episodes 52 and 53 of Django World's tutorials were incredibly helpful for demonstrating how to create user profiles that are automatically created upon registration (using signals), as well as how to redirect users to complete their profiles after first authentication. The series can be found [here](https://www.youtube.com/playlist?list=PLKnjLEpehhFnb210PantMg9sdQNrygxUL)
+* This [video](https://www.youtube.com/watch?v=_eWLaL2g1bo) by Django Lessons helped me to build my own context processor to make user profile data accessible to all my other apps' views/templates.
 
 ### 3rd party Python libraries/modules
 
@@ -1796,8 +1797,8 @@ Default images for job ads and blog posts were sourced from [Unsplash](https://u
 
 ### Acknowledgements
 
-* Thanks to my Mentor Mo Shami for his immensely valuable feedback, advice and encouragement throughout this project. Thanks for pushing me to do the best I can!
+* Many thanks to my Mentor Mo Shami for his immensely valuable feedback, advice and encouragement throughout this project. Thanks for pushing me to do the best I can!
 * Thanks to the CI tutors for all their help with bugs that I couldn't get my head round! Thanks also for helping me out when Codeanywhere did weird things and required extra adjustment!
 * Thanks for the CI slack community for valuable input and help bug-fixing.
 * Thanks to the wonderful CI London Community for all the moral support.
-* Thanks to Oli, Zac, Nathan, and Rob for their user acceptance tesing and feedback. Cheers for breaking my site, guys...
+* Thanks to Oli, Zac, Ruth, Nathan, and Rob for their user acceptance tesing and feedback. Cheers for breaking my site, guys...
