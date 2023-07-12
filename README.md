@@ -482,7 +482,7 @@ A relational database schema was created using [Lucidchart](https://lucid.app/) 
 |  | created_on | datetime | auto_now_add=True |
 |  | full_name | char | max_length=200 |
 |  | email | email | max_length=200 |
-|  | phone | int |  |
+|  | phone | char | max_length=80 |
 |  | linkedin | char | max_length=200 |
 |  | github_username | char | max_length=200 |
 |  | why_company | text | max_length=2000 |
