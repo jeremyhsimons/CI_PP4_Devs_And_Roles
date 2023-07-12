@@ -47,7 +47,7 @@ class JobApplication(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     full_name = models.CharField(max_length=200)
     email = models.EmailField(max_length=200)
-    phone = models.IntegerField()
+    phone = models.CharField(max_length=80)
     linkedin = models.CharField(max_length=200)
     github_username = models.CharField(max_length=200)
     why_company = models.TextField(max_length=2000)
