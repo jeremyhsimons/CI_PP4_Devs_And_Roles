@@ -54,27 +54,26 @@
                 {% endif %}
             </div>
             <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Click Here for More Details About This
-                    Opportunity<i class="fa-solid fa-ellipsis-vertical right"></i></span>
+                <span class="card-title activator grey-text text-darken-4">Click here for an overview of this opportunity.<i class="fa-solid fa-ellipsis-vertical right"></i></span>
             </div>
             <div class="card-reveal light-green-bg">
                 <span class="card-title grey-text text-darken-4"><i
                         class="close fa-regular fa-circle-xmark right"></i></span>
                 <ul class="job-detail-list">
                     <li class="job-detail-list-item">
-                        <h4> SALARY: '£{{ jobpost.salary }}',</h4>
+                        <h4> SALARY: £{{ jobpost.salary }},</h4>
                     </li>
                     <li class="job-detail-list-item">
-                        <h4> LOCATION: '{{ jobpost.location }}',</h4>
+                        <h4> LOCATION: {{ jobpost.location }},</h4>
                     </li>
                     <li class="job-detail-list-item">
-                        <h4> CLOSING DATE: '{{ jobpost.closing_date }}',</h4>
+                        <h4> CLOSING DATE: {{ jobpost.closing_date }},</h4>
                     </li>
                     <li class="job-detail-list-item">
-                        <h4> JOB POSTED ON: '{{ jobpost.created_on }}',</h4>
+                        <h4> JOB POSTED ON: {{ jobpost.created_on }},</h4>
                     </li>
                     <li class="job-detail-list-item">
-                        <h4> CURRENT APPLICANTS: '{{ jobpost.applicants }}',</h4>
+                        <h4> CURRENT APPLICANTS: {{ jobpost.applicants }},</h4>
                     </li>
                 </ul>
             </div>

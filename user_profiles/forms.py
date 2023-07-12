@@ -33,7 +33,7 @@ class AddUserProfileForm(forms.ModelForm):
             'github_username': 'GitHub username',
             'job_seeker': 'Tick the box if you are seeking work',
             'recruiter': 'Tick the box if you are hiring',
-            'location': "Where you're based?",
+            'location': "Where do you live?",
             'years_experience': 'Years of experience',
             'education': 'Education History',
             'work_experience': 'Work History',

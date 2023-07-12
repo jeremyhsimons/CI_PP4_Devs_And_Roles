@@ -38,7 +38,7 @@ class JobApplicationForm(forms.ModelForm):
             'email': 'Email',
             'phone': 'Phone number',
             'linkedin': 'LinkedIn URL',
-            'github_username': 'GitHub username',
+            'github_username': 'GitHub username (optional)',
             'why_company': 'Why this company?',
             'why_role': 'Why this role?',
             'why_you': 'Why hire you?',
